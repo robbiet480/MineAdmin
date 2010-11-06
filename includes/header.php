@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Administration Settings</title>
+	<title>MinecraftServers.com - Control Panel</title>
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="jquery.alerts.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="jquery.autocomplete.css" type="text/css" media="screen" />
