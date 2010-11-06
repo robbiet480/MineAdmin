@@ -5,12 +5,12 @@
             exit;
     }
     require_once('config.php');
-    require("mysql.class.php");
+    require('classes/mysql.class.php');
     $db = new MySQL($mysql['HOST'], $mysql['USER'], $mysql['PASS'], $mysql['DB']);
     if ( !$db->isconnected() ) {
         echo "MySQL Configuration Incorrect.";
         exit();
     }
-    require("minecraft.class.php");
+    require('classes/minecraft.class.php');
     $minecraft = new MineCraft();
 ?>

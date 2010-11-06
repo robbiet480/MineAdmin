@@ -1,6 +1,6 @@
 <?php
 
-include_once("prettyxmlrpc.php");
+include_once("prettyxmlrpc.class.php");
 
 class minecraft{
     var $r;
