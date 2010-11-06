@@ -83,7 +83,7 @@ class minecraft{
         return $this->r->player->kick($nick,$reason);
     }
     function player_ban($nick,$reason){
-        return $this->r->server->runConsoleCommand("/ban $nick","Firestarthe");
+        return $this->r->server->runConsoleCommand("/ban $nick","Banned by MineAdmin");
     }
     
      function configuration_files(){

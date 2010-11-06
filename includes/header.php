@@ -24,8 +24,7 @@
 		<ul>
 			<li><a href="logout_process.php">Logout</a></li>
 			<li><a href="settings.php">Settings</a></li>
-            <li><a href="backup.php">Backup</a></li>
-			<li><a href="exec.php">Exec</a></li>
+            <li><a href="tools.php">Tools</a></li>
 			<li><a href="groups.php">Groups</a></li>
 			<li><a href="bans.php">Bans</a></li>
 			<li><a href="users.php">Users</a></li>
