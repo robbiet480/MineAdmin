@@ -20,7 +20,7 @@ require_once('includes/header.php');
                                 <div class="over_html_row_wrap" style="width:840px;">
                                     <label>
                                         <span class="over_html_row" style="width:300px;font-size:18px;"><?php echo $conf[0];?></span>
-                                        <input class="input_text" <?php if($conf[0] == "max-players") { echo 'disabled="disabled" '; }?>style="width:400px;margin-left:10px; type="text" name="<?php echo $configuration['file'].".".$conf[0];?>" value="<?php echo $conf[1];?>">
+                                        <input class="input_text" <?php if(($conf[0] == "max-players") || ($conf[0] == "data-source") || ($conf[0] == "server-ip")) { echo 'disabled="disabled" '; }?>style="width:400px;margin-left:10px; type="text" name="<?php echo $configuration['file'].".".$conf[0];?>" value="<?php echo $conf[1];?>">
                                     </label>
                                 </div>
                                 <?php

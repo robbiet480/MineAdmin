@@ -91,7 +91,7 @@ class minecraft{
         $file_array=array();
         if ($handle = opendir($PATH['minecraft'])) {
             while (false !== ($file = readdir($handle))) {
-                if ($file != "." && $file != "..") {
+                if ($file != "." && $file != ".." && $file != "mysql.properties" && $file != "craftapi.properties") {
                     $file_out=preg_split('/\./si', $file);
                     if($file_out[1]=="properties"){
                         $filename = $PATH['minecraft'].$file_out[0].".properties";
