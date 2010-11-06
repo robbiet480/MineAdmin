@@ -84,6 +84,7 @@ body{
 	margin-left:-450px;
 	margin-top: 84px;
 	padding:30px 10px 10px 10px;
+	display: none;
 	background:#fff;
 	z-index: 0;
 }
