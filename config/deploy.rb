@@ -17,3 +17,14 @@ set :use_sudo, false
 
 set :user, "root"
 set :password, "DC91652D1695606F425FBDAA017E357DC4026DD3CFF04D49CCCB94BCC583BFFA"
+
+namespace:deploy do
+    task:start do
+    end
+    task:stop do
+    end
+    task:finalize_update do
+    end
+    task:restart do
+    end
+end
