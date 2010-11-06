@@ -9,7 +9,7 @@ body{
 }
 #menu-wrap{
 	width:900px;
-	font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+	font-family: 'Arial','Nimbus Sans L',sans-serif;
 	height:50px;
 	position:absolute;
 	left:50%;
@@ -48,7 +48,7 @@ body{
 }
 #page_wrap{
 	width:880px;
-	font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+	font-family: 'Arial','Nimbus Sans L',sans-serif;
 	position:absolute;
 	left:50%;
 	top:14%;
