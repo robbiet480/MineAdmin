@@ -26,7 +26,7 @@
 			<li><a href="settings.php">Settings</a></li>
             <li><a href="tools.php">Tools</a></li>
 			<li><a href="groups.php">Groups</a></li>
-			<li><a href="bans.php">Bans</a></li>
+			<!--<li><a href="bans.php">Bans</a></li>-->
 			<li><a href="users.php">Users</a></li>
 			<li><a href="start.php">Online Now</a></li>
 		</ul>

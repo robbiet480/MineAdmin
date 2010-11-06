@@ -25,7 +25,7 @@ require_once('includes/header.php');
 				<td>10:37PM PST</td>
 				<td>500MB</td>
 				<th>stuffs</th>
-				<th><img src="images/icons/database_save.png">Download&nbsp;<img src="images/icons/database_delete.png">Delete&nbsp;<img src="images/icons/database_go.png">Restore&nbsp;
+				<th><img src="images/icons/database_save.png" alt="Download">&nbsp;<img src="images/icons/database_delete.png" alt="Delete">&nbsp;<img src="images/icons/database_go.png" alt="Restore">&nbsp;
 		</table>
 		</div>
 		<hr />
