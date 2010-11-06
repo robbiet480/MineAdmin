@@ -8,9 +8,11 @@ require_once('includes/header.php');
 			<h1>Tools</h1>
 			<span id="online"></span>
 		</div>
+		<div id="actions">
+			<img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a>&nbsp;<a href="#">
+		</div>
 		<div id="backup_wrap">
-		<h1>Backup</h1>
-		<h2>Backup Listing</h2>
+		<h1>Backups</h1>
 		<table>
 			<tr>
 				<th>Name</th>
