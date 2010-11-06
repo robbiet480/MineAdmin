@@ -21,9 +21,12 @@ body{
 #menu-wrap h2{
 	padding-top:8px;
 	color:#fff;
-	background: #972e2e;
 	padding-left:10px;
 	float:left;
+}
+#menu-wrap span{
+	background: #972e2e;
+	height: 50px;
 }
 #menu-wrap ul{
 	list-style:none;
