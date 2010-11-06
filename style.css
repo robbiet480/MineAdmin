@@ -233,10 +233,11 @@ span.over_html_row{
 	width:190px;
 	float:left;
 	text-align:right;
+	vertical-align: middle;
 	padding-right:10px;
 }
 span.over_html_row span{
-	font-size:11px;
+	font-size:12px;
 	text-shadow:none;
 }
 span.input_area{
