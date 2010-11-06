@@ -43,7 +43,6 @@ body{
 	margin-left:-450px;
 	padding-top: 34px;
 	background:#fff;
-	z-index: 1111;
 }
 #menu-wrap h2{
 	padding-top:11px;
@@ -86,7 +85,6 @@ body{
 	padding:30px 10px 10px 10px;
 	display: none;
 	background:#fff;
-	z-index: 0;
 }
 #page_wrap h1{
 	font-size:21px;
