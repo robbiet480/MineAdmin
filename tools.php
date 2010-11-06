@@ -2,9 +2,6 @@
 require_once('header_inc.php');
 require_once('includes/header.php');
 //passthru('/usr/bin/python /opt/Minecraft-Overviewer/gmap.py /opt/world /var/www/map/');
-if($_GET['action'] == "restart") {
-	echo 
-}
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
