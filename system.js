@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$('#page_wrap').delay(250).slideDown(500);
 	$(function() {
 		$('#menu-wrap a').click(function() {
-			var linkdest = $(this).attr('href');
+			var linkdest = $('#menu-wrap').attr('href');
 			$('#page_wrap').slideUp(500);
 			setTimeout(function(){window.location = linkdest}, 700);
 			e.preventDefault
