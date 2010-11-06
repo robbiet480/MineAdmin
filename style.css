@@ -13,11 +13,12 @@ body{
 	height:50px;
 	position:absolute;
 	left:50%;
-	top:10%;
 	margin-left:-450px;
 	margin-top:-25px;
+	margin-botto
 	padding-top: 28px;
 	background:#fff;
+	z-index: 1000;
 }
 #menu-wrap h2{
 	padding-top:11px;
