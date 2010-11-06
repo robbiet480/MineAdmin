@@ -264,3 +264,9 @@ span.input_area{
 	text-align:center;
 	border-bottom: 1px solid #ddd;
 }
+#backup_wrap table td:last-child {
+	color:#333;
+	padding:.3em 1em;
+	text-align:center;
+	border-bottom: 1px solid #ddd;
+}
