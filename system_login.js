@@ -1,13 +1,13 @@
 var error_showing=false;
 function login(){
-	document.getElementById("login-form").style.webkitTransition="-webkit-transform linear 0.2s";
-	document.getElementById("login-form").style.webkitTransform="rotateX(90deg)";
+//	document.getElementById("login-form").style.webkitTransition="-webkit-transform linear 0.2s";
+//	document.getElementById("login-form").style.webkitTransform="rotateX(90deg)";
 	setTimeout(function(){
 		$("#login_form_i").hide();
 		$("#loading").show();
 		play=true;
 		setTimeout(rotate, 100);
-		document.getElementById("login-form").style.webkitTransform="rotateX(0deg)";
+//		document.getElementById("login-form").style.webkitTransform="rotateX(0deg)";
 		var user=$("#user").val();
 		var pass=$("#pass").val();
 		$.post("login_process.php",{"user":user,"pass":pass},function(data){
@@ -25,10 +25,10 @@ function login(){
 						});
 					}, 3000);
 				}
-				document.getElementById("login-form").style.webkitTransform="rotateX(90deg)";
+//				document.getElementById("login-form").style.webkitTransform="rotateX(90deg)";
 				setTimeout(function(){
 					$("#login_form_i").show();
-					document.getElementById("login-form").style.webkitTransform="rotateX(0deg)";
+//					document.getElementById("login-form").style.webkitTransform="rotateX(0deg)";
 					$("#loading").hide();
 				}, 200);
 				play=false;
