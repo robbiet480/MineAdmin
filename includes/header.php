@@ -16,7 +16,6 @@
 	<script type="text/javascript" src="fancybox/jquery.fancybox-1.3.2.js"></script>
 	<script type="text/javascript" src="jquery.jgrowl_minimized.js"></script>
 	<script type="text/javascript" src="jquery.ui.all.js"></script>
-	<script type="text/javascript" src="jquery.timer.js"></script>
 	<script type="text/javascript" src="system.js"></script> 
 </head>
 <body>
