@@ -19,14 +19,12 @@ body{
 	background:#fff;
 }
 #menu-wrap h2{
-	padding-top:8px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	font-size: 26px;
 	color:#fff;
 	padding-left:10px;
 	float:left;
-}
-#menu-wrap span{
-	background: #972e2e;
-	height: 50px;
 }
 #menu-wrap ul{
 	list-style:none;
