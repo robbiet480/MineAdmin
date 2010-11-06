@@ -180,9 +180,7 @@ body{
 	padding-right:5px;
 	padding-left:10px;
 	font-size:11px;
-	color:#c0c0c0;
-	letter-spacing: 5px;
-	text-shadow: 1px 1px 0px #000;
+	color:#000;
 }
 #page_wrap #item_amount{
 	padding:3px;
