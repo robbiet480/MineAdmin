@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>MinecraftServers.com - Control Panel</title>
+	<title>MCSAdmin - MinecraftServers.com</title>
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="jquery.alerts.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="jquery.autocomplete.css" type="text/css" media="screen" />
@@ -25,7 +25,7 @@
 </head>
 <body>
 	<div id="menu-wrap">
-		<h2>MinecraftServers.com Control Panel</h2>
+		<h2>MCSAdmin</h2>
 		<ul>
 			<li><a href="logout_process.php">Logout</a></li>
 			<li><a href="settings.php">Settings</a></li>

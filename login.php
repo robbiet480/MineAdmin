@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Minecraft Server Admin Login</title>
+	<title>MCSAdmin Login</title>
 	<link rel="stylesheet" href="style_login.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-css-transform.js"></script> 
@@ -12,11 +12,12 @@
 	<div id="login-form">
 		<form action="javascript:login();" method="post">
 			<div id="login_form_i">
-				<h1>Minecraft Admin Panel</h1>
+				<h1>MCSAdmin</h1>
 				<label><span>Username</span><input type="text" name="user" id="user" /></label><br />
 				<label><span>Password</span><input type="password" name="pass" id="pass" /></label><br />
 				<input type="submit" value="Login">
 			</div>
+			
 			<div id="loading" style="display:none;">
 				<div id="div4"> 
   					<div class="bar1"></div> 
@@ -30,6 +31,8 @@
 				</div> 
 			</div>
 		</form>
+		<h4>&copy; 2010 Hostiio, LLC.</h4>
 	</div>
+	
 </body>
 </html>
