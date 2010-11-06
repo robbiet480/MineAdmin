@@ -1,6 +1,7 @@
 <?php
 require_once('header_inc.php');
 require_once('includes/header.php');
+//passthru('/usr/bin/python /opt/Minecraft-Overviewer/gmap.py /opt/world /var/www/map/');
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -31,6 +32,9 @@ require_once('includes/header.php');
 		<hr />
 		<div id="map_wrap">
 		<h1>Mapping</h1>
+		<p>Your last map generation was: NEVER</p>
+		<p>You can access your map at xxxxxxx.minecraftservers.com/map/</p>
+		<a href="#">Start a new map job</a>
 		</div>
 	</div>
 </body>
