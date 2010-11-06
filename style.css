@@ -255,11 +255,12 @@ span.input_area{
 #backup_wrap table th{
 	padding:.3em 1em;
 	border-bottom: 1px solid #999;
+	text-align: center;
 }
 
 #backup_wrap table td {
 	color:#333;
 	padding:.3em 1em;
-	text-align:left;
+	text-align:center;
 	border-bottom: 1px solid #ddd;
 }
