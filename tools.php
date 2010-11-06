@@ -12,6 +12,10 @@ if($_GET['action'] == "restart") {
 			<span id="online"></span>
 			
 		</div>
+		<div class="info">Info message</div>
+		        <div class="success">Successful operation message</div>
+		        <div class="warning">Warning message</div>
+		        <div class="error">Error message</div>
 		<div id="actions">
 			<a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a>&nbsp;
 		</div>
