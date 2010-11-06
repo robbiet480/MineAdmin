@@ -16,7 +16,6 @@ body{
 	margin-left:-450px;
 	padding-top: 34px;
 	background:#fff;
-	z-index: 1000;
 }
 #menu-wrap h2{
 	padding-top:11px;
@@ -55,6 +54,7 @@ body{
 	position:absolute;
 	left:50%;
 	margin-left:-450px;
+	margin-top: 200px;
 	padding:10px;
 	background:#fff;
 }
