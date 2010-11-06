@@ -19,7 +19,7 @@
 	<script type="text/javascript" src="system.js"></script> 
 	<script type="text/javascript">
 		$(document).ready(function(){	
-		$('#page_wrap').fadeIn(700);
+		$('#page_wrap').slideIn(700);
 		});	
 	</script>
 </head>
