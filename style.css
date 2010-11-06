@@ -85,6 +85,7 @@ body{
 	padding:30px 10px 10px 10px;
 	display: none;
 	background:#fff;
+	z-index: -1;
 }
 #page_wrap h1{
 	font-size:21px;
