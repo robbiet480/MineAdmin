@@ -5,36 +5,37 @@
 body{
 	width:100%;
 	height:100%;
-	background:#ebebeb;
+	background:#bcdbef;
 }
 #login-form{
 	width:400px;
-	font-family: 'Helvetica','Arial Narrow','Nimbus Sans L',sans-serif;
+	font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
 	height:275px;
 	position:absolute;
 	left:50%;
 	top:50%;
 	margin-left:-200px;
 	margin-top:-190px;
-	background: #fff;
+	border:5px solid #eef6fb;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#75b5df), to(#3593D0), color-stop(1,#3593D0));
 }
 #login-form h1{
-	padding-left:19px;
-	padding-top:10px;
-	padding-bottom: 10px;
+	padding-left:10px;
+	padding-top:5px;
 	margin-bottom:10px;
 	color:#fff;
-	background-color: #972e2e;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 2px 2px 1px #17689c;
 }
 #login-form label{
 	width:380px;
 	padding-left:20px;
-	text-shadow: 1px 1px 1px #fff;
+	text-shadow: 1px 1px 1px #000;
 	display:block;
 	font-weight:bold;
-	font-size:14px;
-	color:#000;
+	font-size:11px;
+	color:#fff;
 }
 #login-form label span{
 	width:400px;
@@ -42,41 +43,43 @@ body{
 	display:block;
 }
 #login-form label input[name="user"]{
-	border:1px solid #e3e3e3;
+	border:1px solid #eef6fb;
 	-moz-border-radius: 6px;
 	width:350px;
 	padding:3px;
 	padding-left:5px;
+	text-shadow: 1px 1px 1px #093e6f;
 	font-size:29px;
 	letter-spacing: 2px;
-	color:#000;
+	color:#65acdb;
 	border-radius: 6px;
-	background:#f6f6f6;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#CCE4F3), color-stop(1,#CCE4F3));
 }
 #login-form label input[name="pass"]{
-	border:1px solid #e3e3e3;
+	border:1px solid #eef6fb;
 	-moz-border-radius: 6px;
 	width:350px;
 	padding:3px;
 	padding-left:5px;
+	text-shadow: 1px 1px 1px #093e6f;
 	font-size:29px;
 	letter-spacing: 2px;
-	color:#000;
+	color:#65acdb;
 	border-radius: 6px;
-	background:#f6f6f6;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#CCE4F3), color-stop(1,#CCE4F3));
 }
 #login-form input[type="submit"]{
 	margin-right:20px;
-	border: 1px solid #144564;
+	border:1px solid #eef6fb;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
-	color:#fff;
+	color:#195f92;
 	float:right;
 	padding:7px;
 	padding-left:15px;
 	padding-right:15px;
 	cursor:pointer;
-	background: #144564;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#CCE4F3), color-stop(1,#CCE4F3));
 }
 .bar1 {
   -moz-transform:rotate(0deg) translate(0, -40px);
@@ -153,16 +156,17 @@ body{
 	position:absolute;
 	height:37px;
 	top:50%;
-	border:3px solid #972e2e;
+	border:3px solid #ffc4bd;
 	border-radius: 10px;
-	font-family: sans-serif;
 	font-size:20px;
-	padding-left:15;
+	text-transform:capitalize;
+	padding-left:20px;
 	text-align:center;
 	padding-top:15px;
+	font-weight:bold;
 	-moz-border-radius: 10px;
+	letter-spacing: 3px;
 	margin-top:-304px;
 	margin-left:-400px;
-	background:#972e2e;
-	color: #fff;
-	}
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF9F93), to(#FF614E), color-stop(1,#ff614e));
+}
