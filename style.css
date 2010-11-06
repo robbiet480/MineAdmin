@@ -16,6 +16,7 @@ body{
 	margin-left:-450px;
 	padding-top: 34px;
 	background:#fff;
+	z-index: 1111;
 }
 #menu-wrap h2{
 	padding-top:11px;
@@ -54,9 +55,10 @@ body{
 	position:absolute;
 	left:50%;
 	margin-left:-450px;
-	margin-top: 85px;
+	margin-top: 84px;
 	padding:10px;
 	background:#fff;
+	z-index: 0;
 }
 #page_wrap h1{
 	font-size:21px;
