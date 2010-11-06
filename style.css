@@ -19,14 +19,14 @@ body{
 	background:#fff;
 }
 #menu-wrap h2{
-	padding-top:10px;
-	padding-bottom: 10px;
+	padding-top:11px;
+	padding-bottom: 11px;
 	background: #972e2e;
 	font-size: 23px;
 	color:#fff;
-	padding-left:30px;
+	padding-left:20px;
 	padding-right:10px;
-	margin-left: -30px;
+	margin-left: -20px;
 	float:left;
 }
 #menu-wrap ul{
