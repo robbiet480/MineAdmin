@@ -11,10 +11,12 @@ body{
 	width:900px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
 	height:50px;
+	position:absolute;
 	left:50%;
 	margin-left:-450px;
 	padding-top: 34px;
 	background:#fff;
+	z-index: 1000;
 }
 #menu-wrap h2{
 	padding-top:11px;
@@ -50,6 +52,7 @@ body{
 #page_wrap{
 	width:880px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
+	position:absolute;
 	left:50%;
 	margin-left:-450px;
 	padding:10px;
