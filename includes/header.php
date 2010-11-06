@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div id="menu-wrap">
-		<span><h2>MinecraftServers.com Control Panel</h2></span>
+		<h2>MinecraftServers.com Control Panel</h2>
 		<ul>
 			<li><a href="logout_process.php">Logout</a></li>
 			<li><a href="settings.php">Settings</a></li>
