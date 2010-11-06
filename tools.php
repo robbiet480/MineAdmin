@@ -9,7 +9,7 @@ require_once('includes/header.php');
 			<span id="online"></span>
 		</div>
 		<div id="actions">
-			<img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a>&nbsp;<a href="#">
+			<a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a>&nbsp;
 		</div>
 		<div id="backup_wrap">
 		<h1>Backups</h1>
