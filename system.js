@@ -1,3 +1,14 @@
+//Start Page Transitions
+$(document).ready(function(){	
+	$('#page_wrap').delay(300).slideDown(700);
+});	
+$(function() {
+	$('#menu-wrap a').click(function() {
+		$('#page_wrap').slideUp(700);
+	});
+});
+//End Page Transitions
+
 function get_player_list(){
 	$.post("online_users.php",{"":""},function(data){
 		$("#online").html(data);

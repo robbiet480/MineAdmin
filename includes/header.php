@@ -17,11 +17,6 @@
 	<script type="text/javascript" src="jquery.jgrowl_minimized.js"></script>
 	<script type="text/javascript" src="jquery.ui.all.js"></script>
 	<script type="text/javascript" src="system.js"></script> 
-	<script type="text/javascript">
-		$(document).ready(function(){	
-		$('#page_wrap').slideDown(700);
-		});	
-	</script>
 </head>
 <body>
 	<div id="menu-wrap">
