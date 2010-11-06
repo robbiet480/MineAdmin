@@ -59,9 +59,7 @@ body{
 }
 #page_wrap h1{
 	font-size:21px;
-	color:#c0c0c0;
-	letter-spacing: 5px;
-	text-shadow: 1px 1px 0px #000;
+	color:#000;
 	margin-left:5px;
 	margin-bottom:10px;
 }
@@ -77,7 +75,7 @@ body{
 	float:left;
 	display:block;
 	font-size:15px;
-	color:#65acdb;
+	color:#000;
 	min-height:40px;
 	width:146px;
 	text-shadow: 1px 1px 1px #999;
@@ -107,7 +105,7 @@ body{
 	width:196px;
 }
 #page_wrap ul li.actions a{
-	color:#dadada;
+	color:#999;
 	margin-right:5px;
 	text-shadow: 1px 1px 1px #ccc;
 	text-decoration:none;
@@ -116,13 +114,13 @@ body{
 	width:206px;
 }
 #page_wrap ul li.actions_i a{
-	color:#dadada;
+	color:#999;
 	margin-right:5px;
 	text-shadow: 1px 1px 1px #ccc;
 	text-decoration:none;
 }
 #page_wrap ul li.actions_i a:hover{
-	color:#b0b0b0;
+	color:#d4d4d4;
 }
 #page_wrap a.link_hide{
 	color:#65acdb;
@@ -146,7 +144,7 @@ body{
 }
 #page_wrap .link_give{
 	padding-left:10px;
-	color:#dadada;
+	color:#999;
 	margin-right:5px;
 	text-shadow: 1px 1px 1px #ccc;
 	text-decoration:none;
@@ -169,15 +167,14 @@ body{
 	padding:3px;
 	padding-left:6px;
 	font-size:18px;
-	text-shadow: 1px 1px 1px #093e6f;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	width:200px;
 	letter-spacing: 2px;
 	color:#000;
 	border-radius: 6px;
-	border:1px solid #c6e0f9;
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#c6e0f9), color-stop(1,#c6e0f9));
+	border:1px solid #e3e3e3;
+	background:#f6f6f6;
 }
 #page_wrap label span{
 	padding-right:5px;
