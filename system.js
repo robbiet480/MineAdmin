@@ -1,13 +1,10 @@
 //Start Page Transitions
 $(document).ready(function(){	
 	$('#page_wrap').delay(250).slideDown(500);
-	$(function() {
-		$('#menu-wrap a').click(function() {
-			var linkDest = $(this).attr('href');
-			$('#page_wrap').slideUp(500);
-			setTimeout(function(){"window.location = linkDest", 500});
-			return false;
-		});
+	$('#menu-wrap a').click(function() {
+		$('#page_wrap').slideUp(500);
+		$(function(){window.location = $(this).attr("href"), 500);
+		return false;
 	});
 });	
 //End Page Transitions
