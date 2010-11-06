@@ -4,7 +4,10 @@ $(document).ready(function(){
 });	
 $(function() {
 	$('#menu-wrap a').click(function() {
+		var linkdest = $(this).attr('href');
 		$('#page_wrap').slideUp(700);
+		setTimeout(function(){window.location = linkdest}, 700);
+		e.preventDefault
 	});
 });
 //End Page Transitions
