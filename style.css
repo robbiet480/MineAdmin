@@ -39,7 +39,7 @@ body{
 	color:#000;
 	height:35px;
 	text-decoration:none;
-	display:block;
+	display:inline;
 }
 #menu-wrap li a:hover{
 	background:#f3f3f3;
