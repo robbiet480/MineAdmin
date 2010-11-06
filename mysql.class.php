@@ -11,7 +11,7 @@ class MySQL{
 		$this->overall_stats=0;
 		$this->conn=mysql_connect($server,$username,$password);
 		if(!mysql_select_db($database,$this->conn)){
-			echo "shit out my Asssssssssssssssssssssssss";
+			echo "Failed to select database!";
 		}
 	}
 	function isconnected(){
