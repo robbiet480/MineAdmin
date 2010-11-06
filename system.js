@@ -1,15 +1,15 @@
 //Start Page Transitions
 $(document).ready(function(){	
 	$('#page_wrap').delay(300).slideDown(700);
-});	
-$(function() {
-	$('#menu-wrap a').click(function() {
-		var linkdest = $(this).attr('href');
-		$('#page_wrap').slideUp(700);
-		setTimeout(function(){window.location = linkdest}, 700);
-		e.preventDefault
+	$(function() {
+		$('#menu-wrap a').click(function() {
+			var linkdest = $(this).attr('href');
+			$('#page_wrap').slideUp(700);
+			setTimeout(function(){window.location = linkdest}, 700);
+			e.preventDefault
+		});
 	});
-});
+});	
 //End Page Transitions
 
 function get_player_list(){
