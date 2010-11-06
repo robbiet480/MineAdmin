@@ -202,16 +202,16 @@ body{
 }
 .button{
 	margin-right:20px;
-	border:1px solid #eef6fb;
+	border:1px solid #144564;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
-	color:#195f92;
+	color:#fff;
 	float:right;
 	padding:7px;
 	padding-left:15px;
 	padding-right:15px;
 	cursor:pointer;
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#CCE4F3), color-stop(1,#CCE4F3));
+	background: #144564;
 }
 .over_html_h1{
 	float:left;
