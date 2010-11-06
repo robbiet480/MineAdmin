@@ -110,7 +110,6 @@ body{
 #page_wrap ul li.actions a{
 	color:#144564;
 	margin-right:5px;
-	text-shadow: 1px 1px 1px #144564;
 	text-decoration:none;
 }
 #page_wrap ul li.actions_i{
@@ -119,7 +118,6 @@ body{
 #page_wrap ul li.actions_i a{
 	color:#144564;
 	margin-right:5px;
-	text-shadow: 1px 1px 1px #144564;
 	text-decoration:none;
 }
 #page_wrap ul li.actions_i a:hover{
@@ -127,8 +125,8 @@ body{
 }
 #page_wrap a.link_hide{
 	color:#65acdb;
-	argin-right:5px;
-	text-shadow: 1px 1px 1px #aaa;
+	margin-right:5px;
+
 	text-decoration:none;
 }
 #page_wrap .back_link{
@@ -149,19 +147,17 @@ body{
 	padding-left:10px;
 	color:#144564;
 	margin-right:5px;
-	text-shadow: 1px 1px 1px #144564;
 	text-decoration:none;
 }
 #page_wrap #item_complete{
 	padding:3px;
 	padding-left:6px;
 	font-size:18px;
-	text-shadow: 1px 1px 1px #093e6f;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	width:200px;
 	letter-spacing: 2px;
-	color:#65acdb;
+	color:#144564;
 	border-radius: 6px;
 	border:1px solid #c6e0f9;
 	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#c6e0f9), color-stop(1,#c6e0f9));
