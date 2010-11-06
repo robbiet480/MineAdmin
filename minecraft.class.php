@@ -142,5 +142,10 @@ class minecraft{
     function server_test(){
         return $this->r->player->getInventory("Firestarthe");
     }
+	function white_list(){
+		global $db;
+        $result=$db->fetch_sql("SELECT * FROM `whitelist`");
+        return $result;
+	}
 }
 ?>
