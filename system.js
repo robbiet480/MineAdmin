@@ -1,3 +1,7 @@
+$(document).ready(function(){	
+	$('#page_wrap').slideIn(700);
+});	
+
 function get_player_list(){
 	$.post("online_users.php",{"":""},function(data){
 		$("#online").html(data);
