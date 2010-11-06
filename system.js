@@ -1,5 +1,5 @@
 $(document).ready(function(){	
-	$('#page_wrap').slideIn(700);
+	$('#page_wrap').fadeIn(700);
 });	
 
 function get_player_list(){
