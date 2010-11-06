@@ -108,18 +108,18 @@ body{
 	width:196px;
 }
 #page_wrap ul li.actions a{
-	color:#999;
+	color:#144564;
 	margin-right:5px;
-	text-shadow: 1px 1px 1px #ccc;
+	text-shadow: 1px 1px 1px #144564;
 	text-decoration:none;
 }
 #page_wrap ul li.actions_i{
 	width:206px;
 }
 #page_wrap ul li.actions_i a{
-	color:#999;
+	color:#144564;
 	margin-right:5px;
-	text-shadow: 1px 1px 1px #ccc;
+	text-shadow: 1px 1px 1px #144564;
 	text-decoration:none;
 }
 #page_wrap ul li.actions_i a:hover{
@@ -147,9 +147,9 @@ body{
 }
 #page_wrap .link_give{
 	padding-left:10px;
-	color:#999;
+	color:#144564;
 	margin-right:5px;
-	text-shadow: 1px 1px 1px #ccc;
+	text-shadow: 1px 1px 1px #144564;
 	text-decoration:none;
 }
 #page_wrap #item_complete{
