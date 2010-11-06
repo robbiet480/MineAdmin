@@ -1,10 +1,10 @@
 //Start Page Transitions
 $(document).ready(function(){	
-	$('#page_wrap').delay(300).slideDown(700);
+	$('#page_wrap').delay(250).slideDown(500);
 	$(function() {
 		$('#menu-wrap a').click(function() {
 			var linkdest = $(this).attr('href');
-			$('#page_wrap').slideUp(700);
+			$('#page_wrap').slideUp(500);
 			setTimeout(function(){window.location = linkdest}, 700);
 			e.preventDefault
 		});
