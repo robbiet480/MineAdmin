@@ -5,9 +5,7 @@ $(document).ready(function(){
 		$('#menu-wrap a').click(function() {
 			var linkDest = $('#menu-wrap a').attr('href');
 			$('#page_wrap').slideUp(500);
-			$(this).timer(500, function(){
-				window.location = linkDest;
-			});
+			setTimeout("window.location = linkDest" , 700)
 			return false;
 		});
 	});
