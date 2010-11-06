@@ -293,3 +293,9 @@ span.input_area{
 	text-align:center;
 	border-bottom: 1px solid #ddd;
 }
+#backup_wrap{
+	margin-top: 10px;
+}
+#map_wrap{
+	margin-top: 10px;
+}
