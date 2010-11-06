@@ -16,11 +16,12 @@ body{
 	top:14%;
 	margin-left:-450px;
 	margin-top:-25px;
+	padding-top: 30px;
 	background:#fff;
 }
 #menu-wrap h2{
 	padding-top:11px;
-	padding-bottom: 11px;
+	padding-bottom: 12px;
 	background: #972e2e;
 	font-size: 23px;
 	color:#fff;
