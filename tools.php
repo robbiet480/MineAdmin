@@ -6,9 +6,11 @@ if($_GET['action'] == "saveall") {
 	$minecraft->save_all();
 } elseif($_GET['action'] == "saveoff") {
 	$minecraft->save_off();
-} elseif($_GET['action'] == "saveaon") {
+} elseif($_GET['action'] == "saveon") {
 	$minecraft->save_on();
-}
+} elseif($_GET['action'] == "backup") {
+	$minecraft->backup();
+}	
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -28,6 +30,7 @@ if($_GET['action'] == "saveall") {
 		<a href="tools.php?action=saveall">save-all</a>
 		<a href="tools.php?action=saveoff">save-off</a>
 		<a href="tools.php?action=saveon">save-on</a>
+		<a href="tools.php?action=backup">test backup</a>
 		<table>
 			<tr>
 				<th>Name</th>

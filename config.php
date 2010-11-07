@@ -18,6 +18,7 @@
     
     $PATH['www']        =   "/var/www/MineAdmin/"; // path to MineAdmin
     $PATH['minecraft']  =   "/opt/"; // Path to minecraft server folder
+	$PATH['backups']	=   "/var/www/backups/"; //Path to Backups folder
     
     /* Methods for backup */
 

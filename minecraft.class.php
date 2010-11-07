@@ -100,6 +100,18 @@ class minecraft{
 	        $result=$db->fetch_sql("SELECT * FROM `backups` ORDER BY `id` DESC");
 	        return $result;
 	}
+	function backup(){
+		include 'config.php';
+		$this->r->server->broadcastMessage("Map backup now starting");
+		$this->r->server->broadcastMessage("Issuing save-all command");
+		$this->r->server->runConsoleCommand("save-all");
+		$this->r->server->broadcastMessage("Issuing save-off command");
+		$this->r->server->runConsoleCommand("save-off");
+		$date = date('Y-m-d-H:i');
+		echo "tar -czf ".$PATH['backups']."/".$date.".tgz ".$PATH['minecraft']."world";
+		return;
+		
+	}
      function configuration_files(){
         global $PATH;
         $file_array=array();
