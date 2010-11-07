@@ -29,7 +29,7 @@ body{
 }
 #login-form h4{
 	text-align: center;
-	padding-top: 50px;
+	margin-top: 60px;
 	color: #ccc;
 	text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
 }
