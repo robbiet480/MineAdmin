@@ -26,5 +26,6 @@ namespace:deploy do
     task:finalize_update do
     end
     task:restart do
+	run "chown -R www-data:www-data /var/www"
     end
 end

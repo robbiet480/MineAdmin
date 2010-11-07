@@ -131,6 +131,9 @@ class minecraft{
 		$this->r->server->runConsoleCommand("save-off");
 		$date = date('Y-m-d-Hi');
 		$output = $PATH['backups'].$date.".tgz";
+		if(!file_exists($PATH['backups'])) {
+			mkdir($PATH['backups'], 0777);
+		}
 		shell_exec("tar -czf ".$output." ".$PATH['minecraft']."world");
 		$size = ByteSize(filesize($output));
 		global $db;
