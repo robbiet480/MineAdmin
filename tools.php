@@ -40,7 +40,7 @@ if($_GET['action'] == "saveall") {
 				<label>Comment
 				<input class="input_text" type="text" name="backup_comment" style="width:200px;margin-left:10px" />				
 				</label>
-				<span style="float:right;"><input class="button" id="canceladd" type="button" value="Cancel" /><input class="button" type="submit" value="Save" /></span>
+				<span style="float:right;"><input class="button" type="submit" value="Save" /><input class="button" id="canceladd" type="button" value="Cancel" /></span>
 			</form>
 		</div>
 		<table>
