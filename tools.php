@@ -27,7 +27,7 @@ if($_GET['action'] == "saveall") {
 		</div>
 		<div id="backup_wrap">
 		<h1>Backups</h1>
-		<a href="#newbackup" id="addnew">new backup</a>
+		#add<a href="#newbackup" id="addnew">new backup</a>
 		<a href="tools.php?action=saveall">save-all</a>
 		<a href="tools.php?action=saveoff">save-off</a>
 		<a href="tools.php?action=saveon">save-on</a>
@@ -61,14 +61,13 @@ if($_GET['action'] == "saveall") {
 				<td><?php echo $backup['time']; ?></td>
 				<td><?php echo $backup['size']; ?></td>
 				<th><?php echo $backup['comment']; ?></th>
-				<th><img src="images/icons/database_save.png" alt="Download">&nbsp;<img src="images/icons/database_delete.png" alt="Delete">&nbsp;<img src="images/icons/database_go.png" alt="Restore">&nbsp;</th>
+				<td><img src="images/icons/database_save.png" alt="Download">&nbsp;<img src="images/icons/database_delete.png" alt="Delete">&nbsp;<img src="images/icons/database_go.png" alt="Restore">&nbsp;</td>
 			</tr>
 			<?php
 		}
 			?>
 		</table>
 		</div>
-		<hr />
 		<div id="map_wrap">
 			<h1>Mapping</h1>
 			<p>Your last map generation was: NEVER</p>

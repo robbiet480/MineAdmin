@@ -301,8 +301,12 @@ span.input_area{
 	margin:0;
 	padding:0;
 }
+tr:hover{
+	background: #ebebeb;
+}
 #backup_wrap table {
 	width: 98%;
+	border-collapse: collapse;
 }
 #backup_wrap table th{
 	padding:.3em 1em;
@@ -315,12 +319,7 @@ span.input_area{
 	padding:.3em 1em;
 	text-align:center;
 	border-bottom: 1px solid #ddd;
-}
-#backup_wrap table td:last-child {
-	color:#333;
-	padding:.3em 1em;
-	text-align:center;
-	border-bottom: 1px solid #ddd;
+	border-collapse: collapse;
 }
 #backup_wrap{
 	margin-top: 20px;
