@@ -32,7 +32,7 @@ if($_GET['action'] == "saveall") {
 		<a href="tools.php?action=saveoff">save-off</a>
 		<a href="tools.php?action=saveon">save-on</a>
 		<a href="tools.php?action=backup">test backup</a>
-		<div id="newbackup" style="display:none;width:500px;text-align:center;">
+		<div id="newbackup" style="display:none;margin: 15px 10px;">
 			<form action="" method="post">
 				<label>Backup Name
 				<input class="input_text" type="text" name="backup_name" style="width:200px;margin-left:10px" />
