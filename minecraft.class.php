@@ -85,6 +85,15 @@ class minecraft{
     function player_ban($nick,$reason){
         return $this->r->server->runConsoleCommand("/ban $nick","Banned by MineAdmin");
     }
+	function save_all(){
+        return $this->r->server->runConsoleCommand("save-all");
+    }
+	function save_off(){
+        return $this->r->server->runConsoleCommand("save-off");
+    }
+	function save_on(){
+        return $this->r->server->runConsoleCommand("save-on");
+    }
     
      function configuration_files(){
         global $PATH;

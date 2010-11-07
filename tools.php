@@ -2,6 +2,13 @@
 require_once('header_inc.php');
 require_once('includes/header.php');
 //passthru('/usr/bin/python /opt/Minecraft-Overviewer/gmap.py /opt/world /var/www/map/');
+if($_GET['action'] == "saveall") {
+	save_all();
+} elseif($_GET['action'] == "saveoff") {
+	save_off();
+} elseif($_GET['action'] == "saveaon") {
+	save_on();
+}
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -18,6 +25,9 @@ require_once('includes/header.php');
 		</div>
 		<div id="backup_wrap">
 		<h1>Backups</h1>
+		<a href="tools.php?action=saveall">save-all</a>
+		<a href="tools.php?action=saveoff">save-off</a>
+		<a href="tools.php?action=saveon">save-on</a>
 		<table>
 			<tr>
 				<th>Name</th>
