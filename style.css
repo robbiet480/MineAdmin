@@ -94,7 +94,7 @@ img{
 	height:24px;
 	text-align: right;
 	margin-top:64px;
-	padding-right:10px;
+	padding-right:13px;
 }
 #page_wrap{
 	width:880px;
@@ -307,6 +307,7 @@ tr:hover{
 #backup_wrap table {
 	width: 98%;
 	border-collapse: collapse;
+	margin-left: 10px;
 }
 #backup_wrap table th{
 	padding:.3em 1em;
