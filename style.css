@@ -8,6 +8,9 @@ body{
 	height:100%;
 	background:#ebebeb;
 }
+img{
+	border:none;
+}
 .info, .success, .warning, .error, .validation {
     border: 1px solid;
     margin: 10px 0px;
@@ -53,13 +56,14 @@ body{
 #menu-wrap h2{
 	padding-top:13px;
 	padding-bottom: 12px;
-	background: #972e2e;
+	background: #972e2e url(images/logo.png) no-repeat center;
 	font-size: 23px;
 	color:#fff;
 	padding-left:40px;
 	padding-right:10px;
 	margin-left: -20px;
 	float:left;
+	text-indent: -9999px;
 }
 #menu-wrap ul{
 	list-style:none;
@@ -82,9 +86,10 @@ body{
 	color:#333;
 }
 #status {
-	width:900px;
 	height:24px;
 	text-align: right;
+	margin-top:64px;
+	padding-right:10px;
 }
 #page_wrap{
 	width:880px;
@@ -93,7 +98,7 @@ body{
 	left:50%;
 	margin-left:-450px;
 	margin-top: 84px;
-	padding:30px 10px 10px 10px;
+	padding:50px 10px 10px 10px;
 	display: none;
 	background:#fff;
 	z-index: -1;
