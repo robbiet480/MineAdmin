@@ -11,28 +11,15 @@ function login(){
 		var user=$("#user").val();
 		var pass=$("#pass").val();
 		$.post("login_process.php",{"user":user,"pass":pass},function(data){
-			if(data=="1"){
-				location.href="index.php";
-			}else{
-				if(!error_showing){
-					error_showing=true;
-					$("#error").css({"display":"block","opacity":"0"});
-					$("#error").animate({"opacity":"0.6","marginTop":"-264px"},500);
-					setTimeout(function(){
-						$("#error").animate({"opacity":"0","marginTop":"-304px"},500,function(){
-							$("#error").css({"display":"none","opacity":"0"});
-							error_showing=false;
-						});
-					}, 3000);
-				}
+				window.location.href="index.php";
 				document.getElementById("login-form").style.webkitTransform="rotateX(90deg)";
 				setTimeout(function(){
 					$("#login_form_i").show();
 					document.getElementById("login-form").style.webkitTransform="rotateX(0deg)";
 					$("#loading").hide();
-				}, 200);
+				}, 3000);
 				play=false;
-			}
+			
 		});
 	}, 200);
 }
@@ -44,6 +31,6 @@ function rotate() {
     elem4.style.WebkitTransform = 'scale(0.5) rotate('+count+'deg)';
     if (count==360) { count = 0 }
     count+=45;
-    if(play)
-    	setTimeout(rotate, 100);
+    if(play){
+    setTimeout(rotate, 100);}
 }

@@ -321,3 +321,6 @@ span.input_area{
 	text-decoration: none;
 	color: #144564;
 }
+#actions img{
+	border:none;
+}
