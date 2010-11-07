@@ -26,7 +26,7 @@ if(is_numeric($_GET['uid'])){
 ?>
 <form action="edit_user.php?uid=<?php echo $user_info['id'];?>&save=1" method="post">
     <div style="width:500px;">
-        <span class="overlay_title"><h1 class="over_html_h1"><?php echo $user_info['name'];?>'s Settings</h1></span>
+        <div class="overlay_title"><h1 class="over_html_h1"><?php echo $user_info['name'];?>'s Settings</h1></div>
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row">Group <br /><span>Set user to a group</span></span>
