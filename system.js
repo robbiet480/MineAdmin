@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$('#page_wrap').delay(250).slideDown(500);
 	$('#menu-wrap a').click(function() {
 		$('#page_wrap').slideUp(500);
-		$(this).delay(500, function(){window.location = $(this).attr('href');});
+		$(this).delay(600, function(){window.location = $(this).attr('href');});
 		return false;
 	});
 });	
