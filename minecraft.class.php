@@ -101,14 +101,13 @@ class minecraft{
 	        return $result;
 	}
 	function backup(){
-		include 'config.php';
 		$this->r->server->broadcastMessage("Map backup now starting");
 		$this->r->server->broadcastMessage("Issuing save-all command");
 		$this->r->server->runConsoleCommand("save-all");
 		$this->r->server->broadcastMessage("Issuing save-off command");
 		$this->r->server->runConsoleCommand("save-off");
 		$date = date('Y-m-d-H:i');
-		echo "tar -czf ".$PATH['backups']."/".$date.".tgz ".$PATH['minecraft']."world";
+		echo "tar -czf /var/www/backups/".$date.".tgz ".$PATH['minecraft']."world";
 		return;
 		
 	}
