@@ -14,7 +14,7 @@ require_once('includes/header.php');
 			<h1>Configuration Settings</h1>
                         <?php
                         foreach($config as $configuration){
-                            ?><h1 style="width:850px;float:left;border-bottom:1px solid #e0e0e0;margin-top:40px;" class="over_html_h1">Configuration File: <?php echo $configuration['file'];?></h1><?php
+                            ?><h1 style="width:850px;float:left;border-bottom:1px solid #e0e0e0;margin-top:40px;">Configuration File: <?php echo $configuration['file'];?></h1><?php
                             foreach($configuration['properties'] as $conf){
                                 ?>
                                 <div class="over_html_row_wrap" style="width:840px;">

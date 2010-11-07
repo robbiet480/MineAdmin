@@ -14,7 +14,7 @@ require_once('includes/header.php');
 		        <div class="warning">Warning message</div>
 		        <div class="error">Error message</div>
 		<div id="actions">
-			<a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a>&nbsp;
+			<p><a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a></p>&nbsp;
 		</div>
 		<div id="backup_wrap">
 		<h1>Backups</h1>
@@ -38,10 +38,10 @@ require_once('includes/header.php');
 		</div>
 		<hr />
 		<div id="map_wrap">
-		<h1>Mapping</h1>
-		<p>Your last map generation was: NEVER</p>
-		<p>You can access your map at xxxxxxx.minecraftservers.com/map/</p>
-		<a href="#">Start a new map job</a>
+			<h1>Mapping</h1>
+			<p>Your last map generation was: NEVER</p>
+			<p>You can access your map at xxxxxxx.minecraftservers.com/map/</p>
+			<p><a href="#">Start a new map job</a></p>
 		</div>
 	</div>
 </body>
