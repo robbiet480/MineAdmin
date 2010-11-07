@@ -8,6 +8,9 @@ body{
 	height:100%;
 	background:#ebebeb;
 }
+a{
+	color:#144564;
+}
 img{
 	border:none;
 }
@@ -45,7 +48,7 @@ img{
 #menu-wrap{
 	width:900px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
-	height:50px;
+	height:90px;
 	position:absolute;
 	left:50%;
 	margin-left:-450px;
@@ -56,13 +59,14 @@ img{
 #menu-wrap h2{
 	padding-top:13px;
 	padding-bottom: 12px;
-	background: #972e2e url(images/logo.png) no-repeat center;
+	background: #972e2e url(images/logo.png) no-repeat right;
 	font-size: 23px;
 	color:#fff;
 	padding-left:40px;
 	padding-right:10px;
 	margin-left: -20px;
 	float:left;
+	width: 186px;
 	text-indent: -9999px;
 }
 #menu-wrap ul{
