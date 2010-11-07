@@ -13,7 +13,7 @@ if($_GET['save']=="1"){
 ?>
 <form action="add_group.php?save=1" method="post">
     <div style="width:500px;">
-        <div class="overlay_title"<h1 class="over_html_h1">Add New Group</h1></div>
+        <div class="overlay_title"><h1 class="over_html_h1">Add New Group</h1></div>
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row">Name <br><span>Group Name</span></span>
