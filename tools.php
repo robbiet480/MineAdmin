@@ -27,7 +27,7 @@ if($_GET['action'] == "saveall") {
 		</div>
 		<div id="backup_wrap">
 		<h1>Backups</h1>
-		#add<a href="#newbackup" id="addnew">new backup</a>
+		<a href="#newbackup" id="addnew">new backup</a>
 		<a href="tools.php?action=saveall">save-all</a>
 		<a href="tools.php?action=saveoff">save-off</a>
 		<a href="tools.php?action=saveon">save-on</a>
