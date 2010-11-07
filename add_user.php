@@ -13,7 +13,7 @@ if($_GET['save']=="1"){
 ?>
 <form action="add_user.php?save=1" method="post">
     <div style="width:500px;">
-        <h1 class="over_html_h1">Add New User</h1>
+        <div class="overlay_title"<h1 class="over_html_h1">Add New User</h1></div>
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row">Nickname <br><span>Player name ( minecraft name )</span></span>
@@ -61,7 +61,7 @@ if($_GET['save']=="1"){
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row"></span>
-                <span class="input_area"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
+                <span class="input_area" style="float:right;"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
             </label>
         </div>
         

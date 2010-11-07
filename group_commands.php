@@ -18,7 +18,7 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
 ?>
 <form action="group_commands.php?save=1&gid=<?PHP echo $group_info['id']; ?>" method="post">
     <div style="width:500px;">
-        <h1 class="over_html_h1"><?PHP echo $group_info['name'];?>'s Commands</h1>
+        <div class="overlay_title"<h1 class="over_html_h1"><?PHP echo $group_info['name'];?>'s Commands</h1></div>
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row">Command List <br /><span>commands allowed by this group.</span></span>
@@ -28,7 +28,7 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row"></span>
-                <span class="input_area"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
+                <span class="input_area" style="float:right;"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
             </label>
         </div>
         
