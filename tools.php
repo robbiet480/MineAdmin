@@ -9,7 +9,7 @@ if($_GET['action'] == "saveall") {
 } elseif($_GET['action'] == "saveon") {
 	$minecraft->save_on();
 } elseif($_GET['action'] == "backup") {
-	$minecraft->backup();
+	$minecraft->backup("test","test");
 }	
 ?>
 	<div id="page_wrap">

@@ -1,7 +1,6 @@
 <?php
 
 include_once("prettyxmlrpc.php");
-include_once("config.php");
 class minecraft{
     var $r;
     function __construct(){
@@ -101,6 +100,7 @@ class minecraft{
 	        return $result;
 	}
 	function backup($name,$comment){
+		global $PATH;
 		function ByteSize($bytes)  
 		    { 
 		    $size = $bytes / 1024; 
