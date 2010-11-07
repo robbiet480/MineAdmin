@@ -129,12 +129,12 @@ class minecraft{
 		$this->r->server->runConsoleCommand("save-all");
 		$this->r->server->broadcastMessage("Issuing save-off command");
 		$this->r->server->runConsoleCommand("save-off");
-		$date = date('Y-m-d-H:i');
-		$output = $PATH['backups']."/".$date.".tgz";
-		echo "tar -czf ".$output." ".$PATH['minecraft']."world";
+		$date = date('Y-m-d-Hi');
+		$output = $PATH['backups'].$date.".tgz";
+		shell_exec("tar -czf ".$output." ".$PATH['minecraft']."world");
 		$size = ByteSize(filesize($output));
 		global $db;
-		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>"","time"=>"","size"=>$size,"comment"=>$comment,"filename"=>$output), array(), true);
+		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>date('Y-m-d'),"time"=>date('Hi'),"size"=>$size,"comment"=>$comment,"filename"=>$output), array(), true);
 		return $result;
 		
 	}
