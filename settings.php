@@ -30,12 +30,7 @@ require_once('includes/header.php');
                             <?PHP
                         }
                         ?>
-                        <div class="over_html_row_wrap" style="width:840px;">
-                            <label>
-                                <span class="over_html_row" style="width:300px;font-size:18px;"></span>
-                                <span class="input_area" style="float:right;"><input class="button" type="submit" value="Save" /></span>
-                            </label>
-                        </div>
+                        
                     </form>
 		</div>
 	</div>
