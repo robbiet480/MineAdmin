@@ -85,6 +85,7 @@ class minecraft{
     function player_ban($nick,$reason){
         return $this->r->server->runConsoleCommand("/ban $nick","Banned by MineAdmin");
     }
+//added by robbiet480, 11/06/10
 	function save_all(){
         return $this->r->server->runConsoleCommand("save-all");
     }
@@ -94,7 +95,11 @@ class minecraft{
 	function save_on(){
         return $this->r->server->runConsoleCommand("save-on");
     }
-    
+    function backup_list(){
+	        global $db;
+	        $result=$db->fetch_sql("SELECT * FROM `backups` ORDER BY `id` DESC");
+	        return $result;
+	}
      function configuration_files(){
         global $PATH;
         $file_array=array();

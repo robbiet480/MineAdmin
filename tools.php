@@ -3,11 +3,11 @@ require_once('header_inc.php');
 require_once('includes/header.php');
 //passthru('/usr/bin/python /opt/Minecraft-Overviewer/gmap.py /opt/world /var/www/map/');
 if($_GET['action'] == "saveall") {
-	save_all();
+	$minecraft->save_all();
 } elseif($_GET['action'] == "saveoff") {
-	save_off();
+	$minecraft->save_off();
 } elseif($_GET['action'] == "saveaon") {
-	save_on();
+	$minecraft->save_on();
 }
 ?>
 	<div id="page_wrap">
@@ -37,13 +37,20 @@ if($_GET['action'] == "saveall") {
 				<th>Comment</th>
 				<th>Actions</th>
 			</tr>
+			<?php
+            foreach($minecraft->backup_list() as $backup){
+            ?>
 			<tr>
-				<td>backup1.tar.gz</td>
-				<td>11/05/2010</td>
-				<td>10:37PM PST</td>
-				<td>500MB</td>
-				<th>stuffs</th>
-				<th><img src="images/icons/database_save.png" alt="Download">&nbsp;<img src="images/icons/database_delete.png" alt="Delete">&nbsp;<img src="images/icons/database_go.png" alt="Restore">&nbsp;
+				<td><?php echo $backup['name']; ?></td>
+				<td><?php echo $backup['date']; ?></td>
+				<td><?php echo $backup['time']; ?></td>
+				<td><?php echo $backup['size']; ?></td>
+				<th><?php echo $backup['comment']; ?></th>
+				<th><img src="images/icons/database_save.png" alt="Download">&nbsp;<img src="images/icons/database_delete.png" alt="Delete">&nbsp;<img src="images/icons/database_go.png" alt="Restore">&nbsp;</th>
+			</tr>
+			<?php
+		}
+			?>
 		</table>
 		</div>
 		<hr />
