@@ -1,6 +1,7 @@
 *{
 	margin:0px;
 	padding:0px;
+	font-family: sans-serif;
 }
 body{
 	width:100%;
@@ -155,7 +156,7 @@ body{
 	color:#d4d4d4;
 }
 #page_wrap a.link_hide{
-	color:#65acdb;
+	color:#144564;
 	margin-right:5px;
 	text-decoration:none;
 }
@@ -192,7 +193,7 @@ body{
 	color:#144564;
 	border-radius: 6px;
 	border:1px solid #c6e0f9;
-	background:#972e2e;
+	background:#f6f6f6;
 }
 .input_text{
 	padding:3px;
@@ -225,7 +226,7 @@ body{
 	color:#000;
 	border-radius: 6px;
 	border:1px solid #ebebeb;
-	background:#972e3e;
+	background:#f6f6f6;
 }
 .button{
 	margin-right:20px;
@@ -239,6 +240,11 @@ body{
 	padding-right:15px;
 	cursor:pointer;
 	background: #144564;
+}
+.overlay_title{
+	background: #972e2e;
+	width: 500px;
+	height: 40px;
 }
 .over_html_h1{
 	float:left;
