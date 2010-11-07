@@ -60,7 +60,7 @@ if($_GET['action'] == "saveall") {
 				<td><?php echo $backup['date']; ?></td>
 				<td><?php echo $backup['time']; ?></td>
 				<td><?php echo $backup['size']; ?></td>
-				<th><?php echo $backup['comment']; ?></th>
+				<td><?php echo $backup['comment']; ?></td>
 				<td><img src="images/icons/database_save.png" alt="Download">&nbsp;<img src="images/icons/database_delete.png" alt="Delete">&nbsp;<img src="images/icons/database_go.png" alt="Restore">&nbsp;</td>
 			</tr>
 			<?php
