@@ -101,6 +101,7 @@ class minecraft{
 	        return $result;
 	}
 	function backup(){
+		include 'config.php';
 		$this->r->server->broadcastMessage("Map backup now starting");
 		$this->r->server->broadcastMessage("Issuing save-all command");
 		$this->r->server->runConsoleCommand("save-all");
