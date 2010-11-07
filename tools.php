@@ -27,10 +27,22 @@ if($_GET['action'] == "saveall") {
 		</div>
 		<div id="backup_wrap">
 		<h1>Backups</h1>
+		<a href="#newbackup" id="addnew">new backup</a>
 		<a href="tools.php?action=saveall">save-all</a>
 		<a href="tools.php?action=saveoff">save-off</a>
 		<a href="tools.php?action=saveon">save-on</a>
 		<a href="tools.php?action=backup">test backup</a>
+		<div id="newbackup" style="display:none;width:500px;text-align:center;">
+			<form action="" method="post">
+				<label>Backup Name
+				<input class="input_text" type="text" name="backup_name" style="width:200px;margin-left:10px" />
+				</label>
+				<label>Comment
+				<input class="input_text" type="text" name="backup_comment" style="width:200px;margin-left:10px" />				
+				</label>
+				<span class="input_area"><input class="button" type="submit" value="Save" /></span>
+			</form>
+		</div>
 		<table>
 			<tr>
 				<th>Name</th>
@@ -64,5 +76,15 @@ if($_GET['action'] == "saveall") {
 			<p><a href="#">Start a new map job</a></p>
 		</div>
 	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('#addnew').click(function(){
+				$('#newbackup').slideDown();
+			});
+			$('#canceladd').click(function(){
+				$('#newbackup').slideUp();
+			});
+		});
+	</script>
 </body>
 </html>
