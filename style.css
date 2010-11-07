@@ -10,6 +10,7 @@ body{
 }
 a{
 	color:#144564;
+	text-decoration: none;
 }
 img{
 	border:none;
