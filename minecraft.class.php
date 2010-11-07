@@ -134,7 +134,7 @@ class minecraft{
 		echo "tar -czf ".$output." ".$PATH['minecraft']."world";
 		$size = ByteSize(filesize($output));
 		global $db;
-		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>"","time"=>"","size"=>$size,"comment"=>$comment,"filename"=>$output));
+		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>"","time"=>"","size"=>$size,"comment"=>$comment,"filename"=>$output), array(), true);
 		return $result;
 		
 	}
