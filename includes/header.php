@@ -30,4 +30,8 @@
 			<li><a href="users.php">Users</a></li>
 			<li><a href="start.php">Online Now</a></li>
 		</ul>
+		<div id="status">
+			<p><a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a></p>
+		</div>
 	</div>
+

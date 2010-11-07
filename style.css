@@ -47,7 +47,7 @@ body{
 	left:50%;
 	margin-left:-450px;
 	padding-top: 34px;
-	padding-bottom: 20px;
+	margin-bottom: 15px;
 	background:#fff;
 }
 #menu-wrap h2{
@@ -59,7 +59,6 @@ body{
 	padding-left:40px;
 	padding-right:10px;
 	margin-left: -20px;
-	
 	float:left;
 }
 #menu-wrap ul{
@@ -81,6 +80,11 @@ body{
 #menu-wrap li a:hover{
 	background:#f3f3f3;
 	color:#333;
+}
+#status {
+	width:900px;
+	height:24px;
+	text-align: right;
 }
 #page_wrap{
 	width:880px;
