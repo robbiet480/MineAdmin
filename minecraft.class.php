@@ -124,10 +124,10 @@ class minecraft{
 		        } 
 		    return $size; 
 		    }
-		$this->r->server->broadcastMessage("Map backup now starting");
-		$this->r->server->broadcastMessage("Issuing save-all command");
+		$this->r->player->broadcastMessage("Map backup now starting");
+		$this->r->player->broadcastMessage("Issuing save-all command");
 		$this->r->server->runConsoleCommand("save-all");
-		$this->r->server->broadcastMessage("Issuing save-off command");
+		$this->r->player->broadcastMessage("Issuing save-off command");
 		$this->r->server->runConsoleCommand("save-off");
 		$date = date('Y-m-d-Hi');
 		$output = $PATH['backups'].$date.".tgz";
@@ -139,7 +139,9 @@ class minecraft{
 		global $db;
 		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>date('Y-m-d'),"time"=>date('Hi'),"size"=>$size,"comment"=>$comment,"filename"=>$output), array(), true);
 		return $result;
-		
+	}
+	function restart() {
+		$this->r->server->broadcastMessage("Map backup now starting");
 	}
      function configuration_files(){
         global $PATH;

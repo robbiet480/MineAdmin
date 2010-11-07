@@ -9,7 +9,7 @@ if($_GET['action'] == "saveall") {
 } elseif($_GET['action'] == "saveon") {
 	$minecraft->save_on();
 } elseif($_GET['action'] == "backup") {
-	$minecraft->backup("test","test");
+	$minecraft->backup($_POST['backup_name'],$_POST['backup_comment']);
 }	
 ?>
 	<div id="page_wrap">
@@ -33,7 +33,7 @@ if($_GET['action'] == "saveall") {
 		<a href="tools.php?action=saveon">save-on</a>
 		<a href="tools.php?action=backup">test backup</a>
 		<div id="newbackup" style="display:none;margin: 15px 10px;">
-			<form action="" method="post">
+			<form action="tools.php?action=backup" method="post">
 				<label>Backup Name
 				<input class="input_text" type="text" name="backup_name" style="width:200px;margin-left:10px" />
 				</label>
