@@ -68,7 +68,7 @@ if(is_numeric($_GET['uid'])){
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row"></span>
-                <span class="input_area"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
+                <span class="input_area" style="float:right;"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
             </label>
         </div>
         

@@ -18,21 +18,25 @@ body{
     color: #00529B;
     background-color: #BDE5F8;
     background-image: url('images/knobs/info.png');
+    display: none;
 }
 .success {
     color: #4F8A10;
     background-color: #DFF2BF;
     background-image:url('images/knobs/success.png');
+    display: none;
 }
 .warning {
     color: #9F6000;
     background-color: #FEEFB3;
     background-image: url('images/knobs/warning.png');
+    display: none;
 }
 .error {
     color: #D8000C;
     background-color: #FFBABA;
     background-image: url('images/knobs/error.png');
+    display: none;
 }
 #menu-wrap{
 	width:900px;
@@ -42,6 +46,7 @@ body{
 	left:50%;
 	margin-left:-450px;
 	padding-top: 34px;
+	padding-bottom: 20px;
 	background:#fff;
 }
 #menu-wrap h2{
@@ -90,7 +95,7 @@ body{
 #page_wrap h1{
 	font-size:21px;
 	color:#000;
-	margin-left:5px;
+	margin-left:10px;
 	margin-bottom:10px;
 }
 #page_wrap ul{
@@ -108,7 +113,6 @@ body{
 	color:#000;
 	min-height:40px;
 	width:146px;
-	text-shadow: 1px 1px 1px #999;
 	text-align:center;
 }
 #page_wrap ul li.name{
@@ -153,13 +157,13 @@ body{
 #page_wrap a.link_hide{
 	color:#65acdb;
 	margin-right:5px;
-
 	text-decoration:none;
 }
 #page_wrap .back_link{
 	width:800px;
 	display:block;
 	height:20px;
+	color: #144564;
 	padding-top:20px;
 	padding-bottom:15px;
 	text-align:right;
@@ -167,6 +171,7 @@ body{
 #page_wrap .give_link{
 	width:820px;
 	margin-left:30px;
+	color: #144564;
 	display:block;
 	height:60px;
 }
@@ -187,7 +192,7 @@ body{
 	color:#144564;
 	border-radius: 6px;
 	border:1px solid #c6e0f9;
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#c6e0f9), color-stop(1,#c6e0f9));
+	background:#972e2e;
 }
 .input_text{
 	padding:3px;
@@ -213,15 +218,14 @@ body{
 	padding:3px;
 	padding-left:6px;
 	font-size:18px;
-	text-shadow: 1px 1px 1px #093e6f;
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	width:60px;
 	letter-spacing: 2px;
-	color:#65acdb;
+	color:#000;
 	border-radius: 6px;
-	border:1px solid #c6e0f9;
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f5f9fd), to(#c6e0f9), color-stop(1,#c6e0f9));
+	border:1px solid #ebebeb;
+	background:#972e3e;
 }
 .button{
 	margin-right:20px;
@@ -238,9 +242,10 @@ body{
 }
 .over_html_h1{
 	float:left;
-	color:#65acdb;
+	color:#fff;
+	background: #972e2e;
 	margin-left:5px;
-	text-shadow: 1px 1px 1px #ccc;
+	font-family: sans-serif;
 	text-decoration:none;
 }
 div.over_html_row_wrap{
@@ -249,8 +254,7 @@ div.over_html_row_wrap{
 	margin:3px;
 	padding:5px;
 	margin-top:10px;
-	color:#65acdb;
-	text-shadow: 1px 1px 1px #aaa;
+	color:#000;
 	text-decoration:none;
 	border:#f0f0f0 1px solid;
 }
