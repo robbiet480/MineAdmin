@@ -133,8 +133,9 @@ class minecraft{
 		$output = $PATH['backups']."/".$date.".tgz";
 		echo "tar -czf ".$output." ".$PATH['minecraft']."world";
 		$size = ByteSize(filesize($output));
+		global $db;
 		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>"","time"=>"","size"=>$size,"comment"=>$comment,"filename"=>$output));
-		return;
+		return $result;
 		
 	}
      function configuration_files(){
