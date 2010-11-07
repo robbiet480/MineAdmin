@@ -1,7 +1,6 @@
 <?php
 
 include_once("prettyxmlrpc.php");
-
 class minecraft{
     var $r;
     function __construct(){
@@ -100,16 +99,43 @@ class minecraft{
 	        $result=$db->fetch_sql("SELECT * FROM `backups` ORDER BY `id` DESC");
 	        return $result;
 	}
-	function backup(){
-		include 'config.php';
+	function backup($name,$comment){
+		global $PATH;
+		function ByteSize($bytes)  
+		    { 
+		    $size = $bytes / 1024; 
+		    if($size < 1024) 
+		        { 
+		        $size = number_format($size, 2); 
+		        $size .= ' KB'; 
+		        }  
+		    else  
+		        { 
+		        if($size / 1024 < 1024)  
+		            { 
+		            $size = number_format($size / 1024, 2); 
+		            $size .= ' MB'; 
+		            }  
+		        else if ($size / 1024 / 1024 < 1024)   
+		            { 
+		            $size = number_format($size / 1024 / 1024, 2); 
+		            $size .= ' GB'; 
+		            }  
+		        } 
+		    return $size; 
+		    }
 		$this->r->server->broadcastMessage("Map backup now starting");
 		$this->r->server->broadcastMessage("Issuing save-all command");
 		$this->r->server->runConsoleCommand("save-all");
 		$this->r->server->broadcastMessage("Issuing save-off command");
 		$this->r->server->runConsoleCommand("save-off");
 		$date = date('Y-m-d-H:i');
-		echo "tar -czf ".$PATH['backups']."/".$date.".tgz ".$PATH['minecraft']."world";
-		return;
+		$output = $PATH['backups']."/".$date.".tgz";
+		echo "tar -czf ".$output." ".$PATH['minecraft']."world";
+		$size = ByteSize(filesize($output));
+		global $db;
+		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>"","time"=>"","size"=>$size,"comment"=>$comment,"filename"=>$output));
+		return $result;
 		
 	}
      function configuration_files(){
