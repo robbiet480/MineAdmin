@@ -1,6 +1,8 @@
 <?php
 require_once('header_inc.php');
 require_once('includes/header.php');
+$players = count($minecraft->player_list);
+$max = count($minecraft->player_limit);
 function get_memory() {
   foreach(file('/proc/meminfo') as $ri)
     $m[strtok($ri, ':')] = strtok('');
@@ -9,6 +11,7 @@ function get_memory() {
 
 ?>
 	<div id="page_wrap">
+		<p>Players: <?php echo $players; ?> out of <?php echo $max; ?> allowed are currently online</p><br />
 		<p>Hostname: <?php echo shell_exec('hostname -f'); ?></p><br />
 		<p>IP Address: <?php echo shell_exec("/sbin/ifconfig venet0:0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'"); ?></p><br />
 		<p>CPU Usage: <?php echo shell_exec("ps aux|awk 'NR > 0 { s +=$3 }; END {print s}'"); ?>%</p><br />

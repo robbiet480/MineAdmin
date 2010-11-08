@@ -46,6 +46,9 @@ class minecraft{
     function player_list(){
         return $this->r->player->getPlayers();
     }
+	function player_limit(){
+		return $this->$r->server->getPlayerLimit();
+	}
     function remove_slot($nick,$slot){
         return $this->r->player->removeInventorySlot($nick,intval($slot));
     }
