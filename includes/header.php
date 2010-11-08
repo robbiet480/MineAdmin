@@ -39,7 +39,7 @@ if(count($pid)==1) {
 			<li><a href="start.php">Online Now</a></li>
 		</ul>
 		<div id="status">
-			<p><?php echo $status; ?><a href="#"><img src="images/icons/asterisk_yellow.png" onClick='javascript:power_control('start');'>Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png" onClick='javascript:power_control('stop');'>Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png" onClick='javascript:power_control('restart');'>Restart</a></p>
+			<p><?php echo $status; ?><a href="javascript:power_control('start');"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="javascript:power_control('stop');"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="javascript:power_control('restart');"><img src="images/icons/arrow_refresh.png">Restart</a></p>
 		</div>
 	</div>
 
