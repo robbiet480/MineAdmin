@@ -25,7 +25,7 @@ function kick_player(nick){
 }
 function power_control(action){
 	$.post("actions.php",{"act":action},function(data){
-		$("#message").html(data);
+		$("#output").html(data);
 	});
 }
 var play=true;
