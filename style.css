@@ -15,6 +15,12 @@ a{
 img{
 	border:none;
 }
+p{
+	margin-left: 10px;
+}
+span{
+	margin-left: 10px;
+}
 .info, .success, .warning, .error, .validation {
     border: 1px solid;
     margin: 10px 0px;
@@ -54,7 +60,6 @@ img{
 	left:50%;
 	margin-left:-450px;
 	padding-top: 34px;
-	margin-bottom: 15px;
 	background:#fff;
 }
 #menu-wrap h2{
@@ -96,14 +101,22 @@ img{
 	margin-top:64px;
 	padding-right:13px;
 }
+#output {
+	background: #fff;
+	left: 50%;
+	width: 880px;
+	margin-left: -450px;
+	position: relative
+	padding: 10px;
+
+}
 #page_wrap{
 	width:880px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
 	position:absolute;
 	left:50%;
 	margin-left:-450px;
-	margin-top: 84px;
-	padding:50px 10px 10px 10px;
+	padding:10px 10px 10px 10px;
 	display: none;
 	background:#fff;
 	z-index: -1;
