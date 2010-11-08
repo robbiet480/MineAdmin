@@ -15,6 +15,9 @@ if($_SESSION['user']==""){
 	<li class="actions" style="text-decoration:underline;"></li>
 </ul>
 <?php
+if(empty($minecraft->player_list())) {
+	echo "No one is online currently";
+} else {
 foreach($minecraft->player_list() as $player){
 ?>
 <ul>
@@ -27,5 +30,6 @@ foreach($minecraft->player_list() as $player){
 	<li class="actions"><a href="javascript:kick_player('<?php echo $player['name'];?>');">&lsaquo; kick &rsaquo;</a> <!--<a href="javascript:ban_player('<?php echo $player['name'];?>','<?php echo $player['ip'];?>');">ban</a>//--> <a href="javascript:inv_player('<?php echo $player['name'];?>');">&lsaquo; inventory &rsaquo;</a> <a href="javascript:msg_player('<?php echo $player['name'];?>');">&lsaquo; msg &rsaquo;</a></li>
 </ul>
 <?php
+}
 }
 ?>
