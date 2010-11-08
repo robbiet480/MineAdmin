@@ -25,7 +25,8 @@
 
     $Backup_Method      =   "node.js"; // node.js, backup.plugin
     
-
+	/* General settings */
+	$GENERAL['memory']				=	"256M"; //memory to allocate for MC
     /*
         ADMIN LOGINS
         FORMAT, USERNAME=>SHA1(PASSWORD)

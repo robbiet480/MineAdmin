@@ -23,6 +23,9 @@ function kick_player(nick){
 		$.post("user_process.php",{"act":"kick","reason":r,"nick":nick});
 	});
 }
+function power_control(action){
+	$.post("actions.php",{"act":action});
+}
 var play=true;
 var count = 0;
 function rotate() {

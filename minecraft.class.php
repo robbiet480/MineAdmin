@@ -147,6 +147,11 @@ class minecraft{
 		$result=$db-delete("backups", array("id"=>$id));
 		return $result;
 	}
+	function server_stop(){
+		$this->r->server->runConsoleCommand("stop");
+		return $this;
+	}
+	
      function configuration_files(){
         global $PATH;
         $file_array=array();
