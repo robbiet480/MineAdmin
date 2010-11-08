@@ -27,6 +27,7 @@ if(count($pid)==1) {
 	<script type="text/javascript" src="system.js"></script> 
 </head>
 <body>
+	<div id="message"></div>
 	<div id="menu-wrap">
 		<h2>MCSAdmin</h2>
 		<ul>
