@@ -56,7 +56,7 @@ span{
 	width:900px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
 	height:90px;
-	position:absolute;
+	position:relative;
 	left:50%;
 	margin-left:-450px;
 	padding-top: 34px;
@@ -106,14 +106,13 @@ span{
 	left: 50%;
 	width: 880px;
 	margin-left: -450px;
-	position: relative
+	position: relative;
 	padding: 10px;
-
 }
 #page_wrap{
 	width:880px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
-	position:absolute;
+	position:relative;
 	left:50%;
 	margin-left:-450px;
 	padding:10px 10px 10px 10px;
