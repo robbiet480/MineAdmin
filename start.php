@@ -1,24 +1,18 @@
 <?php
 require_once('header_inc.php');
 require_once('includes/header.php');
+function get_memory() {
+  foreach(file('/proc/meminfo') as $ri)
+    $m[strtok($ri, ':')] = strtok('');
+  return 100 - round(($m['MemFree'] + $m['Buffers'] + $m['Cached']) / $m['MemTotal'] * 100);
+}
+
 ?>
 	<div id="page_wrap">
-		<div id="online_wrap">
-			<h1>Who's Online</h1>
-			<span id="online"></span>
-		</div>
-		<div id="inventory_wrap" style="display:none;">
-			<h1><span id="user"></span>'s Inventory</h1>
-			<div class="give_link"><span style="float:left;text-align:left;margin-top:10px;"><a href="javascript:clear_inv();" class="link_give">&lsaquo; Clear Inventory &rsaquo;</a></span><span style="float:right;text-align:right;"><label><span>Item Name</span><input type="text" id="item_complete" /></label> <label><span>Amount</span><input type="text" id="item_amount" /></label> <a href="javascript:give_item();" class="link_give">&lsaquo; Give Item &rsaquo;</a></span></div>
-			<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
-			<span id="inventory"></span>
-			<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
-		</div>
+		<p>Hostname: <?php shell_exec('cat /etc/hostname'); ?></p><br />
+		<p>CPU Usage: <?php shell_exec("ps aux|awk 'NR > 0 { s +=$3 }; END {print s}'"); ?>%</p><br />
+		<p>Memory Usage: <?php echo get_memory(); ?>%</p><br />
+		<p>Disk usage: <?php disk_free_space("/"); ."/".disk_total_space("/");?></p><br />
 	</div>
-	<script type="text/javascript">
-		$("body").ready(function(){
-			get_player_list();
-		});
-	</script> 
 </body>
 </html>
