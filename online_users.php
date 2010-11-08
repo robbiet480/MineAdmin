@@ -4,6 +4,9 @@ $logged=true;
 if($_SESSION['user']==""){
 	$logged=false;
 }
+if(empty($minecraft->player_list)) {
+	echo "No one is online currently";
+} else {
 ?>
 <ul>
 	<li class="name" style="text-decoration:underline;">Nickname</li>
@@ -15,9 +18,6 @@ if($_SESSION['user']==""){
 	<li class="actions" style="text-decoration:underline;"></li>
 </ul>
 <?php
-if(empty($minecraft->player_list())) {
-	echo "No one is online currently";
-} else {
 foreach($minecraft->player_list() as $player){
 ?>
 <ul>
