@@ -1,3 +1,11 @@
+<?php
+$pid = shell_exec('pidof java');
+if(count($pid) >= 2) {
+	$status = '<font color="green">Status: Online</font>';
+} else {
+	$status = '<font color="red">Status: OFFLINE</font>';
+}
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -31,7 +39,7 @@
 			<li><a href="start.php">Online Now</a></li>
 		</ul>
 		<div id="status">
-			<p><a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a></p>
+			<p><?php echo $status; ?><a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a></p>
 		</div>
 	</div>
 

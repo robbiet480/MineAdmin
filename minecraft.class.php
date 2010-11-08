@@ -101,6 +101,7 @@ class minecraft{
 	}
 	function backup($name,$comment){
 		global $PATH;
+		global $db;
 		function ByteSize($bytes)  
 		    { 
 		    $size = $bytes / 1024; 
@@ -136,12 +137,15 @@ class minecraft{
 		}
 		shell_exec("tar -czf ".$output." ".$PATH['minecraft']."world");
 		$size = ByteSize(filesize($output));
-		global $db;
 		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>date('Y-m-d'),"time"=>date('Hi'),"size"=>$size,"comment"=>$comment,"filename"=>$output), array(), true);
+		$this->r->player->broadcastMessage("Issuing save-on command");
+		$this->r->server->runConsoleCommand("save-on");
 		return $result;
 	}
-	function restart() {
-		$this->r->server->broadcastMessage("Map backup now starting");
+	function backup_delete($id){
+		global $db;
+		$result=$db-delete("backups", array("id"=>$id));
+		return $result;
 	}
      function configuration_files(){
         global $PATH;
