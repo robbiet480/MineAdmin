@@ -149,7 +149,6 @@ class minecraft{
 	}
 	function server_stop(){
 		$this->r->server->runConsoleCommand("stop");
-		return $this;
 	}
 	
      function configuration_files(){

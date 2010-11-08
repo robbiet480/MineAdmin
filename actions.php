@@ -4,6 +4,9 @@ $logged=true;
 if($_SESSION['user']==""){
 	$logged=false;
 }
+function stop_server() {
+	shell_exec("screen -S Minecraft -p 0 -X stuff "`printf "stop.\r"`"; sleep 5");
+}
 switch($_POST['act']){
 	case "start":
 	$pid = shell_exec('pidof java');
@@ -19,12 +22,12 @@ switch($_POST['act']){
 	if(count($pid)==0) {
 		echo "<div class='error' style='display:block;'>Failed to stop! Server is not running!</div>";
 	} else {
-		$minecraft->server_stop();
+		stop_server();
 		echo "<div class='success' style='display:block;'>Stopped server!</div>";
 	}
 	break;
 	case "restart":
-	$minecraft->server_stop();
+	stop_server();
 	sleep(5);
 	shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 	echo "<div class='success' style='display:block;'>Restarted server!</div>";
