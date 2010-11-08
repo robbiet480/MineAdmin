@@ -1,6 +1,6 @@
 <?php
 $pid = shell_exec('pidof java');
-if(count($pid) >= 2) {
+if(count($pid)=1) {
 	$status = '<font color="green">Status: Online</font>';
 } else {
 	$status = '<font color="red">Status: OFFLINE</font>';
