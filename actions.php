@@ -30,4 +30,5 @@ switch($_POST['act']){
 	shell_exec('screen -dmS Minecraft java -Xmx'.$GLOBAL["memory"].' -Xms'.$GLOBAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 	echo "<div class='success' style='display:block;'>Restarted server!</div>";
 	break;
+}
 ?>
