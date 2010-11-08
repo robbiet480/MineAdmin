@@ -5,7 +5,7 @@ if($_SESSION['user']==""){
 	$logged=false;
 }
 function stop_server() {
-	shell_exec("screen -S Minecraft -p 0 -X stuff ".escapeshellarg("`printf "stop.\r"`")."; sleep 5");
+	shell_exec("screen -S Minecraft -p 0 -X stuff `printf 'stop.\r'`; sleep 5");
 }
 switch($_POST['act']){
 	case "start":
