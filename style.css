@@ -97,9 +97,7 @@ span{
 	margin-right:10px;
 }
 #menu-wrap li a{
-	padding-left:3px;
-	padding-right:3px;
-	padding-top:15px;
+	padding:7px;
 	color:#000;
 	height:35px;
 	text-decoration:none;
@@ -114,8 +112,6 @@ span{
 	-moz-border-radius: 6px;
 	color:#fff;
 	padding:7px;
-	padding-left:15px;
-	padding-right:15px;
 	cursor:pointer;
 	background: #144564;
 }
@@ -152,6 +148,10 @@ span{
 	background:#fff;
 	z-index: 0;
 	overflow: hidden;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	-moz-border-bottom-left-radius: 6px;
+	-moz-border-bottom-right-radius: 6px;	
 }
 #page_wrap h1{
 	font-size:21px;
@@ -421,6 +421,8 @@ tr:hover{
 	-webkit-transition:all 500ms ease-in;
 	-o-transition:all 500ms ease-in;
 	-moz-transition:all 500ms ease-in;
+	color: #ccc;
+	text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
 }
 
 #footer a:hover {
