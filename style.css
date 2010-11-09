@@ -61,6 +61,7 @@ span{
 	margin-left:-450px;
 	padding-top: 34px;
 	background:#fff;
+	z-index: 1;
 }
 #menu-wrap h2{
 	padding-top:13px;
@@ -108,6 +109,7 @@ span{
 	margin-left: -450px;
 	position: relative;
 	padding: 10px;
+	z-index: 1;
 }
 #page_wrap{
 	width:880px;
@@ -118,7 +120,7 @@ span{
 	padding:10px 10px 10px 10px;
 	display: none;
 	background:#fff;
-	z-index: -1;
+	z-index: 0;
 }
 #page_wrap h1{
 	font-size:21px;
