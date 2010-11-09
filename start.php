@@ -1,7 +1,7 @@
 <?php
+$pageid = "start";
 require_once('header_inc.php');
 require_once('includes/header.php');
-$pageid = "start";
 $players = count($minecraft->player_list);
 $max = count($minecraft->player_limit);
 function get_memory() {
