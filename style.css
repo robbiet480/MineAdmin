@@ -121,6 +121,7 @@ span{
 	display: none;
 	background:#fff;
 	z-index: 0;
+	overflow: hidden;
 }
 #page_wrap h1{
 	font-size:21px;
