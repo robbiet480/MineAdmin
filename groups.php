@@ -1,6 +1,7 @@
 <?php
 require_once('header_inc.php');
 require_once('includes/header.php');
+$pageid = "groups";
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -43,5 +44,4 @@ require_once('includes/header.php');
 			$(".fancy").fancybox();
 		});
 	</script> 
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>

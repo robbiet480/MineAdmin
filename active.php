@@ -1,6 +1,7 @@
 <?php
 require_once('header_inc.php');
 require_once('includes/header.php');
+$pageid = "active";
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -20,5 +21,4 @@ require_once('includes/header.php');
 			get_player_list();
 		});
 	</script> 
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>

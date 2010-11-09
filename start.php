@@ -1,6 +1,7 @@
 <?php
 require_once('header_inc.php');
 require_once('includes/header.php');
+$pageid = "start";
 $players = count($minecraft->player_list);
 $max = count($minecraft->player_limit);
 function get_memory() {
@@ -18,5 +19,4 @@ function get_memory() {
 		<p>Memory Usage: <?php echo get_memory(); ?>%</p><br />
 		<p>Disk usage: <?php disk_free_space("/")."/".disk_total_space("/");?></p><br />
 	</div>
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>

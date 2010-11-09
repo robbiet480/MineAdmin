@@ -1,6 +1,7 @@
 <?php
 require_once('header_inc.php');
 require_once('includes/header.php');
+$pageid = "tools";
 //passthru('/usr/bin/python /opt/Minecraft-Overviewer/gmap.py /opt/world /var/www/map/');
 if($_GET['action'] == "backup") {
 	$minecraft->backup($_POST['backup_name'],$_POST['backup_comment']);
@@ -77,5 +78,4 @@ if($_GET['action'] == "backup") {
 			});
 		});
 	</script>
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>
