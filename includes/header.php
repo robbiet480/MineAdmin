@@ -9,7 +9,7 @@ if(count($pid)==1) {
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<?php if($_SERVER['HTTP_USER_AGENT'] == "Mozilla/5.0 (iPad; U; CPU OS 4_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C134 Safari/6533.18.5") {
+	<?php if((preg_match("/iPad/i"$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPhone/i"$_SERVER['HTTP_USER_AGENT']) {
 		echo "<title>MCSAdmin</title>";
 	} else {
 		echo "<title>MCSAdmin - MinecraftServers.com</title>";
