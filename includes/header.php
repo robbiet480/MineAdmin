@@ -16,6 +16,7 @@ if(count($pid)==1) {
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.2.css" media="screen" />
 	<link rel="stylesheet" href="jquery.jgrowl.css" type="text/css" media="screen" />
 	<link rel="apple-touch-icon" href="images/apple-icon.png"/>
+	<script type="text/javascript" src="js/detect.ios.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery-css-transform.js"></script>
 	<script type="text/javascript" src="jquery.autocomplete.pack.js"></script>
