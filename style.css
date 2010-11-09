@@ -15,7 +15,7 @@ body{
 	background:#ebebeb;
 }
 a{
-	color:#144564;
+	color:#000;
 	text-decoration: none;
 }
 img{
@@ -99,7 +99,6 @@ span{
 }
 #menu-wrap li a{
 	padding:7px;
-	color:#000;
 	text-decoration:none;
 	display:block;
 	-webkit-transition:all 500ms ease-in;
@@ -159,6 +158,9 @@ span{
 	border-bottom-right-radius: 6px;
 	-moz-border-bottom-left-radius: 6px;
 	-moz-border-bottom-right-radius: 6px;	
+}
+#page_wrap a{
+	color: #144564;
 }
 #page_wrap h1{
 	font-size:21px;
@@ -420,6 +422,7 @@ tr:hover{
 	position: relative;
 	left:50%;
 	margin-left:-450px;
+	padding-left: 10px;
 	z-index: 0;
 }
 
