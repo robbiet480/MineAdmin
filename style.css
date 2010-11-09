@@ -125,7 +125,7 @@ span{
 	height:24px;
 	text-align: right;
 	margin-top:64px;
-	padding-right:13px;
+	margin-right:16px;
 }
 #status a{
 	color: #144564;
@@ -426,7 +426,7 @@ tr:hover{
 	left:50%;
 	margin-left:-450px;
 	margin-bottom: 50px;
-	padding-left: 10px;
+	padding-left: 6px;
 	z-index: 0;
 }
 
