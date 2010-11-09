@@ -85,5 +85,4 @@ if($_GET['action'] == "saveall") {
 			});
 		});
 	</script>
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>

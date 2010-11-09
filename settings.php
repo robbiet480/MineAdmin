@@ -39,5 +39,4 @@ require_once('includes/header.php');
 			$(".fancy").fancybox();
 		});
 	</script> 
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>

@@ -1,3 +1,9 @@
+/******************************
+
+	Globals
+	
+******************************/
+
 *{
 	margin:0px;
 	padding:0px;
@@ -52,6 +58,13 @@ span{
     background-image: url('images/knobs/error.png');
     display: none;
 }
+
+/******************************
+
+	Header
+	
+******************************/
+
 #menu-wrap{
 	width:900px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
@@ -91,10 +104,20 @@ span{
 	height:35px;
 	text-decoration:none;
 	display:block;
+	-webkit-transition:all 500ms ease-in;
+	-o-transition:all 500ms ease-in;
+	-moz-transition:all 500ms ease-in;
 }
 #menu-wrap li a:hover{
-	background:#f3f3f3;
-	color:#333;
+	border:1px solid #144564;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	color:#fff;
+	padding:7px;
+	padding-left:15px;
+	padding-right:15px;
+	cursor:pointer;
+	background: #144564;
 }
 #status {
 	height:24px;
@@ -111,6 +134,13 @@ span{
 	padding: 10px;
 	z-index: 1;
 }
+
+/******************************
+
+	General Page content
+	
+******************************/
+
 #page_wrap{
 	width:880px;
 	font-family: 'Arial','Nimbus Sans L',sans-serif;
@@ -271,6 +301,13 @@ span{
 	cursor:pointer;
 	background: #144564;
 }
+
+/******************************
+
+	Modals
+	
+******************************/
+
 .over_html_h1{
 	float:left;
 	color:#fff;
@@ -319,6 +356,13 @@ span.input_area{
 tr:hover{
 	background: #ebebeb;
 }
+
+/******************************
+
+	Tools.php
+	
+******************************/
+
 #backup_wrap table {
 	width: 98%;
 	border-collapse: collapse;
@@ -356,3 +400,42 @@ tr:hover{
 #actions img{
 	border:none;
 }
+
+/******************************
+
+	Footer
+	
+******************************/
+
+#footer {
+	margin-top: 10px;
+	width: 880px;
+	padding: 10px;
+	position: relative;
+	left:50%;
+	margin-left:-450px;
+	z-index: 0;
+}
+
+#footer a{
+	-webkit-transition:all 500ms ease-in;
+	-o-transition:all 500ms ease-in;
+	-moz-transition:all 500ms ease-in;
+}
+
+#footer a:hover {
+	color:#144564;
+}
+
+#copyright {
+	float: left;
+	color: #ccc;
+	text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
+}
+
+#footer_info{
+	float: right;
+	color: #ccc;
+	text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
+}
+

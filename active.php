@@ -20,5 +20,4 @@ require_once('includes/header.php');
 			get_player_list();
 		});
 	</script> 
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>

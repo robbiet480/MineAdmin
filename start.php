@@ -18,5 +18,4 @@ function get_memory() {
 		<p>Memory Usage: <?php echo get_memory(); ?>%</p><br />
 		<p>Disk usage: <?php disk_free_space("/")."/".disk_total_space("/");?></p><br />
 	</div>
-</body>
-</html>
+<?php require_once('includes/footer.php'); ?>
