@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<title>MCSAdmin Login</title>
-	<link rel="stylesheet" href="style_login.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/style_login.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-	<script type="text/javascript" src="jquery-css-transform.js"></script> 
-	<script type="text/javascript" src="system_login.js"></script> 
+	<script type="text/javascript" src="js/jquery-css-transform.js"></script> 
+	<script type="text/javascript" src="js/system_login.js"></script> 
 </head>
 <body>
 	<div id="error" style="display:none;">Username was not found, please try again...</div>

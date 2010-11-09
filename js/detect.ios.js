@@ -9,4 +9,3 @@ if ( (navigator.userAgent.indexOf('iPad') != -1) ) {
 	document.getElementsByTagName('head').item(1).appendChild(link);
 	$("input").append(' autocorrect="off" autocapitalize="off" ');
 }
-
