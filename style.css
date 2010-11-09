@@ -114,7 +114,7 @@ span{
 	cursor:pointer;
 	background: #144564;
 }
-#menu_active{
+.menu_active{
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	color:#fff;
