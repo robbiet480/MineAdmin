@@ -13,7 +13,8 @@ Requirements
 * hey0 needs to store its data in MySQL.
 * A LAMP (Linux, Apache, MySQL, PHP) server
 * PHP needs to have XML-RPC support. On Ubuntu (and maybe Debian) you can use the following command to install XML-RPC support:
-	sudo apt-get install php5-xmlrpc
+
+	`sudo apt-get install php5-xmlrpc`
 
 Installation
 ------------
@@ -24,7 +25,7 @@ Installation
 	4.	Import minecraft.sql into a database (preferrably minecraft)
 	5.	Fill in the settings in mysql.properties
 	6.	Start the server one last time
-2.	Checkout the files or download a tarball/zipball from [Github](http://github.com/robbiet480/MineAdmin#readme)
+2.	Checkout the files or download a tarball/zipball from [Github](http://github.com/robbiet480/MineAdmin)
 3.	Move config.example.php to config.php and change the values to match.
 4.	Done!
 
