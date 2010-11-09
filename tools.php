@@ -25,7 +25,7 @@ if($_GET['action'] == "backup") {
 	    exit;
 	}
 } elseif($_GET['action'] == "delete") {
-	backup_delete($_GET['id']);
+	$minecraft->backup_delete($_GET['id']);
 } elseif($_GET['action'] == "restore") {
 	$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
 	stop_server();
