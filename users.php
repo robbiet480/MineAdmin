@@ -1,7 +1,7 @@
 <?php
+$pageid = "users";
 require_once('header_inc.php');
 require_once('includes/header.php');
-$pageid = "users";
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">

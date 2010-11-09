@@ -1,4 +1,5 @@
 <?php
+$pageid = "tools";
 require_once('header_inc.php');
 require_once('includes/header.php');
 $pageid = "tools";

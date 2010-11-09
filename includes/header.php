@@ -31,16 +31,16 @@ if(count($pid)==1) {
 		<h2>MCSAdmin</h2>
 		<ul>
 			<li><a href="logout_process.php">Logout</a></li>
-			<li><a href="settings.php" <?php if ($page=="settings") { echo " class=\"menu_active\""; } else { echo ""; }?>>Settings</a></li>
-            <li><a href="tools.php" <?php if ($page=="tools") { echo " class=\"menu_active\""; } else { echo ""; }?>>Tools</a></li>
-			<li><a href="groups.php" <?php if ($page=="groups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Groups</a></li>
+			<li><a href="settings.php" <?php if ($pageid=="settings") { echo " class=\"menu_active\""; } else { echo ""; }?>>Settings</a></li>
+            <li><a href="tools.php" <?php if ($pageid=="tools") { echo " class=\"menu_active\""; } else { echo ""; }?>>Tools</a></li>
+			<li><a href="groups.php" <?php if ($pageid=="groups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Groups</a></li>
 			<!--<li><a href="bans.php">Bans</a></li>-->
-			<li><a href="users.php" <?php if ($page=="users") { echo " class=\"menu_active\""; } else { echo ""; }?>>Users</a></li>
-			<li><a href="active.php" <?php if ($page=="active") { echo " class=\"menu_active\""; } else { echo ""; }?>>Online Now</a></li>
-			<li><a href="start.php" <?php if ($page=="start") { echo " class=\"menu_active\""; } else { echo ""; }?>>Home</a></li>
+			<li><a href="users.php" <?php if ($pageid=="users") { echo " class=\"menu_active\""; } else { echo ""; }?>>Users</a></li>
+			<li><a href="active.php" <?php if ($pageid=="active") { echo " class=\"menu_active\""; } else { echo ""; }?>>Online Now</a></li>
+			<li><a href="start.php" <?php if ($pageid=="start") { echo " class=\"menu_active\""; } else { echo ""; }?>>Home</a></li>
 		</ul>
 		<div id="status">
-			<p><?php echo $status; ?><a href="javascript:power_control('start');"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="javascript:power_control('stop');"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="javascript:power_control('restart');"><img src="images/icons/arrow_refresh.png">Restart</a></p>
+			<p><?php echo $status; ?>&nbsp;<a href="javascript:power_control('start');"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="javascript:power_control('stop');"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="javascript:power_control('restart');"><img src="images/icons/arrow_refresh.png">Restart</a></p>
 		</div>
 	</div>
 	<div id="output">
