@@ -1,11 +1,21 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>MCSAdmin Login</title>
+	<?php if((preg_match("/iPad/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPhone/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPod/i",$_SERVER['HTTP_USER_AGENT']))) {
+		echo "<title>MCSAdmin</title>";
+	} else {
+		echo "<title>MCSAdmin - MinecraftServers.com</title>";
+	}
+	?>
 	<link rel="stylesheet" href="css/style_login.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-css-transform.js"></script> 
-	<script type="text/javascript" src="js/system_login.js"></script> 
+	<script type="text/javascript" src="js/system_login.js"></script>
+	<script type="text/javascript" src="js/detect.ios.js"></script>
+	<link rel="apple-touch-icon" href="images/apple-icon.png"/>
+	<link rel="apple-touch-startup-image" href="/startup.png" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-touch-fullscreen" content="yes" />
 </head>
 <body>
 	<div id="error" style="display:none;">Username was not found, please try again...</div>
