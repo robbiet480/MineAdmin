@@ -11,8 +11,8 @@ if(count($pid)==1) {
 <head>
 	<?php if((preg_match("/iPad/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPhone/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPod/i",$_SERVER['HTTP_USER_AGENT']))) {
 		echo "<title>MCSAdmin</title>";
-		echo "<meta name="viewport" content"initial-scale = 1.0, user-scalable = no" />";
-		echo "<link rel="apple-touch-startup-image" href="images/ipad-startup.png" />";
+		echo "<meta name=\"viewport\" content=\"initial-scale = 1.0, user-scalable = no\" />";
+		echo "<link rel=\"apple-touch-startup-image\" href=\"images/ipad-startup.png\" />";
 	} else {
 		echo "<title>MCSAdmin - MinecraftServers.com</title>";
 	}
