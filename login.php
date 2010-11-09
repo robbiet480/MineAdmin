@@ -18,7 +18,6 @@
 	<meta name="apple-touch-fullscreen" content="yes" />
 </head>
 <body>
-	<div id="error" style="display:none;">Username was not found, please try again...</div>
 	<div id="login-form">
 		<form action="javascript:login();" method="post">
 			<div id="login_form_i">

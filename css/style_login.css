@@ -19,13 +19,17 @@ body{
 	background: #fff;
 }
 #login-form h1{
-	padding-left:19px;
-	padding-top:10px;
-	padding-bottom: 10px;
-	margin-bottom:10px;
+	padding-top:13px;
+	padding-bottom: 12px;
+	background: #972e2e url('../images/logo.png') no-repeat center;
+	font-size: 23px;
 	color:#fff;
-	background-color: #972e2e;
-	text-shadow: 1px 1px 1px #000;
+	padding-left:15px;
+	padding-right:10px;
+    margin-bottom: 14px;
+	float:left;
+	width: 375px;
+	text-indent: -9999px;
 }
 #login-form h4{
 	text-align: center;

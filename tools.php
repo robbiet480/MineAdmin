@@ -50,7 +50,7 @@ if($_GET['action'] == "backup") {
 		</div>
 		<div id="backup_wrap">
 		<h1>Backups</h1>
-		<a href="#newbackup" id="addnew">new backup</a>
+		<a href="#" id="addnew">new backup</a>
 		<div id="newbackup" style="display:none;margin: 15px 10px;">
 			<form action="tools.php?action=backup" method="post">
 				<label>Backup Name
