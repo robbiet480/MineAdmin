@@ -11,6 +11,8 @@ if(count($pid)==1) {
 <head>
 	<?php if((preg_match("/iPad/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPhone/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPod/i",$_SERVER['HTTP_USER_AGENT']))) {
 		echo "<title>MCSAdmin</title>";
+		echo "<meta name=\"viewport\" content=\"initial-scale = 1.0, user-scalable = no\" />";
+		echo "<link rel=\"apple-touch-startup-image\" href=\"images/ipad-startup.png\" />";
 	} else {
 		echo "<title>MCSAdmin - MinecraftServers.com</title>";
 	}
@@ -21,7 +23,6 @@ if(count($pid)==1) {
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.2.css" media="screen" />
 	<link rel="stylesheet" href="css/jquery.jgrowl.css" type="text/css" media="screen" />
 	<link rel="apple-touch-icon" href="images/apple-icon.png"/>
-	<link rel="apple-touch-startup-image" href="/startup.png" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<script type="text/javascript" src="js/detect.ios.js"></script>
