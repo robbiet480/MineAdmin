@@ -148,7 +148,7 @@ class minecraft{
 	function backup_delete($id){
 		global $db;
 		$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
-		unlink($PATH['backup'].$result['filename']);
+		unlink($result['filename']);
 		$result=$db-delete("backups", array("id"=>$id));
 		return $result;
 	}
