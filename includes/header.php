@@ -21,6 +21,7 @@ if(count($pid)==1) {
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.2.css" media="screen" />
 	<link rel="stylesheet" href="css/jquery.jgrowl.css" type="text/css" media="screen" />
 	<link rel="apple-touch-icon" href="images/apple-icon.png"/>
+	<link rel=Óapple-touch-startup-imageÓ href=Óimages/ipad-startup.pngÓ />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
 	<script type="text/javascript" src="js/detect.ios.js"></script>
