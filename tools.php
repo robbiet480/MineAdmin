@@ -10,8 +10,7 @@ if($_GET['action'] == "backup") {
 	$minecraft->backup($_POST['backup_name'],$_POST['backup_comment']);
 } elseif($_GET['action'] == "dl") {
     $result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
-	$path = $PATH['backups'].$result['filename'];
-	if (file_exists($file)) {
+	if (file_exists($result['filename'])) {
 	    header('Content-Description: File Transfer');
 	    header('Content-Type: application/octet-stream');
 	    header('Content-Disposition: attachment; filename='.basename($result['filename']));
