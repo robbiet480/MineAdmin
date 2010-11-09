@@ -101,9 +101,9 @@ span{
 	padding:7px;
 	text-decoration:none;
 	display:block;
-	-webkit-transition:all 500ms ease-in;
-	-o-transition:all 500ms ease-in;
-	-moz-transition:all 500ms ease-in;
+	-webkit-transition:all 300ms ease-in;
+	-o-transition:all 300ms ease-in;
+	-moz-transition:all 300ms ease-in;
 }
 #menu-wrap li a:hover{
 	border-radius: 6px;
@@ -431,9 +431,9 @@ tr:hover{
 }
 
 #footer a{
-	-webkit-transition:all 500ms ease-in;
-	-o-transition:all 500ms ease-in;
-	-moz-transition:all 500ms ease-in;
+	-webkit-transition:all 300ms ease-in;
+	-o-transition:all 300ms ease-in;
+	-moz-transition:all 300ms ease-in;
 	color: #ccc;
 	text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
 }
