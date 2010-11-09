@@ -29,7 +29,7 @@ if($_GET['action'] == "backup") {
 } elseif($_GET['action'] == "restore") {
 	$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
 	stop_server();
-	$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].' '.$result[0]['filename']);
+	$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].'.. '.$result[0]['filename']);
 	shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 	echo "<div class='success' style='display:block;'>Restored backup!</div>";
 }

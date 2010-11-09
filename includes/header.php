@@ -9,7 +9,12 @@ if(count($pid)==1) {
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>MCSAdmin - MinecraftServers.com</title>
+	<?php if($_SERVER['HTTP_USER_AGENT'] == "Mozilla/5.0 (iPad; U; CPU OS 4_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C134 Safari/6533.18.5") {
+		echo "<title>MCSAdmin</title>";
+	} else {
+		echo "<title>MCSAdmin - MinecraftServers.com</title>";
+	}
+	?>
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="jquery.alerts.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="jquery.autocomplete.css" type="text/css" media="screen" />

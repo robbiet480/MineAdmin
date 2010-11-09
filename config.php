@@ -16,9 +16,9 @@
    
     /* Paths to files */
     
-    $PATH['www']        =   "/var/www/current/"; // path to MineAdmin
-    $PATH['minecraft']  =   "/opt/"; // Path to minecraft server folder
-	$PATH['backups']	=   "/opt/backups/"; //Path to Backups folder
+    $PATH['www']        =   "/var/www/current/"; // path to MineAdmin. MUST HAVE ENDING FORWARD SLASH
+    $PATH['minecraft']  =   "/opt/"; // Path to minecraft server folder. MUST HAVE ENDING FORWARD SLASH
+	$PATH['backups']	=   "/opt/backups/"; //Path to Backups folder. MUST HAVE ENDING FORWARD SLASH
 	//$PATH['backup_url'] =	"http://"
     
 	/* General settings */
