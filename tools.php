@@ -81,7 +81,7 @@ if($_GET['action'] == "backup") {
 				<td><?php echo $backup['time']; ?></td>
 				<td><?php echo $backup['size']; ?></td>
 				<td><?php echo $backup['comment']; ?></td>
-				<td><a href="tools.php?action=dl&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_save.png" alt="Download"></a>&nbsp;<a href="tools.php?action=delete&id=<?php echo $backup['id']; ?><img src="images/icons/database_delete.png" alt="Delete"></a>&nbsp;<a href="tools.php?action=restore&id=<?php echo $backup['id']; ?><img src="images/icons/database_go.png" alt="Restore"></a>&nbsp;</td>
+				<td><a href="tools.php?action=dl&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_save.png" alt="Download"></a>&nbsp;<a href="tools.php?action=delete&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_delete.png" alt="Delete"></a>&nbsp;<a href="tools.php?action=restore&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_go.png" alt="Restore"></a>&nbsp;</td>
 			</tr>
 			<?php
 		}
