@@ -59,6 +59,7 @@ span{
     display: none;
 }
 
+
 /******************************
 
 	Header
@@ -99,7 +100,6 @@ span{
 #menu-wrap li a{
 	padding:7px;
 	color:#000;
-	height:35px;
 	text-decoration:none;
 	display:block;
 	-webkit-transition:all 500ms ease-in;
@@ -107,7 +107,14 @@ span{
 	-moz-transition:all 500ms ease-in;
 }
 #menu-wrap li a:hover{
-	border:1px solid #144564;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	color:#fff;
+	padding:7px;
+	cursor:pointer;
+	background: #144564;
+}
+#menu_active{
 	border-radius: 6px;
 	-moz-border-radius: 6px;
 	color:#fff;
@@ -408,9 +415,8 @@ tr:hover{
 ******************************/
 
 #footer {
-	margin-top: 10px;
+	margin-top: 8px;
 	width: 880px;
-	padding: 10px;
 	position: relative;
 	left:50%;
 	margin-left:-450px;

@@ -7,6 +7,7 @@ $config=$minecraft->configuration_files();
 //echo "Coming soon....";
 //exit;
 require_once('includes/header.php');
+$pageid = "settings";
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
