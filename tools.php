@@ -10,18 +10,18 @@ if($_GET['action'] == "backup") {
 	$minecraft->backup($_POST['backup_name'],$_POST['backup_comment']);
 } elseif($_GET['action'] == "dl") {
     $result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
-	if (file_exists($result['filename'])) {
+	if (file_exists($result[0]['filename'])) {
 	    header('Content-Description: File Transfer');
 	    header('Content-Type: application/octet-stream');
-	    header('Content-Disposition: attachment; filename='.basename($result['filename']));
+	    header('Content-Disposition: attachment; filename='.basename($result[0]['filename']));
 	    header('Content-Transfer-Encoding: binary');
 	    header('Expires: 0');
 	    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
 	    header('Pragma: public');
-	    header('Content-Length: ' . filesize($result['filename']));
+	    header('Content-Length: ' . filesize($result[0]['filename']));
 	    ob_clean();
 	    flush();
-	    readfile($result['filename']);
+	    readfile($result[0]['filename']);
 	    exit;
 	}
 } elseif($_GET['action'] == "delete") {
@@ -29,7 +29,7 @@ if($_GET['action'] == "backup") {
 } elseif($_GET['action'] == "restore") {
 	$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
 	stop_server();
-	$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].' '.$result['filename']);
+	$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].' '.$result[0]['filename']);
 	shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 	echo "<div class='success' style='display:block;'>Restored backup!</div>";
 }
