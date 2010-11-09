@@ -153,6 +153,13 @@ class minecraft{
 	function server_stop(){
 		$this->r->server->runConsoleCommand("stop");
 	}
+	function start_mapping(){
+		$this->r->player->broadcastMessage("Map generation now starting");
+		$this->r->player->broadcastMessage("Issuing save-all command");
+		$this->r->server->runConsoleCommand("save-all");
+		$this->r->player->broadcastMessage("Issuing save-off command");
+		$this->r->server->runConsoleCommand("save-off");
+	}
 	
      function configuration_files(){
         global $PATH;

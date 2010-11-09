@@ -21,12 +21,10 @@
 	$PATH['backups']	=   "/var/www/current/backups/"; //Path to Backups folder
 	//$PATH['backup_url'] =	"http://"
     
-    /* Methods for backup */
-
-    $Backup_Method      =   "node.js"; // node.js, backup.plugin
-    
 	/* General settings */
 	$GENERAL['memory']				=	"256M"; //memory to allocate for MC
+	$GENERAL['mapper_cmd']			=	"screen -dmS Mapper python gmap.py --cachedir /opt/cache/ /opt/world /var/www/map; find /opt/cache -name "*.png" -exec pngcrush {} {}.crush \; -exec mv {}.crush {} \;"; //Mapping program, needs to be installed. Valid options: c10t, minecraft-overviewer. for Minecraft-Overviewer, it is recommended that you set the cache directory to something other then world. You may also want to append this command to the end: find /path/to/destination -name "*.png" -exec pngcrush {} {}.crush \; -exec mv {}.crush {} \;
+	
     /*
         ADMIN LOGINS
         FORMAT, USERNAME=>SHA1(PASSWORD)

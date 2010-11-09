@@ -28,7 +28,6 @@ switch($_POST['act']){
 	break;
 	case "restart":
 	stop_server();
-	sleep(5);
 	shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 	echo "<div class='success' style='display:block;'>Restarted server!</div>";
 	break;

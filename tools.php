@@ -2,15 +2,11 @@
 require_once('header_inc.php');
 require_once('includes/header.php');
 //passthru('/usr/bin/python /opt/Minecraft-Overviewer/gmap.py /opt/world /var/www/map/');
-if($_GET['action'] == "saveall") {
-	$minecraft->save_all();
-} elseif($_GET['action'] == "saveoff") {
-	$minecraft->save_off();
-} elseif($_GET['action'] == "saveon") {
-	$minecraft->save_on();
-} elseif($_GET['action'] == "backup") {
+if($_GET['action'] == "backup") {
 	$minecraft->backup($_POST['backup_name'],$_POST['backup_comment']);
-}	
+} elseif($_GET['action'] == "dl") {
+	
+}
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -28,10 +24,6 @@ if($_GET['action'] == "saveall") {
 		<div id="backup_wrap">
 		<h1>Backups</h1>
 		<a href="#newbackup" id="addnew">new backup</a>
-		<a href="tools.php?action=saveall">save-all</a>
-		<a href="tools.php?action=saveoff">save-off</a>
-		<a href="tools.php?action=saveon">save-on</a>
-		<a href="tools.php?action=backup">test backup</a>
 		<div id="newbackup" style="display:none;margin: 15px 10px;">
 			<form action="tools.php?action=backup" method="post">
 				<label>Backup Name
