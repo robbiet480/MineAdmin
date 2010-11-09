@@ -17,6 +17,7 @@ body{
 	margin-left:-200px;
 	margin-top:-190px;
 	background: #fff;
+	display: none;
 }
 #login-form h1{
 	padding-top:13px;
@@ -24,8 +25,7 @@ body{
 	background: #972e2e url('../images/logo.png') no-repeat center;
 	font-size: 23px;
 	color:#fff;
-	padding-left:15px;
-	padding-right:10px;
+	padding-left:25px;
     margin-bottom: 14px;
 	float:left;
 	width: 375px;
