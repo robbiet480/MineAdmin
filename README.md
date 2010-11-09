@@ -14,6 +14,7 @@ Requirements
 * A LAMP (Linux, Apache, MySQL, PHP) server
 * PHP needs to have XML-RPC support. On Ubuntu (and maybe Debian) you can use the following command to install XML-RPC support:
 	sudo apt-get install php5-xmlrpc
+
 Installation
 ------------
 1.	Set up hey0. 
