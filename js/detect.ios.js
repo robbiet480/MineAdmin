@@ -6,6 +6,6 @@ if ( (navigator.userAgent.indexOf('iPad') != -1) ) {
 	link = document.createElement('link');
 	link.rel = "apple-touch-startup-image";
 	link.href = "images/ipad-startup,png"
-	document.getElementsByTagName('head').item(1).appendChild(link);
+	document.getElementsByTagName('head').item(0).appendChild(link);
 	$("input").append(' autocorrect="off" autocapitalize="off" ');
 }
