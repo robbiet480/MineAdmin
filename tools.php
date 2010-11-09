@@ -2,12 +2,38 @@
 require_once('header_inc.php');
 require_once('includes/header.php');
 $pageid = "tools";
-//passthru('/usr/bin/python /opt/Minecraft-Overviewer/gmap.py /opt/world /var/www/map/');
+function stop_server() {
+	shell_exec("screen -S Minecraft -p 0 -X stuff `printf 'stop.\r'`; sleep 5");
+}
 if($_GET['action'] == "backup") {
 	$minecraft->backup($_POST['backup_name'],$_POST['backup_comment']);
 } elseif($_GET['action'] == "dl") {
-	
+    $result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
+	$path = $PATH['backups'].$result['filename'];
+	if (file_exists($file)) {
+	    header('Content-Description: File Transfer');
+	    header('Content-Type: application/octet-stream');
+	    header('Content-Disposition: attachment; filename='.basename($path));
+	    header('Content-Transfer-Encoding: binary');
+	    header('Expires: 0');
+	    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+	    header('Pragma: public');
+	    header('Content-Length: ' . filesize($path));
+	    ob_clean();
+	    flush();
+	    readfile($path);
+	    exit;
+	}
+} elseif($_GET['action'] == "delete") {
+	backup_delete($_GET['id']);
+} elseif($_GET['action'] == "restore") {
+	$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
+	stop_server();
+	$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].' '.$PATH['backup'].$result['filename']);
+	shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
+	echo "<div class='success' style='display:block;'>Started server!</div>";
 }
+
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -54,7 +80,7 @@ if($_GET['action'] == "backup") {
 				<td><?php echo $backup['time']; ?></td>
 				<td><?php echo $backup['size']; ?></td>
 				<td><?php echo $backup['comment']; ?></td>
-				<td><img src="images/icons/database_save.png" alt="Download">&nbsp;<img src="images/icons/database_delete.png" alt="Delete">&nbsp;<img src="images/icons/database_go.png" alt="Restore">&nbsp;</td>
+				<td><a href="tools.php?action=dl&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_save.png" alt="Download"></a>&nbsp;<a href="tools.php?action=delete&id=<?php echo $backup['id']; ?><img src="images/icons/database_delete.png" alt="Delete"></a>&nbsp;<a href="tools.php?action=restore&id=<?php echo $backup['id']; ?><img src="images/icons/database_go.png" alt="Restore"></a>&nbsp;</td>
 			</tr>
 			<?php
 		}
