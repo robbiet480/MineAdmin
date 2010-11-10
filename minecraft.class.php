@@ -216,12 +216,27 @@ class minecraft{
         $result=$db->fetch_sql("SELECT * FROM `items` ORDER BY `name` DESC");
         return $result;
     }
+	function reserve_list(){
+        global $db;
+        $result=$db->fetch_sql("SELECT * FROM `reservelist`");
+        return $result;
+    }
     function server_test(){
         return $this->r->player->getInventory("Firestarthe");
     }
 	function white_list(){
 		global $db;
         $result=$db->fetch_sql("SELECT * FROM `whitelist`");
+        return $result;
+	}
+	function kit_list(){
+		global $db;
+        $result=$db->fetch_sql("SELECT * FROM `kits` ORDER BY `id` DESC");
+        return $result;
+	}
+	function warp_list(){
+		global $db;
+        $result=$db->fetch_sql("SELECT * FROM `warps` ORDER BY `id` DESC");
         return $result;
 	}
 }
