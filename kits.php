@@ -17,20 +17,31 @@ if($_GET['action'] == "dlkit") {
 	<div id="page_wrap">
 
 		<div id="add_kit">
-			<?php
-			foreach($items as $item) {
-			if(file_exists('images/'.$item['itemid'].'.png')) {
-				echo '<img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
-			} else {
-				echo '<img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" />';
-			}
-				echo '<input type="checkbox" name="item" value="'.$item['itemid'].'">';
-			}
-			?>		
+			<form action="kits.php?action=savekit" method="post">
+				<?php
+				foreach($items as $item) {
+				if(file_exists('images/'.$item['itemid'].'.png')) {
+					echo '<img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+				} else {
+					echo '<img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+				}
+					echo '<input type="checkbox" name="item" value="'.$item['itemid'].'">';
+				}
+				?>	
+				<br />	
+				<label>Kit Name
+				<input class="input_text" type="text" name="kit_name" style="width:200px;margin-left:10px" />
+				</label>
+				<label>Kit Group
+				<input class="input_text" type="text" name="kit_group" style="width:200px;margin-left:10px" />				
+				</label>
+				<span style="float:right;"><input class="button" type="submit" value="Save" /><input class="button" id="canceladd" type="button" value="Cancel" /></span>
+			</form>
 		</div>
 
 		<div id="kits">
 			<h1>Kits</h1>
+			<p><a class="button" href="javascript:void(0)" style="font-size:8px;color:#fff;" id="addnew">Add Kit</a></p><br /><br />
 			<table>
 				<th>Kit name</th>
 				<th>Kit items</th>
@@ -55,10 +66,15 @@ if($_GET['action'] == "dlkit") {
 			</table>
 		</div>
 
-		<div>
-			<form action="items.php" method="POST">
-			<input class="button" type="submit">
-			</form>
-		</div>
 	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('#addnew').click(function(){
+				$('#add_kit').slideDown();
+			});
+			$('#canceladd').click(function(){
+				$('#add_kit').slideUp();
+			});
+		});
+	</script>
 <?php require_once('includes/footer.php'); ?>

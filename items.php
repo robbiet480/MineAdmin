@@ -23,7 +23,7 @@ if(isset($_POST['item_name'])) {
 			?>
 			
 			<form action="items.php" method="POST">
-			<input class="button" style="margin-right: 72px;" type="submit">
+			<input class="button" style="margin-right: 72px;" type="submit" value="Save">
 			</form>
 		</div>
 		
