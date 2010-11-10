@@ -19,7 +19,11 @@ if($_GET['action'] == "dlkit") {
 		<div id="add_kit">
 			<?php
 			foreach($items as $item) {
+			if(file_exists($item['itemid'])) {
 				echo '<img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+			} else {
+				echo '<img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+			}
 				echo '<input type="checkbox" name="item" value="'.$item['itemid'].'">';
 			}
 			?>		
