@@ -48,7 +48,7 @@ require_once('includes/header.php');
                             }
                             ?>
                         </span>
-		</div>
+
 		<h1>Reserve List</h1>
 		<?php
 		$reserve = $minecraft->reserve_list();
@@ -85,7 +85,7 @@ require_once('includes/header.php');
 			echo "Warp group: ".$warp['group'].' <br />';
 		}
 		?>
-
+		</div>
 	</div>
         <script type="text/javascript">
 		$("body").ready(function(){
