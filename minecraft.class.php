@@ -71,6 +71,12 @@ class minecraft{
     function get_plugins(){
         return $this->r->server->getPlugins();
     }
+	function enable_plugin($plugin){
+		return $this->r->server->enablePlugin($plugin);
+	}
+	function disable_plugin($plugin){
+		return $this->r->server->disablePlugin($plugin);
+	}
     function user_get_id($id){
         global $db;
         $result=$db->fetch_sql("SELECT * FROM `users` WHERE `id`='".$id."'");
