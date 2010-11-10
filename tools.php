@@ -101,7 +101,8 @@ if($_GET['action'] == "backup") {
 	$reserve = $minecraft->reserve_list();
 	$i=0;
 	foreach ($reserve as $user) {
-		echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+		echo "<p>".$user['name']."</p><br />";
 	$i++;
 	}
 	?>
@@ -111,7 +112,8 @@ if($_GET['action'] == "backup") {
 	$white = $minecraft->white_list();
 	$i=0;
 	foreach ($white as $user) {
-		echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+		echo "<p>".$user['name']."</p><br />";
 	$i++;
 	}
 	?>
@@ -120,10 +122,9 @@ if($_GET['action'] == "backup") {
 	$kits = $minecraft->kit_list();
 	foreach ($kits as $kit) {
 		echo "Kit name: ".$kit['name'].' <br />';
-		//echo "Kit items: ".$kit['items'].' <br />';
 		$items = explode(",",$kit['items']);
-		foreach($items_out as &$item){
-			echo '<img src="images/"'.$item.'".png>';
+		foreach($items as &$item){   
+			echo '<img src="images/'.$item.'.png">';
 		}
 		echo "Kit group: ".$kit['group'].' <br />';
 	}
