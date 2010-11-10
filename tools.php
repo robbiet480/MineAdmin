@@ -143,29 +143,7 @@ if($_GET['action'] == "backup") {
 		}
 		?>
 		</table>
-		<h1>Kits List</h1>
-		<table>
-			<th>Kit name</th>
-			<th>Kit items</th>
-			<th>Kit group</th>
-			<th>Actions</th>
-		<?php
-		$kits = $minecraft->kit_list();
-		foreach ($kits as $kit) {
-			echo "<tr>";
-			echo "<td>".$kit['name'].'</td>';
-			echo "<td>";
-			$items = explode(",",$kit['items']);
-			foreach($items as &$item){   
-				echo '<img src="images/'.$item.'.png">';
-			}
-			echo "</td>";
-			echo "<td>".$kit['group'].'</td>';
-			echo "<td><a href='tools.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
-			echo "</tr>";
-		}
-		?>
-		</table>
+
 		<h1>Warp List</h1>
 		<table>
 			<th>Warp Name</th>

@@ -453,9 +453,18 @@ tr:hover{
 	margin-bottom:10px;
 }
 
+#add_kit{
+	
+}
+
+#kit {
+	float: right;
+	width: 400px;
+}
+
 #items {
 	width:400px;
-	margin-left:280px;
+	float: left;
 }
 
 #items img {

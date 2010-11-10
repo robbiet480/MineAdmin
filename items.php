@@ -11,16 +11,44 @@ if(isset($_POST['item_name'])) {
 
 	<div id="page_wrap">
 
-		<h1>Items</h1>
-		<div id="kits">
-		<?php
-		foreach($items as $item) {
-			echo '<img src="images/'.$item['itemid'].'.png" width="25px" height="25px" />';
-			echo '<input type="checkbox" name="item" value="'.$item['itemid'].'">';
-		}
-		?>
+		<div id="add_kit">
+			<?php
+			foreach($items as $item) {
+				echo '<img src="images/'.$item['itemid'].'.png" width="25px" height="25px" />';
+				echo '<input type="checkbox" name="item" value="'.$item['itemid'].'">';
+			}
+			?>		
 		</div>
+
+		<div id="kits">
+			<h1>Kits</h1>
+			<table>
+				<th>Kit name</th>
+				<th>Kit items</th>
+				<th>Kit group</th>
+				<th>Actions</th>
+			<?php
+			$kits = $minecraft->kit_list();
+			foreach ($kits as $kit) {
+				echo "<tr>";
+				echo "<td>".$kit['name'].'</td>';
+				echo "<td>";
+				$items = explode(",",$kit['items']);
+				foreach($items as &$item){   
+					echo '<img src="images/'.$item.'.png">';
+				}
+				echo "</td>";
+				echo "<td>".$kit['group'].'</td>';
+				echo "<td><a href='tools.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
+				echo "</tr>";
+			}
+			?>
+			</table>
+		</div>
+		
         <div id="items">
+    		<h1>Items</h1>
+    		
 			<?php
 			foreach ($items as $item) {
 				echo '<label style="clear:both;"><span><img src="images/'.$item['itemid'].'.png" width="25px" height="25px" /><input type="text" disabled="disabled" class="item_id" name="id_'.$item['itemid'].'" value="'.$item['itemid'].'" />';
