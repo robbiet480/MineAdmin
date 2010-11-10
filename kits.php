@@ -31,7 +31,7 @@ if($_GET['action'] == "dlkit") {
 				?>	
 				<br />	
 				<label>Kit Name
-				<input class="input_text" type="text" name="kit_name" style="width:200px;margin-left:10px" />
+				<input class="input_text" type="text" name="kit_name" style="width:200px;margin-right:10px" />
 				</label>
 				<label>Group
 				<select class="input_text" name="kit_group" style="width:100px;margin-left:10px">
@@ -40,11 +40,10 @@ if($_GET['action'] == "dlkit") {
 					echo "<option value='".$groups['name']."'>".$groups['name']."</option>";
 				}
 				?>
-					<!-- Replace this line with <option> echos -->
 				</select>			
 				</label>
 				<label>Delay
-				<select class="input_text" name="kit_delay" style="width:50px;margin-left:10px">	
+				<select class="input_text" name="kit_delay" style="width:90px;margin-right:10px">	
 					<option value="-1">Once</option>
 					<option value="6000">5m</option>
 					<option value="18000">15m</option>
