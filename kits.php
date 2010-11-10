@@ -41,7 +41,7 @@ if($_GET['action'] == "dlkit") {
 
 		<div id="kits">
 			<h1>Kits</h1>
-			<p><a class="button" href="javascript:void(0)" style="font-size:8px;color:#fff;" id="addnew">Add Kit</a></p><br /><br />
+			<p><a class="btn" href="javascript:void(0)" style="font-size:10px;color:#fff;" id="addnew">Add Kit</a></p><br /><br />
 			<table>
 				<th>Kit name</th>
 				<th>Kit items</th>

@@ -469,15 +469,15 @@ tr:hover{
 #add_kit{
 	margin-bottom: 50px;
 	padding-left: 10px;
-	display: none;
+	display: none; 
 }
 
-#kit {
+#kits {
 	float: right;
 	width: 400px;
 }
 
-#kit table {
+#kits table {
 	margin-left: 10px;
 }
 
