@@ -6,6 +6,9 @@ if($_GET['action'] == "enable") {
 	$minecraft->enable_plugin($_GET['id']);
 	echo "<div class='success' style='display:block;'>Enabled ".$_GET['id']."</div>";
 } elseif($_GET['action'] == "disable") {
+	if($_GET['id'] == "CraftAPI") {
+		die("You can NOT disable CraftAPI. Try again!");
+	}
 	$minecraft->disable_plugin($_GET['id']);
 	echo "<div class='success' style='display:block;'>Disabled ".$_GET['id']."</div>";
 }
@@ -18,7 +21,11 @@ if($_GET['action'] == "enable") {
 		<?php foreach ($minecraft->get_plugins() as $plugin) {
 			if($plugin['enabled'] == "1") {
 				$img = "<img src='images/icons/accept.png'>";
+				if($plugin['id'] == "CraftAPI") {
+					$url = "<p>You can not disable CraftAPI</p>";
+				} else {
 				$url = "<a href='plugins.php?action=disable&id=".$plugin['id']."'>Disable Plugin</a>";
+			}
 			} else {
 				$img = "<img src='images/icons/cross.png'>";
 				$url = "<a href='plugins.php?action=enable&id=".$plugin['id']."'>Enable Plugin</a>";
