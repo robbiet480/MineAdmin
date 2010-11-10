@@ -33,9 +33,21 @@ if($_GET['action'] == "dlkit") {
 				<label>Kit Name
 				<input class="input_text" type="text" name="kit_name" style="width:200px;margin-left:10px" />
 				</label>
-				<label>Kit Group
-				<input class="input_text" type="text" name="kit_group" style="width:200px;margin-left:10px" />				
+				<label>Group
+				<select class="input_text" name="kit_group" style="width:100px;margin-left:10px">	
+					<!-- Replace this line with <option> echos -->
+				</select>			
 				</label>
+				<label>Delay
+				<select class="input_text" name="kit_delay" style="width:50px;margin-left:10px">	
+					<option value="-1">Once</option>
+					<option value="6000">5m</option>
+					<option value="18000">15m</option>
+					<option value="36000">30m</option>
+					<option value="54000">45m</option>
+					<option value="72000">60m</option>
+				</select>			
+				</label>				
 				<span style="float:right;"><input class="button" type="submit" value="Save" /><input class="button" id="canceladd" type="button" value="Cancel" /></span>
 			</form>
 		</div>
