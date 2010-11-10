@@ -18,14 +18,16 @@ if($_GET['action'] == "dlkit") {
 
 		<div id="add_kit">
 			<form action="kits.php?action=savekit" method="post">
+			<h3>Pick the items you'd like in your kit.</h3>
 				<?php
 				foreach($items as $item) {
+					echo '<span><input type="checkbox" name="item" value="'.$item['itemid'].'">';				
 				if(file_exists('images/'.$item['itemid'].'.png')) {
-					echo '<img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+					echo '<img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" /></span>';
 				} else {
-					echo '<img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+					echo '<img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" /></span>';
 				}
-					echo '<input type="checkbox" name="item" value="'.$item['itemid'].'">';
+
 				}
 				?>	
 				<br />	
