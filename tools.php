@@ -108,82 +108,80 @@ if($_GET['action'] == "backup") {
 			<p>You can access your map at xxxxxxx.minecraftservers.com/map/</p>
 			<p><a href="#">Start a new map job</a></p>
 		</div>
-	<form action="#" method="POST">
-	<input type="submit">
-	</form>
-	<h1>Reserve List</h1>
-	<table>
-		<th>Username</th>
-		<th>Actions</th>
-	<?php
-	$reserve = $minecraft->reserve_list();
-	$i=0;
-	foreach ($reserve as $user) {
-		echo "<tr>";
-		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-		echo "<td>".$user['name']."</td>";
-		echo "<td><a href='tools.php?action=dlrl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
-		echo "</tr>";
-	$i++;
-	}
-	?>
-	</table>
-	<h1>White List</h1>
-	<table>
-		<th>Username</th>
-		<th>Actions</th>
-	<?php
-	$white = $minecraft->white_list();
-	$i=0;
-	foreach ($white as $user) {
-		echo "<tr>";
-		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-		echo "<td>".$user['name']."</td>";
-		echo "<td><a href='tools.php?action=dlwl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
-		echo "</tr>";
-	$i++;
-	}
-	?>
-	</table>
-	<h1>Kits List</h1>
-	<table>
-		<th>Kit name</th>
-		<th>Kit items</th>
-		<th>Kit group</th>
-		<th>Actions</th>
-	<?php
-	$kits = $minecraft->kit_list();
-	foreach ($kits as $kit) {
-		echo "<tr>";
-		echo "<td>".$kit['name'].'</td>';
-		echo "<td>";
-		$items = explode(",",$kit['items']);
-		foreach($items as &$item){   
-			echo '<img src="images/'.$item.'.png">';
+		
+		<h1>Reserve List</h1>
+		<table>
+			<th>Username</th>
+			<th>Actions</th>
+		<?php
+		$reserve = $minecraft->reserve_list();
+		$i=0;
+		foreach ($reserve as $user) {
+			echo "<tr>";
+			//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+			echo "<td>".$user['name']."</td>";
+			echo "<td><a href='tools.php?action=dlrl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
+			echo "</tr>";
+		$i++;
 		}
-		echo "</td>";
-		echo "<td>".$kit['group'].'</td>';
-		echo "<td><a href='tools.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
-		echo "</tr>";
-	}
-	?>
-	</table>
-	<h1>Warp List</h1>
-	<table>
-		<th>Warp Name</th>
-		<th>Warp Group</th>
-		<th>Actions</th>
-	<?php
-	$warps = $minecraft->warp_list();
-	foreach ($warps as $warp) {
-		echo "<tr>";
-		echo "<td>".$warp['name'].'</td>';
-		echo "<td>".$warp['group'].'</td>';
-		echo "<td><a href='tools.php?action=dlwarp&id=".$warp['id']."'><img src='images/icons/delete.png'></a></td>";
-		echo "</tr>";
-	}
-	?>
-	</table>
+		?>
+		</table>
+		<h1>White List</h1>
+		<table>
+			<th>Username</th>
+			<th>Actions</th>
+		<?php
+		$white = $minecraft->white_list();
+		$i=0;
+		foreach ($white as $user) {
+			echo "<tr>";
+			//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+			echo "<td>".$user['name']."</td>";
+			echo "<td><a href='tools.php?action=dlwl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
+			echo "</tr>";
+		$i++;
+		}
+		?>
+		</table>
+		<h1>Kits List</h1>
+		<table>
+			<th>Kit name</th>
+			<th>Kit items</th>
+			<th>Kit group</th>
+			<th>Actions</th>
+		<?php
+		$kits = $minecraft->kit_list();
+		foreach ($kits as $kit) {
+			echo "<tr>";
+			echo "<td>".$kit['name'].'</td>';
+			echo "<td>";
+			$items = explode(",",$kit['items']);
+			foreach($items as &$item){   
+				echo '<img src="images/'.$item.'.png">';
+			}
+			echo "</td>";
+			echo "<td>".$kit['group'].'</td>';
+			echo "<td><a href='tools.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
+			echo "</tr>";
+		}
+		?>
+		</table>
+		<h1>Warp List</h1>
+		<table>
+			<th>Warp Name</th>
+			<th>Warp Group</th>
+			<th>Actions</th>
+		<?php
+		$warps = $minecraft->warp_list();
+		foreach ($warps as $warp) {
+			echo "<tr>";
+			echo "<td>".$warp['name'].'</td>';
+			echo "<td>".$warp['group'].'</td>';
+			echo "<td><a href='tools.php?action=dlwarp&id=".$warp['id']."'><img src='images/icons/delete.png'></a></td>";
+			echo "</tr>";
+		}
+		?>
+		</table>
 	</div>
 	<script type="text/javascript">
 		$(function(){
