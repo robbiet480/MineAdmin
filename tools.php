@@ -93,7 +93,18 @@ if($_GET['action'] == "backup") {
 			<p>You can access your map at xxxxxxx.minecraftservers.com/map/</p>
 			<p><a href="#">Start a new map job</a></p>
 		</div>
-	<?php print_r($minecraft->item_list); ?>
+	<form action="#" method="POST">
+	<?php
+	$items = $minecraft->item_list();
+	$i=0;
+	foreach ($items as $item) {
+		echo '<input type="text" name="id_'.$i.'" value="'.$item['id'].'" <br />';
+		echo '<input type="text" name="name_'.$i.'" value="'.$item['name'].'" <br />';
+	$i++;
+	}
+	?>
+	<input type="submit">
+	</form>
 	</div>
 	<script type="text/javascript">
 		$(function(){
