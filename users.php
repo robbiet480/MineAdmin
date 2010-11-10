@@ -15,7 +15,7 @@ require_once('includes/header.php');
 			<span id="inventory"></span>
 			<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
 		</div>
-<hr />
+
 			<h1>User List</h1>
                         <div class="give_link"><span style="height:19px;float:left;text-align:left;margin-top:10px;"><a href="add_user.php" class="link_give fancy">&lsaquo; Add &rsaquo;</a></span></div>
 			<span id="online">
