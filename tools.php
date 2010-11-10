@@ -53,9 +53,9 @@ if($_GET['action'] == "backup") {
         <div class="warning">Warning message</div>
         <div class="error">Error message</div>
 
-		<div id="actions">
+		<!--<div id="actions">
 			<p><a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a></p>&nbsp;
-		</div>
+		</div>-->
 		<div id="backup_wrap">
 		<h1>Backups</h1>
 		<a href="javascript:void(0)" id="addnew"><img src="images/icons/database_add.png" alt="New Backup">New Backup</a>
