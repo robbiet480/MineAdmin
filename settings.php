@@ -5,8 +5,6 @@ if($_GET['save']=="1"){
     $minecraft->configuration($_POST);
 }
 $config=$minecraft->configuration_files();
-//echo "Coming soon....";
-//exit;
 require_once('includes/header.php');
 ?>
 	<div id="page_wrap">

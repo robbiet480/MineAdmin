@@ -5,6 +5,18 @@ require_once('includes/header.php');
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
+					<h1>Who's Online</h1>
+					<span id="online"></span>
+				</div>
+				<div id="inventory_wrap" style="display:none;">
+					<h1><span id="user"></span>'s Inventory</h1>
+					<div class="give_link"><span style="float:left;text-align:left;margin-top:10px;"><a href="javascript:clear_inv();" class="link_give">&lsaquo; Clear Inventory &rsaquo;</a></span><span style="float:right;text-align:right;"><label><span>Item Name</span><input type="text" id="item_complete" /></label> <label><span>Amount</span><input type="text" id="item_amount" /></label> <a href="javascript:give_item();" class="link_give">&lsaquo; Give Item &rsaquo;</a></span></div>
+					<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
+					<span id="inventory"></span>
+					<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
+				</div>
+			</div>
+			<hr />
 			<h1>User List</h1>
                         <div class="give_link"><span style="height:19px;float:left;text-align:left;margin-top:10px;"><a href="add_user.php" class="link_give fancy">&lsaquo; Add &rsaquo;</a></span></div>
 			<span id="online">
@@ -42,6 +54,9 @@ require_once('includes/header.php');
         <script type="text/javascript">
 		$("body").ready(function(){
 			$(".fancy").fancybox();
+		});
+		$("body").ready(function(){
+			get_player_list();
 		});
 	</script> 
 <?php require_once('includes/footer.php'); ?>
