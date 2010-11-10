@@ -168,7 +168,7 @@ class minecraft{
         $file_array=array();
         if ($handle = opendir($PATH['minecraft'])) {
             while (false !== ($file = readdir($handle))) {
-                if ($file != "." && $file != ".." && $file != "mysql.properties" && $file != "craftapi.properties") {
+                if ($file != "." && $file != ".." && $file != "mysql.properties" && $file != "craftapi.properties" ) {
                     $file_out=preg_split('/\./si', $file);
                     if($file_out[1]=="properties"){
                         $filename = $PATH['minecraft'].$file_out[0].".properties";
@@ -238,6 +238,30 @@ class minecraft{
 		global $db;
         $result=$db->fetch_sql("SELECT * FROM `warps` ORDER BY `id` DESC");
         return $result;
+	}
+	function reload_bans(){
+		return $this->r->server->reloadBanList();
+	}
+	function reload_groups(){
+		return $this->r->server->reloadGroups();
+	}
+	function reload_homes(){
+		return $this->r->server->reloadHomes();
+	}
+	function reload_kits(){
+		return $this->r->server->reloadKits();
+	}
+	function reload_reservelist(){
+		return $this->r->server->reloadReserveList();
+	}
+	function reload_warps(){
+		return $this->r->server->reloadWarps();
+	}
+	function reload_whitelist(){
+		return $this->r->server->reloadWhitelist();
+	}
+	function run_console($command){
+		return $this->r->server->runConsoleCommand($command);
 	}
 }
 ?>

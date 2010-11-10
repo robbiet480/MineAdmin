@@ -32,8 +32,23 @@ if($_GET['action'] == "backup") {
 	$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].'.. '.$result[0]['filename']);
 	shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 	echo "<div class='success' style='display:block;'>Restored backup!</div>";
+} elseif($_GET['action'] == "dlrl") {
+	$result=$db->delete("reservelist", array("name"=>$_GET['name']));
+	$minecraft->reload_reservelist();
+	echo "<div class='success' style='display:block;'>Removed ".$_GET['name']." from the reservelist</div>";
+} elseif($_GET['action'] == "dlwl") {
+	$result=$db->delete("reservelist", array("name"=>$_GET['name']));
+	$minecraft->reload_whitelist();
+	echo "<div class='success' style='display:block;'>Removed ".$_GET['name']." from the reservelist</div>";
+} elseif($_GET['action'] == "dlkit") {
+	$result=$db->delete("kits", array("id"=>$_GET['id']));
+	$minecraft->reload_kits();
+	echo "<div class='success' style='display:block;'>Removed ".$_GET['id']." from kits</div>";
+} elseif($_GET['action'] == "dlwarp") {
+	$result=$db->delete("warps", array("id"=>$_GET['id']));
+	$minecraft->reload_warps();
+	echo "<div class='success' style='display:block;'>Removed ".$_GET['id']." from warps</div>";
 }
-
 ?>
 	<div id="page_wrap">
 		<div id="online_wrap">
@@ -99,6 +114,7 @@ if($_GET['action'] == "backup") {
 	<h1>Reserve List</h1>
 	<table>
 		<th>Username</th>
+		<th>Actions</th>
 	<?php
 	$reserve = $minecraft->reserve_list();
 	$i=0;
@@ -115,6 +131,7 @@ if($_GET['action'] == "backup") {
 	<h1>White List</h1>
 	<table>
 		<th>Username</th>
+		<th>Actions</th>
 	<?php
 	$white = $minecraft->white_list();
 	$i=0;
@@ -133,6 +150,7 @@ if($_GET['action'] == "backup") {
 		<th>Kit name</th>
 		<th>Kit items</th>
 		<th>Kit group</th>
+		<th>Actions</th>
 	<?php
 	$kits = $minecraft->kit_list();
 	foreach ($kits as $kit) {
@@ -145,7 +163,7 @@ if($_GET['action'] == "backup") {
 		}
 		echo "</td>";
 		echo "<td>".$kit['group'].'</td>';
-		echo "<td><a href='tools.php?action=dlkit&name=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
+		echo "<td><a href='tools.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
 		echo "</tr>";
 	}
 	?>
@@ -154,13 +172,14 @@ if($_GET['action'] == "backup") {
 	<table>
 		<th>Warp Name</th>
 		<th>Warp Group</th>
+		<th>Actions</th>
 	<?php
 	$warps = $minecraft->warp_list();
 	foreach ($warps as $warp) {
 		echo "<tr>";
 		echo "<td>".$warp['name'].'</td>';
 		echo "<td>".$warp['group'].'</td>';
-		echo "<td><a href='tools.php?action=dlwarp&name=".$warp['id']."'><img src='images/icons/delete.png'></a></td>";
+		echo "<td><a href='tools.php?action=dlwarp&id=".$warp['id']."'><img src='images/icons/delete.png'></a></td>";
 		echo "</tr>";
 	}
 	?>
