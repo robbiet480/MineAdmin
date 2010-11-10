@@ -106,6 +106,7 @@ if($_GET['action'] == "backup") {
 		echo "<tr>";
 		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
 		echo "<td>".$user['name']."</td>";
+		echo "<td><a href='tools.php?action=dlrl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
 		echo "</tr>";
 	$i++;
 	}
@@ -121,6 +122,7 @@ if($_GET['action'] == "backup") {
 		echo "<tr>";
 		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
 		echo "<td>".$user['name']."</td>";
+		echo "<td><a href='tools.php?action=dlwl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
 		echo "</tr>";
 	$i++;
 	}
@@ -143,6 +145,7 @@ if($_GET['action'] == "backup") {
 		}
 		echo "</td>";
 		echo "<td>".$kit['group'].'</td>';
+		echo "<td><a href='tools.php?action=dlkit&name=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
 		echo "</tr>";
 	}
 	?>
@@ -157,6 +160,7 @@ if($_GET['action'] == "backup") {
 		echo "<tr>";
 		echo "<td>".$warp['name'].'</td>';
 		echo "<td>".$warp['group'].'</td>';
+		echo "<td><a href='tools.php?action=dlwarp&name=".$warp['id']."'><img src='images/icons/delete.png'></a></td>";
 		echo "</tr>";
 	}
 	?>
