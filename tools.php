@@ -97,6 +97,7 @@ if($_GET['action'] == "backup") {
 	<?php
 	$items = $minecraft->item_list();
 	foreach ($items as $item) {
+		echo '<img src="images/'.$item['itemid'].'.png">';
 		echo '<input type="text" name="id_'.$item['itemid'].'" value="'.$item['itemid'].'" <br />';
 		echo '<input type="text" name="name_'.$item['itemid'].'" value="'.$item['name'].'" <br /><br />';
 	}
