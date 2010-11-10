@@ -414,6 +414,56 @@ tr:hover{
 
 /******************************
 
+	Items
+	
+******************************/
+
+.item_id{
+	border-left:#f0f0f0 1px solid;
+	display:inline;
+	padding:3px;
+	padding-left:6px;
+	font-size:18px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	width:50px;
+	letter-spacing: 2px;
+	color:#000;
+	border-radius: 6px;
+	border:1px solid #e3e3e3;
+	background:#f6f6f6;
+	margin-left: 10px;
+	margin-bottom:10px;
+}
+.item_name{
+	border-left:#f0f0f0 1px solid;
+	display:inline;
+	padding:3px;
+	padding-left:6px;
+	font-size:18px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	width:200px;
+	letter-spacing: 2px;
+	color:#000;
+	border-radius: 6px;
+	border:1px solid #e3e3e3;
+	background:#f6f6f6;
+	margin-left: 10px;
+	margin-bottom:10px;
+}
+
+#items {
+	width:400px;
+	margin-left:280px;
+}
+
+#items img {
+	vertical-align: middle;
+}
+
+/******************************
+
 	Footer
 	
 ******************************/
