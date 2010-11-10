@@ -40,10 +40,6 @@ if($_GET['action'] == "backup") {
 	$result=$db->delete("reservelist", array("name"=>$_GET['name']));
 	$minecraft->reload_whitelist();
 	echo "<div class='success' style='display:block;'>Removed ".$_GET['name']." from the reservelist</div>";
-} elseif($_GET['action'] == "dlkit") {
-	$result=$db->delete("kits", array("id"=>$_GET['id']));
-	$minecraft->reload_kits();
-	echo "<div class='success' style='display:block;'>Removed ".$_GET['id']." from kits</div>";
 } elseif($_GET['action'] == "dlwarp") {
 	$result=$db->delete("warps", array("id"=>$_GET['id']));
 	$minecraft->reload_warps();

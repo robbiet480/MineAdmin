@@ -7,6 +7,11 @@ if(isset($_POST['item_name'])) {
 	global $db;
 	$result=$db->set('items',array('name'=>$_POST['item_name']),array('id'=>$_POST['id']));
 }
+if($_GET['action'] == "dlkit") {
+	$result=$db->delete("kits", array("id"=>$_GET['id']));
+	$minecraft->reload_kits();
+	echo "<div class='success' style='display:block;'>Removed ".$_GET['id']." from kits</div>";
+}
 ?>
 
 	<div id="page_wrap">
