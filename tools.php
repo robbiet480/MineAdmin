@@ -47,15 +47,12 @@ if($_GET['action'] == "backup") {
 }
 ?>
 	<div id="page_wrap">
-		<div id="online_wrap">
-			<h1>Tools</h1>
-			<span id="online"></span>
-			
-		</div>
+	
 		<div class="info">Info message</div>
-		        <div class="success">Successful operation message</div>
-		        <div class="warning">Warning message</div>
-		        <div class="error">Error message</div>
+        <div class="success">Successful operation message</div>
+        <div class="warning">Warning message</div>
+        <div class="error">Error message</div>
+
 		<div id="actions">
 			<p><a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a></p>&nbsp;
 		</div>
