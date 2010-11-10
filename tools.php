@@ -97,46 +97,62 @@ if($_GET['action'] == "backup") {
 	<input type="submit">
 	</form>
 	<h1>Reserve List</h1>
+	<table>
+		<th>Username</th>
 	<?php
 	$reserve = $minecraft->reserve_list();
 	$i=0;
 	foreach ($reserve as $user) {
 		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-		echo "<p>".$user['name']."</p><br />";
+		echo "<tr>".$user['name']."</tr>";
 	$i++;
 	}
 	?>
-	<br>
+	</table>
 	<h1>White List</h1>
+	<table>
+		<th>Username</th>
 	<?php
 	$white = $minecraft->white_list();
 	$i=0;
 	foreach ($white as $user) {
 		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-		echo "<p>".$user['name']."</p><br />";
+		echo "<tr>".$user['name']."</tr>";
 	$i++;
 	}
 	?>
+	</table>
 	<h1>Kits List</h1>
+	<table>
+		<th>Kit name</th>
+		<th>Kit items</th>
+		<th>Kit group</th>
 	<?php
 	$kits = $minecraft->kit_list();
 	foreach ($kits as $kit) {
-		echo "Kit name: ".$kit['name'].' <br />';
+		echo "<tr>".$kit['name'].'</tr>';
+		echo "<tr>";
 		$items = explode(",",$kit['items']);
 		foreach($items as &$item){   
 			echo '<img src="images/'.$item.'.png">';
 		}
-		echo "Kit group: ".$kit['group'].' <br />';
+		echo "</tr>";
+		echo "<tr>".$kit['group'].'</tr>';
 	}
 	?>
+	</table>
 	<h1>Warp List</h1>
+	<table>
+		<th>Warp Name</th>
+		<th>Warp Group</th>
 	<?php
 	$warps = $minecraft->warp_list();
 	foreach ($warps as $warp) {
-		echo "Warp name: ".$warp['name'].' <br />';
-		echo "Warp group: ".$warp['group'].' <br />';
+		echo "<tr>".$warp['name'].'</tr>';
+		echo "<tr>".$warp['group'].'</tr>';
 	}
 	?>
+	</table>
 	</div>
 	<script type="text/javascript">
 		$(function(){
