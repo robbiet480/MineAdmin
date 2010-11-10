@@ -94,6 +94,42 @@ if($_GET['action'] == "backup") {
 			<p><a href="#">Start a new map job</a></p>
 		</div>
 	<form action="#" method="POST">
+		<h1>Reserve List</h1>
+		<?php
+		$reserve = $minecraft->reserve_list();
+		$i=0;
+		foreach ($reserve as $user) {
+			echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+		$i++;
+		}
+		?>
+		<br>
+		<h1>White List</h1>
+		<?php
+		$white = $minecraft->white_list();
+		$i=0;
+		foreach ($white as $user) {
+			echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+		$i++;
+		}
+		?>
+		<h1>Kits List</h1>
+		<?php
+		$kits = $minecraft->kit_list();
+		foreach ($kits as $kit) {
+			echo "Kit name: ".$kit['name'].' <br />';
+			echo "Kit items: ".$kit['items'].' <br />';
+			echo "Kit group: ".$kit['group'].' <br />';
+		}
+		?>
+		<h1>Warp List</h1>
+		<?php
+		$warps = $minecraft->warp_list();
+		foreach ($warps as $warp) {
+			echo "Warp name: ".$warp['name'].' <br />';
+			echo "Warp group: ".$warp['group'].' <br />';
+		}
+		?>
 	<input type="submit">
 	</form>
 	</div>
