@@ -47,6 +47,7 @@ if(count($pid)==1) {
 			<li><a href="plugins.php" <?php if ($pageid=="plugins") { echo " class=\"menu_active\""; } else { echo ""; }?>>Plugins</a></li>
 			<li><a href="groups.php" <?php if ($pageid=="groups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Groups</a></li>
 			<li><a href="users.php" <?php if ($pageid=="users") { echo " class=\"menu_active\""; } else { echo ""; }?>>Users</a></li>
+			<li><a href="items.php" <?php if ($pageid=="items") { echo " class=\"menu_active\""; } else { echo ""; }?>>Items</a></li>
 			<li><a href="news.php" <?php if ($pageid=="news") { echo " class=\"menu_active\""; } else { echo ""; }?>>News</a></li>
 			<li><a href="start.php" <?php if ($pageid=="start") { echo " class=\"menu_active\""; } else { echo ""; }?>>Home</a></li>
 		</ul>
