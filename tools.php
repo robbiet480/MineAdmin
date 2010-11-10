@@ -93,6 +93,7 @@ if($_GET['action'] == "backup") {
 			<p>You can access your map at xxxxxxx.minecraftservers.com/map/</p>
 			<p><a href="#">Start a new map job</a></p>
 		</div>
+	<?php print_r($minecraft->item_list); ?>
 	</div>
 	<script type="text/javascript">
 		$(function(){
