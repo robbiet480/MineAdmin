@@ -14,8 +14,8 @@ if($_GET['action'] == "enable") {
 }
 ?>
 <div class='info' style='display:inline;'>You can add plugins for hey0 by contacting support. We hope to fix this in the *very* near future.</div>
-	<div id="page_wrap">
-		<table>
+	<div id="page_wrap" style="text-align: center;">
+		<table style="margin-left: auto;margin-right:auto;">
 			<th>Name</th>
 			<th>Status</th>
 			<th>Actions</th>
