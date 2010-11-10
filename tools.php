@@ -121,7 +121,7 @@ if($_GET['action'] == "backup") {
 	foreach ($kits as $kit) {
 		echo "Kit name: ".$kit['name'].' <br />';
 		//echo "Kit items: ".$kit['items'].' <br />';
-		$items = explode(",",$items_out);
+		$items = explode(",",$kit['items']);
 		foreach($items_out as &$item){
 			echo '<img src="images/"'.$item.'".png>';
 		}
