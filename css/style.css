@@ -14,14 +14,14 @@ body{
 	height:100%;
 	background:#ebebeb;
 }
-a{
+a {
 	color:#000;
 	text-decoration: none;
 }
-img{
+img {
 	border:none;
 }
-p{
+p {
 	margin-left: 10px;
 }
 .info, .success, .warning, .error, .validation {
@@ -58,6 +58,19 @@ p{
     display: none;
 }
 
+.btn{
+	margin-left:20px;
+	border:1px solid #144564;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	color:#fff;
+	float: left;
+	padding:7px;
+	padding-left:15px;
+	padding-right:15px;
+	cursor:pointer;
+	background: #144564;
+}
 
 /******************************
 

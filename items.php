@@ -16,41 +16,6 @@ if($_GET['action'] == "dlkit") {
 
 	<div id="page_wrap">
 
-		<div id="add_kit">
-			<?php
-			foreach($items as $item) {
-				echo '<img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
-				echo '<input type="checkbox" name="item" value="'.$item['itemid'].'">';
-			}
-			?>		
-		</div>
-
-		<div id="kits">
-			<h1>Kits</h1>
-			<table>
-				<th>Kit name</th>
-				<th>Kit items</th>
-				<th>Kit group</th>
-				<th>Actions</th>
-			<?php
-			$kits = $minecraft->kit_list();
-			foreach ($kits as $kit) {
-				echo "<tr>";
-				echo "<td>".$kit['name'].'</td>';
-				echo "<td>";
-				$items = explode(",",$kit['items']);
-				foreach($items as &$item){   
-					echo '<img src="images/'.$item.'.png">';
-				}
-				echo "</td>";
-				echo "<td>".$kit['group'].'</td>';
-				echo "<td><a href='tools.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
-				echo "</tr>";
-			}
-			?>
-			</table>
-		</div>
-		
         <div id="items">
     		<h1>Items</h1>
     		
@@ -65,8 +30,9 @@ if($_GET['action'] == "dlkit") {
 			
 		<div>
 			<form action="items.php" method="POST">
-			<input class="button" type="submit">
+			<input class="btn" type="submit">
 			</form>
 		</div>
+		
 	</div>
 <?php require_once('includes/footer.php'); ?>
