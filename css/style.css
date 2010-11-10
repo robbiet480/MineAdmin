@@ -482,6 +482,9 @@ tr:hover{
 
 #kits table {
 	margin-left: 10px;
+	width: 97%;
+	text-align: left;
+	border-collapse: collapse;
 }
 
 #items {
