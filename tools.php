@@ -103,8 +103,10 @@ if($_GET['action'] == "backup") {
 	$reserve = $minecraft->reserve_list();
 	$i=0;
 	foreach ($reserve as $user) {
+		echo "<tr>";
 		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-		echo "<tr>".$user['name']."</tr>";
+		echo "<td>".$user['name']."</td>";
+		echo "</tr>";
 	$i++;
 	}
 	?>
@@ -116,8 +118,10 @@ if($_GET['action'] == "backup") {
 	$white = $minecraft->white_list();
 	$i=0;
 	foreach ($white as $user) {
+		echo "<tr>";
 		//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-		echo "<tr>".$user['name']."</tr>";
+		echo "<td>".$user['name']."</td>";
+		echo "</tr>";
 	$i++;
 	}
 	?>
@@ -130,14 +134,16 @@ if($_GET['action'] == "backup") {
 	<?php
 	$kits = $minecraft->kit_list();
 	foreach ($kits as $kit) {
-		echo "<tr>".$kit['name'].'</tr>';
 		echo "<tr>";
+		echo "<td>".$kit['name'].'</td>';
+		echo "<td>";
 		$items = explode(",",$kit['items']);
 		foreach($items as &$item){   
 			echo '<img src="images/'.$item.'.png">';
 		}
+		echo "</td>";
+		echo "<td>".$kit['group'].'</td>';
 		echo "</tr>";
-		echo "<tr>".$kit['group'].'</tr>';
 	}
 	?>
 	</table>
@@ -148,8 +154,10 @@ if($_GET['action'] == "backup") {
 	<?php
 	$warps = $minecraft->warp_list();
 	foreach ($warps as $warp) {
-		echo "<tr>".$warp['name'].'</tr>';
-		echo "<tr>".$warp['group'].'</tr>';
+		echo "<tr>";
+		echo "<td>".$warp['name'].'</td>';
+		echo "<td>".$warp['group'].'</td>';
+		echo "</tr>";
 	}
 	?>
 	</table>
