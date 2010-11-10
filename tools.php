@@ -98,8 +98,8 @@ if($_GET['action'] == "backup") {
 	$items = $minecraft->item_list();
 	$i=0;
 	foreach ($items as $item) {
-		echo '<input type="text" name="id_'.$i.'" value="'.$item['id'].'" <br />';
-		echo '<input type="text" name="name_'.$i.'" value="'.$item['name'].'" <br />';
+		echo '<input type="text" name="id_'.$i.'" value="'.$item['itemid'].'" <br />';
+		echo '<input type="text" name="name_'.$i.'" value="'.$item['name'].'" <br /><br />';
 	$i++;
 	}
 	?>

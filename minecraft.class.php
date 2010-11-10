@@ -213,7 +213,7 @@ class minecraft{
     
     function item_list(){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `items`");
+        $result=$db->fetch_sql("SELECT * FROM `items` ORDER BY `name` DESC");
         return $result;
     }
     function server_test(){
