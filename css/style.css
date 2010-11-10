@@ -472,7 +472,12 @@ tr:hover{
 	display: none; 
 }
 
-#kits {
+#add_kit span {
+	padding: 5px;
+}
+
+#kits a {
+	margin-left: 0;
 }
 
 #kits table {
