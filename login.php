@@ -22,7 +22,7 @@
 		<form action="javascript:login();" method="post">
 			<div id="login_form_i">
 				<h1>MCSAdmin</h1>
-				<label><span>Username</span><input type="text" name="user" id="user" /></label><br />
+				<label><span>Username</span><input type="text" name="user" id="user" class="autofocus" /></label><br />
 				<label><span>Password</span><input type="password" name="pass" id="pass" /></label><br />
 				<input type="submit" value="Login">
 			</div>
