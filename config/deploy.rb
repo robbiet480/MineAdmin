@@ -7,7 +7,6 @@ set :deploy_to, "/var/www/"
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
 set :scm, :git
-set :git_enable_submodules, 1
 role :app, "67.228.153.12"
 role :web, "67.228.153.12"
 set :use_sudo, false
