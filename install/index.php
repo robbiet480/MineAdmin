@@ -7,7 +7,7 @@
 	<title>MinecraftServers SuperFantabolous Installer!</title>
 	<style type="text/css">
 	body {
-		background: #FFF url('../images/bg-tile.png') repeat;
+		background: #FFF url('ui-progress-bar/images/bg-tile.png') repeat;
 		font-family: 'Helvetica','Arial Narrow','Nimbus Sans L',sans-serif;
 	}
 	</style>
@@ -49,7 +49,7 @@
 	         if (http_request.status == 200) {
 	            //alert(http_request.responseText);
 	            result = http_request.responseText;
-	            document.getElementById('myspan').innerHTML = result;            
+	            document.getElementById('message').innerHTML = result;            
 	         } else {
 	            alert('There was a problem with the request.');
 	         }
@@ -67,9 +67,9 @@
 	<p>Hello there and welcome to the official MinecraftServers.com (&copy;) SuperFantabolous Installer!</p>
 	<p>We are going to ask you a few simple questions and then you will be on your way to MineCrack!</p>
 	<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
-		<label>First, what is your first name?</label><input type="text" name="f_name" onchange="this.form.submit();">
-		<span name="myspan" id="myspan"></span>
+		<label>First, what is your first name?</label><input type="text" name="f_name" id="f_name" onchange="this.form.submit();">
 	</form>
+<div name="message" id="message"></div>
 		
 </body>
 </html>
