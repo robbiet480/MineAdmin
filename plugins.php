@@ -13,6 +13,7 @@ if($_GET['action'] == "enable") {
 	echo "<div class='success' style='display:block;'>Disabled ".$_GET['id']."</div>";
 }
 ?>
+<div class='info' style='display:inline;'>You can add plugins for hey0 by contacting support. We hope to fix this in the *very* near future.</div>
 	<div id="page_wrap" style="text-align: center;">
 		<table style="margin-left: auto;margin-right:auto;">
 			<th>Name</th>
