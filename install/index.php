@@ -157,7 +157,7 @@
 			</li>
 		</ul>
 	 </div>
-<p id="copy">&copy; Hostiio, LLC.</p>
+<p id="copy">&copy; <?php echo date("Y"); ?> Hostiio, LLC.</p>
 </div>
 </body>
 </html>
