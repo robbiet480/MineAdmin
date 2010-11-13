@@ -157,6 +157,11 @@ p {
 li.dropdown ul { 
 	display: none;  
 	margin-left: -40px;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-transition:all 300ms ease-in;
+	-o-transition:all 300ms ease-in;
+	-moz-transition:all 300ms ease-in;
 }
 
 li.dropdown:hover ul { 
@@ -643,4 +648,5 @@ width: 97%;
 
 #ipad_warning {
 	display: none;
+	-webkit-transition:all 300ms ease-in;
 }
