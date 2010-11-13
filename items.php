@@ -26,8 +26,9 @@ if(isset($_POST['item_name'])) {
 			}
 			?>
 			
+			<div style="clear:both;"></div>
 			<form action="items.php" method="POST">
-			<input class="button" style="margin-right: 72px;" type="submit" value="Save">
+			<input class="button" style="float:right;" type="submit" value="Save">
 			</form>
 		</div>
 		

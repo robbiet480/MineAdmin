@@ -542,12 +542,16 @@ width: 97%;
 }
 
 #items {
-	width:400px;
-	float: left;
+	width: 680px;
+	margin-left: 105px;
 }
 
 #items img {
 	vertical-align: middle;
+}
+
+#items span {
+	float:left;
 }
 
 /******************************
