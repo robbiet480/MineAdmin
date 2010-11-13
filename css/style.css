@@ -149,7 +149,25 @@ p {
 	margin-left: -450px;
 	position: relative;
 	padding: 10px;
-	z-index: 1;
+	z-index: 0;
+}
+
+li.dropdown ul { 
+	display: none;  
+	margin-left: -40px;
+}
+
+li.dropdown:hover ul { 
+	display: block; 
+	width: 110px;
+	position: absolute; 
+	background: #fff;
+	padding: 10px 0 10px 20px;
+	border: 1px #ebebeb solid;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	box-shadow: 0px 10px 15px #666;
+	-moz-box-shadow: 0 10px 15px #666;
 }
 
 /******************************
