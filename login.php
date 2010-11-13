@@ -12,7 +12,6 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-css-transform.js"></script> 
 	<script type="text/javascript" src="js/system_login.js"></script>
-	<script type="text/javascript" src="js/detect.ios.js"></script>
 	<link rel="apple-touch-icon" href="images/apple-icon.png"/>
 	<link rel="apple-touch-startup-image" href="/startup.png" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
