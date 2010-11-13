@@ -42,8 +42,8 @@ if(count($pid)==1) {
 		<h2>MCSAdmin</h2>
 		<ul>
 			<li><a href="logout_process.php">Logout</a></li>
-			<li class="dropdown"><a href="javascript:void(0)" <?php if ($pageid=="groups" or $pageid=="users" or $pageid=="items" or $pageid=="kits" or $pageid=="plugins" or $pageid=="settings" or $pageid=="sysinfo") {echo " class=\"menu_active\"";} else { echo ""; }?>>Settings &or;</a>
-				<ul>
+			<li class="dropdown"><a href="javascript:void(0)" id="droplink" <?php if ($pageid=="groups" or $pageid=="users" or $pageid=="items" or $pageid=="kits" or $pageid=="plugins" or $pageid=="settings" or $pageid=="sysinfo") {echo " class=\"menu_active\"";} else { echo ""; }?>>Settings &or;</a>
+				<ul id="droplist">
 					<li><a href="items.php" <?php if ($pageid=="items") { echo " class=\"menu_active\""; } else { echo ""; }?>>Items</a></li>
 					<li><a href="kits.php" <?php if ($pageid=="kits") { echo " class=\"menu_active\""; } else { echo ""; }?>>Kits</a></li>			
 					<li><a href="users.php" <?php if ($pageid=="users") { echo " class=\"menu_active\""; } else { echo ""; }?>>Users</a></li>	
