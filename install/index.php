@@ -94,5 +94,6 @@
 <span id="well"></span>
 </div>
 </form>
+<p>&copy; <?php echo date("Y"); ?> Hostiio, LLC</p>
 </body>
 </html>

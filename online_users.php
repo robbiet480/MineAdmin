@@ -5,7 +5,7 @@ if($_SESSION['user']==""){
         $logged=false;
 }
 $list = $minecraft->player_list();
-if(empty($list)) {
+if(isset($list->code)) {
         echo "<p>No one is currently online.</p>";
 } else {
 ?>
