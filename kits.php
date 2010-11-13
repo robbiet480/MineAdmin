@@ -22,11 +22,11 @@ if($_GET['action'] == "dlkit") {
 				<?php
 				foreach($items as $item) {
 				if(file_exists('images/'.$item['itemid'].'.png')) {
-					echo '<span><img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+					echo '<span><label><img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
 				} else {
-					echo '<span><img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+					echo '<span><label><img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" />';
 				}
-					echo '<input type="checkbox" name="item" value="'.$item['itemid'].'"></span>';
+					echo '<input type="checkbox" name="item" value="'.$item['itemid'].'"></label></span>';
 				}
 				?>	
 				<br />	
