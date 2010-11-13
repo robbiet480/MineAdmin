@@ -8,6 +8,7 @@
 	}
 	?>
 	<link rel="stylesheet" href="css/style_login.css" type="text/css" media="screen" />
+	<link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="css/ipad.portrait.css"> 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery-css-transform.js"></script> 
 	<script type="text/javascript" src="js/system_login.js"></script>
