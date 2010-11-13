@@ -43,8 +43,5 @@ require_once('includes/header.php');
 		$("body").ready(function(){
 			$(".fancy").fancybox();
 		});
-		$("body").ready(function(){
-			get_player_list();
-		});
-	</script> 
+		</script> 
 <?php require_once('includes/footer.php'); ?>

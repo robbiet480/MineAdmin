@@ -24,4 +24,9 @@ function get_memory() {
 			<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
 		</div><br />
 	</div>
+	<script type="text/javascript">
+		$("body").ready(function(){
+			get_player_list();
+		});
+	</script> 	
 <?php require_once('includes/footer.php'); ?>
