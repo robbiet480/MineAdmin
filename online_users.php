@@ -28,7 +28,7 @@ foreach($list as $player){
 	<li class="world"><?php if($player['canModifyWorld']){ echo "<img src=\"images/icons/accept.png\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" />"; };?></li>
 	<li class="ip"><?php if($logged){ echo $player['ip']; }else{ echo "HIDDEN"; };?></li>
 	<li class="hand"><?php if($player['itemInHand']!="-1"){ echo "<img src=\"images/".$player['itemInHand'].".png\" title=\"".$minecraft->get_item_name($player['itemInHand'])."\" />"; }else{ echo "o"; }?></li>
-	<li class="actions"><a href="javascript:kick_player('<?php echo $player['name'];?>');">&lsaquo; kick &rsaquo;</a> <!--<a href="javascript:ban_player('<?php echo $player['name'];?>','<?php echo $player['ip'];?>');">ban</a>//--> <a href="javascript:inv_player('<?php echo $player['name'];?>');">&lsaquo; inventory &rsaquo;</a> <a href="javascript:msg_player('<?php echo $player['name'];?>');">&lsaquo; msg &rsaquo;</a></li>
+	<li class="actions"><a href="javascript:kick_player('<?php echo $player['name'];?>');">Kick</a> <!--<a href="javascript:ban_player('<?php echo $player['name'];?>','<?php echo $player['ip'];?>');">ban</a>//--> <a href="javascript:inv_player('<?php echo $player['name'];?>');">Inventory</a> <a href="javascript:msg_player('<?php echo $player['name'];?>');">Message</a></li>
 </ul>
 <?php
 }

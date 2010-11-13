@@ -54,7 +54,6 @@ if(count($pid)==1) {
 				</ul>
 			</li>
             <li><a href="tools.php" <?php if ($pageid=="tools") { echo " class=\"menu_active\""; } else { echo ""; }?>>Tools</a></li>
-		    <li><a href="chat.php" <?php if ($pageid=="chat") { echo " class=\"menu_active\""; } else { echo ""; }?>>Chat</a></li>
 			<li><a href="news.php" <?php if ($pageid=="news") { echo " class=\"menu_active\""; } else { echo ""; }?>>News</a></li>
 			<li><a href="start.php" <?php if ($pageid=="start") { echo " class=\"menu_active\""; } else { echo ""; }?>>Home</a></li>
 		</ul>
