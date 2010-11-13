@@ -13,29 +13,49 @@
 		#installer {
 		    background: #fff;
 			left:50%;
-			margin-top: 100px;
+			top:50%;
+			margin-top: -232px;
+			padding-bottom: 30px;
 			margin-left: -250px;
 			position: absolute;
 		    width: 500px;
+		    border-bottom-left-radius: 6px;
+		    border-bottom-right-radius: 6px;
+		    -moz-border-bottom-left-radius: 6px;
+		    -moz-border-bottom-right-radius: 6px;		    
 		}
-		h1 {
+		h1#logo {
 			background: #972e2e url('../images/logo.png') no-repeat center;
 			text-indent: -9999px;
 			padding: 10px;
 			margin-top: -10px;
 		}
-		h2, p {
+		h2, p, label, table {
 			margin-left: 20px;
 			margin-right: 20px;
 		}
+		table {
+			width: 90%;
+			text-align: left;
+			border-collapse: collapse;
+		}
+		a {
+			color: #144564;
+			text-decoration: none;
+		}
+		.breadcrumb {
+			color:#c6c6c6;
+		}
+		.active {
+			color:#000;
+		}
 		#steps ul, #steps li {
-			margin: 0;
+			margin: -6px 0 0 0;
 			padding: 0;
 			list-style: none;
 		}
 		#steps, #steps li {
 			width: 500px;
-			height: 400px;
 			overflow: hidden;
 		}
 		.input_text{
@@ -55,16 +75,25 @@
 			position: absolute;
 			color: #ccc;
 			text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
-			padding-left: 5px;
+			margin-top: 60px;
+			left: 30%;
+		}
+		span#prevBtn {
+			padding-bottom: 10px;
+		}
+		span#nextBtn {
+			padding-bottom: 10px;
+			padding-right: 10px;
 		}
 	</style>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/easySlider.js"></script>
+	<script type="text/javascript" src="js/easySlider.js"></script>
 	<script type="text/javascript" language="javascript">
 		$(document).ready(function(){	
 			$("#steps").easySlider({
 				prevText:'< Back',
 				nextText:'Next >',
+				speed:'300',
 			});
 		});
 	   var http_request = false;
@@ -115,50 +144,68 @@
 	      var poststr = "f_name=" + encodeURI( document.getElementById("f_name").value );
 	      makePOSTRequest('post.php', poststr);
 	   }
-	 function toggleElement(btn)
-			{
-				x=document.getElementById("step1");
-				x.style.display=(x.style.display=="none")?"block":(x.style.display=="block")?"none":"block";
-				//btn.value=(x.style.display=="none")?"Hide":"Unhide";
-			}
-			function add_content(){
-				document.getElementById("well").innerHTML="What are you looking at me for? I told you NOT to click it! Next time, listen to directions. But here, <a onClick='add_content1()' target='_blank' href='http://vimeo.com/1109226?pg=embed&sec=1109226'>this is actually cool</a>...";
-			}
-			function add_content1(){
-				document.getElementById("well").innerHTML="See now wasn't that cool! Ok, now I am out of videos and if this progress bar isn't done yet then someone screwed the pooch. Please file a support ticket <a href='https://billing.hostiio.com/submitticket.php?step=2&deptid=2'>here</a>. I'm real sorry 'bout this. :(";
-			}
 	</script>
 </head>
 <body>
 	<div id="installer">
+		<h1 id="logo">MCSAdmin</h1>
 		<div id="steps">
 			<ul>
 				<li>
-					<h1>Welcome to MCSAdmin.</h1>
-					<p>Before you can use MCSAdmin, there are a few things that need to set up</p>
+					<p class="breadcrumb"><span class="active">Welcome</span> > Account > Plugins > Install</p>
+					<h2>Welcome to MCSAdmin.</h2>
+					<p>Before you can use MCSAdmin, there are a few things that need to be set up.</p>
 					<p>Ready? Click 'Next' to get started.</p>
 				</li>
 				<li>
 					<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
-					<p>Next, I need to get some basic info from you.</p>
-					<label for="username">What username would you like to use to access the web interface?</label><input type="text" name="username" id="username"><br/>
-					<label for="password">And what password would you like to use to access the web interface?</label><input type="password" name="password" id="password"><br/>
+					<p class="breadcrumb">Welcome > <span class="active">Account</span> > Plugins > Install</p>
+					<h2>Account Setup</h2>
+					<p>Create your account to log into MCSAdmin.</p>
+					<label for="username">Username: <input type="text" class="input_text" name="username" id="username"></label><br /><br />
+					<label for="password">Password: <input type="password" class="input_text" name="password" id="password"></label>
 				</li>
 				<li>
-					<h2>Allrighty then...,</h2><p>what about plugins? We are offering a few specific plugins to you because during the setup process when your database is created, we need to do some special magic</p>
-					<p>PLUGINS HERE</p>
+					<p class="breadcrumb">Welcome > Account > <span class="active">Plugins</span> > Install</p>
+					<h2>Plugins</h2>
+					<p>Plugins will extend the functionality of your Minecraft server, check the ones you'd like to install!</p>
+					<table>
+						<th>Plugin Name</th>
+						<th>Description</th>
+						<th>Install</th>
+						<tr>
+						<td>iConomy</td>
+						<td>Lorizzle ipsizzle dolor mofo the bizzle, da bomb adipiscing elit.</td>
+						<td><input type="checkbox" /></td>
+						</tr>
+						<tr>
+						<td>EditLog</td>
+						<td>Phasellizzle interdum volutpat pot.</td>
+						<td><input type="checkbox" /></td>
+						</tr>
+						<tr>
+						<td>LogBlock</td>
+						<td>Praesent nizzle mi i saw beyonces tizzles and my pizzle went crizzle mauris bow wow wow bibendizzle.</td>
+						<td><input type="checkbox" /></td>
+						</tr>
+						<tr>
+						<td>Craftizens</td>
+						<td>In sagittis shut the shizzle up nizzle nisi.</td>
+						<td><input type="checkbox" /></td>
+						</tr>																		
+					</table>
 					<br/>
 				</li>
 				<li>
-					<h2>OK then!</h2><p>You are all done. Feel free to now sit back, relax, and watch this pretty progress bar scroll quickly across your screen as our magical server gremlins do their work. I must insist however that you <b>DO NOT LEAVE THIS PAGE</b>. Don't close it. Or it will be your head!</p>
-					<p>Also, please don't press <a onclick="add_content()" href="http://www.youtube.com/v/4R-7ZO4I1pI&fs=1&iv_load_policy=3&autoplay=1" target="_blank">this</a>.</p>
-					<span id="well"></span>
+					<p class="breadcrumb">Welcome > Account > Plugins > <span class="active">Install</span></p>
+					<h2>Ready to install!</h2>
+					<p>We have everything we need, all you need to do is click 'Install!'.</p>
+					<p style="color:#ff0000;font-weight:bold;">Do not close this page while installing!</p>
+					<input type="submit" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" value="Install" />
 					</form>
 				</li>
 			</ul>
 		 </div>
-		<span id="prevBtn"><a href="javascript:void(0);">Previous</a></span> 
-		<span id="nextBtn"><a href="javascript:void(0);">Next</a></span>
 		<p id="copy">&copy; <?php echo date("Y"); ?> Hostiio, LLC.</p>
 	</div>
 </body>

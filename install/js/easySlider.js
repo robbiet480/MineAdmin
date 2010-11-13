@@ -38,13 +38,13 @@
 			var vertical = (options.orientation == 'vertical');
 			$("ul", obj).css('width',s*w);			
 			if(!vertical) $("li", obj).css('float','left');
-			$(obj).after('<span id="'+ options.prevId +'"><a href=\"javascript:void(0);\">'+ options.prevText +'</a></span> <span id="'+ options.nextId +'"><a href=\"javascript:void(0);\">'+ options.nextText +'</a></span>');		
+			$(obj).after('<span style="float:right;"><span id="'+ options.prevId +'"><a href=\"javascript:void(0);\">'+ options.prevText +'</a></span> <span id="'+ options.nextId +'"><a href=\"javascript:void(0);\">'+ options.nextText +'</a></span></span>');		
 			$("a","#"+options.prevId).hide();
 			$("a","#"+options.nextId).hide();
 			$("a","#"+options.nextId).click(function(){		
 				animate("next");
 				if (t>=ts) $(this).fadeOut();
-				$("a","#"+options.prevId).fadeIn();
+				$("a","#"+options.prevId).fadeOut();
 			});
 			$("a","#"+options.prevId).click(function(){		
 				animate("prev");
