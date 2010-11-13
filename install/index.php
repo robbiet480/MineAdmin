@@ -157,8 +157,8 @@
 				</li>
 			</ul>
 		 </div>
-		<span id="prevId"><a href="javascript:void(0);">Previous</a></span> 
-		<span id="nextId"><a href="javascript:void(0);">Next</a></span>
+		<span id="prevBtn"><a href="javascript:void(0);">Previous</a></span> 
+		<span id="nextBtn"><a href="javascript:void(0);">Next</a></span>
 		<p id="copy">&copy; <?php echo date("Y"); ?> Hostiio, LLC.</p>
 	</div>
 </body>
