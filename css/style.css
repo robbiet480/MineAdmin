@@ -446,6 +446,39 @@ tr:hover{
 	border:none;
 }
 
+#reserve_wrap {
+	margin-top: 10px;
+}
+
+#reserve_wrap table {
+border-collapse: collapse;
+text-align: left;
+margin-left: 10px;
+width: 97%;
+}
+
+#white_wrap {
+	margin-top: 10px;
+}
+
+#white_wrap table {
+	border-collapse: collapse;
+	text-align: left;
+	margin-left: 10px;
+	width: 97%;
+}
+
+#warp_wrap {
+	margin-top: 10px;
+}
+
+#warp_wrap table {
+	border-collapse: collapse;
+	text-align: left;
+	margin-left: 10px;
+	width: 97%;
+}
+
 /******************************
 
 	Items & Kits
@@ -589,9 +622,6 @@ tr:hover{
 .read_more_container a {
 	
 }
-
-
-
 .tumblr_quote {	
 
 }

@@ -24,27 +24,27 @@ if($_GET['action'] == "backup") {
 	    readfile($result[0]['filename']);
 	    exit;
 	}
-} elseif($_GET['action'] == "delete") {
-	$minecraft->backup_delete($_GET['id']);
-} elseif($_GET['action'] == "restore") {
-	$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
-	stop_server();
-	$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].'.. '.$result[0]['filename']);
-	shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
-	echo "<div class='success' style='display:block;'>Restored backup!</div>";
-} elseif($_GET['action'] == "dlrl") {
-	$result=$db->delete("reservelist", array("name"=>$_GET['name']));
-	$minecraft->reload_reservelist();
-	echo "<div class='success' style='display:block;'>Removed ".$_GET['name']." from the reservelist</div>";
-} elseif($_GET['action'] == "dlwl") {
-	$result=$db->delete("reservelist", array("name"=>$_GET['name']));
-	$minecraft->reload_whitelist();
-	echo "<div class='success' style='display:block;'>Removed ".$_GET['name']." from the reservelist</div>";
-} elseif($_GET['action'] == "dlwarp") {
-	$result=$db->delete("warps", array("id"=>$_GET['id']));
-	$minecraft->reload_warps();
-	echo "<div class='success' style='display:block;'>Removed ".$_GET['id']." from warps</div>";
-}
+	} elseif($_GET['action'] == "delete") {
+		$minecraft->backup_delete($_GET['id']);
+	} elseif($_GET['action'] == "restore") {
+		$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
+		stop_server();
+		$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].'.. '.$result[0]['filename']);
+		shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
+		echo "<div class='success' style='display:block;'>Restored backup!</div>";
+	} elseif($_GET['action'] == "dlrl") {
+		$result=$db->delete("reservelist", array("name"=>$_GET['name']));
+		$minecraft->reload_reservelist();
+		echo "<div class='success' style='display:block;'>Removed ".$_GET['name']." from the reservelist</div>";
+	} elseif($_GET['action'] == "dlwl") {
+		$result=$db->delete("reservelist", array("name"=>$_GET['name']));
+		$minecraft->reload_whitelist();
+		echo "<div class='success' style='display:block;'>Removed ".$_GET['name']." from the reservelist</div>";
+	} elseif($_GET['action'] == "dlwarp") {
+		$result=$db->delete("warps", array("id"=>$_GET['id']));
+		$minecraft->reload_warps();
+		echo "<div class='success' style='display:block;'>Removed ".$_GET['id']." from warps</div>";
+	}
 ?>
 	<div id="page_wrap">
 	
@@ -52,49 +52,49 @@ if($_GET['action'] == "backup") {
         <div class="success">Successful operation message</div>
         <div class="warning">Warning message</div>
         <div class="error">Error message</div>
-
-		<!--<div id="actions">
-			<p><a href="#"><img src="images/icons/asterisk_yellow.png">Start</a>&nbsp;<a href="#"><img src="images/icons/stop.png">Stop</a>&nbsp;<a href="#"><img src="images/icons/arrow_refresh.png">Restart</a></p>&nbsp;
-		</div>-->
+        
 		<div id="backup_wrap">
-		<h1>Backups</h1>
-		<a href="javascript:void(0)" id="addnew"><img src="images/icons/database_add.png" alt="New Backup">New Backup</a>
-		<div id="newbackup" style="display:none;margin: 15px 10px;">
-			<form action="tools.php?action=backup" method="post">
-				<label>Backup Name
-				<input class="input_text" type="text" name="backup_name" style="width:200px;margin-left:10px" />
-				</label>
-				<label>Comment
-				<input class="input_text" type="text" name="backup_comment" style="width:200px;margin-left:10px" />				
-				</label>
-				<span style="float:right;"><input class="button" type="submit" value="Save" /><input class="button" id="canceladd" type="button" value="Cancel" /></span>
-			</form>
+			<h1>Backups</h1>
+			<a href="javascript:void(0)" id="addnew"><img src="images/icons/database_add.png" alt="New Backup">New Backup</a>
+		
+			<div id="newbackup" style="display:none;margin: 15px 10px;">
+				<form action="tools.php?action=backup" method="post">
+					<label>Backup Name
+					<input class="input_text" type="text" name="backup_name" style="width:200px;margin-left:10px" />
+					</label>
+					<label>Comment
+					<input class="input_text" type="text" name="backup_comment" style="width:200px;margin-left:10px" />				
+					</label>
+					<span style="float:right;"><input class="button" type="submit" value="Save" /><input class="button" id="canceladd" type="button" value="Cancel" /></span>
+				</form>
+			</div>
+			
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Size</th>
+					<th>Comment</th>
+					<th>Actions</th>
+				</tr>
+				<?php
+	            foreach($minecraft->backup_list() as $backup){
+	            ?>
+				<tr>
+					<td><?php echo $backup['name']; ?></td>
+					<td><?php echo $backup['date']; ?></td>
+					<td><?php echo $backup['time']; ?></td>
+					<td><?php echo $backup['size']; ?></td>
+					<td><?php echo $backup['comment']; ?></td>
+					<td><a href="tools.php?action=dl&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_save.png" alt="Download"></a>&nbsp;<a href="tools.php?action=delete&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_delete.png" alt="Delete"></a>&nbsp;<a href="tools.php?action=restore&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_go.png" alt="Restore"></a>&nbsp;</td>
+				</tr>
+				<?php
+			}
+				?>
+			</table>
 		</div>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Date</th>
-				<th>Time</th>
-				<th>Size</th>
-				<th>Comment</th>
-				<th>Actions</th>
-			</tr>
-			<?php
-            foreach($minecraft->backup_list() as $backup){
-            ?>
-			<tr>
-				<td><?php echo $backup['name']; ?></td>
-				<td><?php echo $backup['date']; ?></td>
-				<td><?php echo $backup['time']; ?></td>
-				<td><?php echo $backup['size']; ?></td>
-				<td><?php echo $backup['comment']; ?></td>
-				<td><a href="tools.php?action=dl&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_save.png" alt="Download"></a>&nbsp;<a href="tools.php?action=delete&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_delete.png" alt="Delete"></a>&nbsp;<a href="tools.php?action=restore&id=<?php echo $backup['id']; ?>"><img src="images/icons/database_go.png" alt="Restore"></a>&nbsp;</td>
-			</tr>
-			<?php
-		}
-			?>
-		</table>
-		</div>
+		
 		<div id="map_wrap">
 			<h1>Mapping</h1>
 			<p>Your last map generation was: NEVER</p>
@@ -102,57 +102,65 @@ if($_GET['action'] == "backup") {
 			<p><a href="#">Start a new map job</a></p>
 		</div>
 		
-		<h1>Reserve List</h1>
-		<table>
-			<th>Username</th>
-			<th>Actions</th>
-		<?php
-		$reserve = $minecraft->reserve_list();
-		$i=0;
-		foreach ($reserve as $user) {
-			echo "<tr>";
-			//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-			echo "<td>".$user['name']."</td>";
-			echo "<td><a href='tools.php?action=dlrl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
-			echo "</tr>";
-		$i++;
-		}
-		?>
-		</table>
-		<h1>White List</h1>
-		<table>
-			<th>Username</th>
-			<th>Actions</th>
-		<?php
-		$white = $minecraft->white_list();
-		$i=0;
-		foreach ($white as $user) {
-			echo "<tr>";
-			//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
-			echo "<td>".$user['name']."</td>";
-			echo "<td><a href='tools.php?action=dlwl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
-			echo "</tr>";
-		$i++;
-		}
-		?>
-		</table>
+		<div id="reserve_wrap">
+			<h1>Reserve List</h1>
+			<table>
+				<th>Username</th>
+				<th>Actions</th>
+				<?php
+				$reserve = $minecraft->reserve_list();
+				$i=0;
+				foreach ($reserve as $user) {
+					echo "<tr>";
+					//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+					echo "<td>".$user['name']."</td>";
+					echo "<td><a href='tools.php?action=dlrl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
+					echo "</tr>";
+				$i++;
+				}
+				?>
+			</table>
+		</div>
+		
+		<div id="white_wrap">
+			<h1>White List</h1>
+			<table>
+				<th>Username</th>
+				<th>Actions</th>
+				<?php
+				$white = $minecraft->white_list();
+				$i=0;
+				foreach ($white as $user) {
+					echo "<tr>";
+					//echo '<input type="text" name="'.$i.'" value="'.$user['name'].'" <br />';
+					echo "<td>".$user['name']."</td>";
+					echo "<td><a href='tools.php?action=dlwl&name=".$user['name']."'><img src='images/icons/delete.png'></a></td>";
+					echo "</tr>";
+				$i++;
+				}
+				?>
+			</table>
+		</div>
 
+		<div id="warp_wrap">
 		<h1>Warp List</h1>
 		<table>
 			<th>Warp Name</th>
 			<th>Warp Group</th>
 			<th>Actions</th>
-		<?php
-		$warps = $minecraft->warp_list();
-		foreach ($warps as $warp) {
-			echo "<tr>";
-			echo "<td>".$warp['name'].'</td>';
-			echo "<td>".$warp['group'].'</td>';
-			echo "<td><a href='tools.php?action=dlwarp&id=".$warp['id']."'><img src='images/icons/delete.png'></a></td>";
-			echo "</tr>";
-		}
-		?>
+			<?php
+			$warps = $minecraft->warp_list();
+			foreach ($warps as $warp) {
+				echo "<tr>";
+				echo "<td>".$warp['name'].'</td>';
+				echo "<td>".$warp['group'].'</td>';
+				echo "<td><a href='tools.php?action=dlwarp&id=".$warp['id']."'><img src='images/icons/delete.png'></a></td>";
+				echo "</tr>";
+			}
+			?>
 		</table>
+		</div>
+		
 	</div>
 	<script type="text/javascript">
 		$(function(){
