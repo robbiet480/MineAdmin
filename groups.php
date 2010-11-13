@@ -6,7 +6,7 @@ require_once('includes/header.php');
 	<div id="page_wrap">
 		<div id="online_wrap">
 			<h1>Group Configuration</h1>
-                        <div class="give_link"><span style="height:19px;float:left;text-align:left;margin-top:10px;"><a href="add_group.php" class="link_give fancy">&lsaquo; Add &rsaquo;</a></span></div>
+                        <div class="give_link"><span style="height:19px;float:left;text-align:left;margin-top:10px;"><a href="add_group.php" class="link_give fancy">Add New Group</a></span></div>
 			<span id="online">
                             <ul>
                                     <li class="name" style="text-align:left;text-decoration:underline;">Group Name</li>

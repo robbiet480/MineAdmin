@@ -1,0 +1,19 @@
+#menu-wrap #output #page_wrap #footer {
+	display: none;
+}
+
+#ipad_warning {
+	display: block;
+	width: 768px;
+	height: 1024px;
+	top: 50%;
+	left: 50%;
+	margin-left: -384px;
+	margin-top: -512px;
+}
+
+#ipad_warning p {
+	color: #ccc;
+	text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
+	font-size: 28px;
+}

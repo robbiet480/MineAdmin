@@ -5,7 +5,7 @@ require_once('includes/header.php');
 ?>
 	<div id="page_wrap">
 			<h1>User List</h1>
-                        <div class="give_link"><span style="height:19px;float:left;text-align:left;margin-top:10px;"><a href="add_user.php" class="link_give fancy">&lsaquo; Add &rsaquo;</a></span></div>
+                        <div class="give_link"><span style="height:19px;float:left;text-align:left;margin-top:10px;"><a href="add_user.php" class="link_give fancy">Add New User</a></span></div>
 			<span id="online">
                             <ul>
                                     <li class="build" style="width:70px;">UserID</li>

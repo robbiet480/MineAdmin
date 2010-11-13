@@ -282,7 +282,6 @@ li.dropdown:hover ul {
 	height:60px;
 }
 #page_wrap .link_give{
-	padding-left:10px;
 	color:#144564;
 	margin-right:5px;
 	text-decoration:none;
@@ -634,4 +633,14 @@ width: 97%;
 }
 .tumblr_source {
 	
+}
+
+/******************************
+
+	iOS
+	
+******************************/
+
+#ipad_warning {
+	display: none;
 }

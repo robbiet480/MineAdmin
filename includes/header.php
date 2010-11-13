@@ -22,6 +22,7 @@ if(count($pid)==1) {
 	<link rel="stylesheet" href="css/jquery.autocomplete.css" type="text/css" media="screen" />
     <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-1.3.2.css" media="screen" />
 	<link rel="stylesheet" href="css/jquery.jgrowl.css" type="text/css" media="screen" />
+	<link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="css/ipad.portrait.css"> 
 	<link rel="apple-touch-icon" href="images/apple-icon.png"/>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-touch-fullscreen" content="yes" />
@@ -64,4 +65,8 @@ if(count($pid)==1) {
 	</div>
 	<div id="output">
 		
+	</div>
+
+	<div id="ipad_warning">
+		<p>Please rotate your iPad to the landscape orientation.</p>
 	</div>
