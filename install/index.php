@@ -130,34 +130,36 @@
 	</script>
 </head>
 <body>
-<div id="installer">
-	<div id="steps">
-		<ul>
-			<li>
-				<h1>Welcome to MCSAdmin.</h1>
-				<p>Before you can use MCSAdmin, there are a few things that need to set up</p>
-				<p>Ready? Click 'Next' to get started.</p>
-			</li>
-			<li>
-				<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
-				<p>Next, I need to get some basic info from you.</p>
-				<label for="username">What username would you like to use to access the web interface?</label><input type="text" name="username" id="username"><br/>
-				<label for="password">And what password would you like to use to access the web interface?</label><input type="password" name="password" id="password"><br/>
-			</li>
-			<li>
-				<h2>Allrighty then...,</h2><p>what about plugins? We are offering a few specific plugins to you because during the setup process when your database is created, we need to do some special magic</p>
-				<p>PLUGINS HERE</p>
-				<br/>
-			</li>
-			<li>
-				<h2>OK then!</h2><p>You are all done. Feel free to now sit back, relax, and watch this pretty progress bar scroll quickly across your screen as our magical server gremlins do their work. I must insist however that you <b>DO NOT LEAVE THIS PAGE</b>. Don't close it. Or it will be your head!</p>
-				<p>Also, please don't press <a onclick="add_content()" href="http://www.youtube.com/v/4R-7ZO4I1pI&fs=1&iv_load_policy=3&autoplay=1" target="_blank">this</a>.</p>
-				<span id="well"></span>
-				</form>
-			</li>
-		</ul>
-	 </div>
-<p id="copy">&copy; <?php echo date("Y"); ?> Hostiio, LLC.</p>
-</div>
+	<div id="installer">
+		<div id="steps">
+			<ul>
+				<li>
+					<h1>Welcome to MCSAdmin.</h1>
+					<p>Before you can use MCSAdmin, there are a few things that need to set up</p>
+					<p>Ready? Click 'Next' to get started.</p>
+				</li>
+				<li>
+					<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
+					<p>Next, I need to get some basic info from you.</p>
+					<label for="username">What username would you like to use to access the web interface?</label><input type="text" name="username" id="username"><br/>
+					<label for="password">And what password would you like to use to access the web interface?</label><input type="password" name="password" id="password"><br/>
+				</li>
+				<li>
+					<h2>Allrighty then...,</h2><p>what about plugins? We are offering a few specific plugins to you because during the setup process when your database is created, we need to do some special magic</p>
+					<p>PLUGINS HERE</p>
+					<br/>
+				</li>
+				<li>
+					<h2>OK then!</h2><p>You are all done. Feel free to now sit back, relax, and watch this pretty progress bar scroll quickly across your screen as our magical server gremlins do their work. I must insist however that you <b>DO NOT LEAVE THIS PAGE</b>. Don't close it. Or it will be your head!</p>
+					<p>Also, please don't press <a onclick="add_content()" href="http://www.youtube.com/v/4R-7ZO4I1pI&fs=1&iv_load_policy=3&autoplay=1" target="_blank">this</a>.</p>
+					<span id="well"></span>
+					</form>
+				</li>
+			</ul>
+		 </div>
+		<span id="prevId"><a href="javascript:void(0);">Previous</a></span> 
+		<span id="nextId"><a href="javascript:void(0);">Next</a></span>
+		<p id="copy">&copy; <?php echo date("Y"); ?> Hostiio, LLC.</p>
+	</div>
 </body>
 </html>
