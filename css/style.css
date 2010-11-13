@@ -538,3 +538,45 @@ tr:hover{
 	text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
 }
 
+/******************************
+
+	News
+	
+******************************/
+
+.tumblr_posts {	
+
+}
+.tumblr_post {
+	list-style: none;		
+}
+.tumblr_title {	
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 6px;
+	font-size: 20px;
+}
+.tumblr_body a {	
+	color: #144564;
+}
+.tumblr_body img {	
+
+}
+.read_more_container {
+	
+}
+.read_more_container a {
+	
+}
+
+
+
+.tumblr_quote {	
+
+}
+.tumblr_quote p {		
+
+}
+.tumblr_source {
+	
+}

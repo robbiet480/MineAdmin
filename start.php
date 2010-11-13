@@ -12,11 +12,16 @@ function get_memory() {
 
 ?>
 	<div id="page_wrap">
-		<p>Players: <?php echo $players; ?> out of <?php echo $max; ?> allowed are currently online</p><br />
-		<p>Hostname: <?php echo shell_exec('hostname -f'); ?></p><br />
-		<p>IP Address: <?php echo shell_exec("/sbin/ifconfig venet0:0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}'"); ?></p><br />
-		<p>CPU Usage: <?php echo shell_exec("ps aux|awk 'NR > 0 { s +=$3 }; END {print s}'"); ?>%</p><br />
-		<p>Memory Usage: <?php echo get_memory(); ?>%</p><br />
-		<p>Disk usage: <?php disk_free_space("/")."/".disk_total_space("/");?></p><br />
+		<div id="online_wrap">
+			<h1>Who's Online</h1>
+			<span id="online"></span>
+		</div>
+		<div id="inventory_wrap" style="display:none;">
+			<h1><span id="user"></span>'s Inventory</h1>
+			<div class="give_link"><span style="float:left;text-align:left;margin-top:10px;"><a href="javascript:clear_inv();" class="link_give">&lsaquo; Clear Inventory &rsaquo;</a></span><span style="float:right;text-align:right;"><label><span>Item Name</span><input type="text" id="item_complete" /></label> <label><span>Amount</span><input type="text" id="item_amount" /></label> <a href="javascript:give_item();" class="link_give">&lsaquo; Give Item &rsaquo;</a></span></div>
+			<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
+			<span id="inventory"></span>
+			<div class="back_link"><a href="javascript:hide_inv();" class="link_hide">&lsaquo;&lsaquo; Go Back</a></div>
+		</div><br />
 	</div>
 <?php require_once('includes/footer.php'); ?>
