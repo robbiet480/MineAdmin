@@ -1,5 +1,5 @@
 <?php
-$pageid = "start";
+$pageid = "sysinfo";
 require_once('header_inc.php');
 require_once('includes/header.php');
 $players = count($minecraft->player_list);

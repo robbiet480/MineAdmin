@@ -42,18 +42,19 @@ if(count($pid)==1) {
 		<h2>MCSAdmin</h2>
 		<ul>
 			<li><a href="logout_process.php">Logout</a></li>
-			<li class="dropdown"><a href="#" <?php if ($pageid=="groups" or $pageid=="users") {echo " class=\"menu_active\"";} else { echo ""; }?>>Settings &#9660;</a>
+			<li class="dropdown"><a href="javascript:void(0)" <?php if ($pageid=="groups" or $pageid=="users" or $pageid=="items" or $pageid=="kits" or $pageid=="plugins" or $pageid=="settings" or $pageid=="sysinfo") {echo " class=\"menu_active\"";} else { echo ""; }?>>Settings &#9660;</a>
 				<ul>
-					<li><a href="settings.php" <?php if ($pageid=="settings") { echo " class=\"menu_active\""; } else { echo ""; }?>>Configuration</a></li>	
-					<li><a href="plugins.php" <?php if ($pageid=="plugins") { echo " class=\"menu_active\""; } else { echo ""; }?>>Plugins</a></li>
-					<li><a href="groups.php" <?php if ($pageid=="groups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Groups</a></li>
-					<li><a href="users.php" <?php if ($pageid=="users") { echo " class=\"menu_active\""; } else { echo ""; }?>>Users</a></li>
-					<li><a href="kits.php" <?php if ($pageid=="kits") { echo " class=\"menu_active\""; } else { echo ""; }?>>Kits</a></li>
 					<li><a href="items.php" <?php if ($pageid=="items") { echo " class=\"menu_active\""; } else { echo ""; }?>>Items</a></li>
+					<li><a href="kits.php" <?php if ($pageid=="kits") { echo " class=\"menu_active\""; } else { echo ""; }?>>Kits</a></li>			
+					<li><a href="users.php" <?php if ($pageid=="users") { echo " class=\"menu_active\""; } else { echo ""; }?>>Users</a></li>	
+					<li><a href="groups.php" <?php if ($pageid=="groups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Groups</a></li>
+					<li><a href="plugins.php" <?php if ($pageid=="plugins") { echo " class=\"menu_active\""; } else { echo ""; }?>>Plugins</a></li>
+					<li><a href="settings.php" <?php if ($pageid=="settings") { echo " class=\"menu_active\""; } else { echo ""; }?>>Configuration</a></li>	
+					<li><a href="sysinfo.php" <?php if ($pageid=="sysinfo") { echo " class=\"menu_active\""; } else { echo ""; }?>>System Info</a></li>	
 				</ul>
 			</li>
             <li><a href="tools.php" <?php if ($pageid=="tools") { echo " class=\"menu_active\""; } else { echo ""; }?>>Tools</a></li>
-		    <li><a href="chat.php" <?php if ($pageid=="tools") { echo " class=\"menu_active\""; } else { echo ""; }?>>Chat</a></li>
+		    <li><a href="chat.php" <?php if ($pageid=="chat") { echo " class=\"menu_active\""; } else { echo ""; }?>>Chat</a></li>
 			<li><a href="news.php" <?php if ($pageid=="news") { echo " class=\"menu_active\""; } else { echo ""; }?>>News</a></li>
 			<li><a href="start.php" <?php if ($pageid=="start") { echo " class=\"menu_active\""; } else { echo ""; }?>>Home</a></li>
 		</ul>
