@@ -4,14 +4,69 @@
 <!DOCTYPE HTML> 
 <html lang="en"> 
 <head>
-	<title>MinecraftServers SuperFantabolous Installer!</title>
+	<title>MCSAdmin Installer - MinecraftServers.com</title>
 	<style type="text/css">
-	body {
-		background: #FFF url('ui-progress-bar/images/bg-tile.png') repeat;
-		font-family: 'Helvetica','Arial Narrow','Nimbus Sans L',sans-serif;
-	}
+		body {
+			background: #ebebeb;
+			font-family: 'Helvetica','Arial Narrow','Nimbus Sans L',sans-serif;
+		}
+		#installer {
+		    background: #fff;
+			left:50%;
+			margin-top: 100px;
+			margin-left: -250px;
+			position: absolute;
+		    width: 500px;
+		}
+		h1 {
+			background: #972e2e url('../images/logo.png') no-repeat center;
+			text-indent: -9999px;
+			padding: 10px;
+			margin-top: -10px;
+		}
+		h2, p {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		#steps ul, #steps li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		#steps, #steps li {
+			width: 500px;
+			height: 400px;
+			overflow: hidden;
+		}
+		.input_text{
+			padding:3px;
+			padding-left:6px;
+			font-size:18px;
+			border-radius: 6px;
+			-moz-border-radius: 6px;
+			width:200px;
+			letter-spacing: 2px;
+			color:#000;
+			border-radius: 6px;
+			border:1px solid #e3e3e3;
+			background:#f6f6f6;
+		}
+		#copy {
+			position: absolute;
+			color: #ccc;
+			text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
+			padding-left: 5px;
+		}
 	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/easySlider.js"></script>
 	<script type="text/javascript" language="javascript">
+		$(document).ready(function(){	
+			$("#steps").easySlider({
+				prevText:'< Back',
+				nextText:'Next >',
+			});
+		});
 	   var http_request = false;
 	   function makePOSTRequest(url, parameters) {
 	      http_request = false;
@@ -75,24 +130,34 @@
 	</script>
 </head>
 <body>
-	<h1>Hi!</h1>
-	<p>Hello there and welcome to the official MinecraftServers.com (&copy;) SuperFantabolous Installer!</p>
-	<p>We are going to ask you a few simple questions and then you will be on your way to MineCrack!</p>
-	<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
-		<label for="f_name">First, what is your first name?</label><input type="text" name="f_name" id="f_name" onchange="this.form.submit();toggleElement(this);">
-
-<div name="message" id="message"></div>
-<div id="step1" style="display:none;">
-<p>Next, I need to get some basic info from you.</p>
-<label for="username">What username would you like to use to access the web interface?</label><input type="text" name="username" id="username"><br/>
-<label for="password">And what password would you like to use to access the web interface?</label><input type="password" name="password" id="password"><br/>
-<h2>Allrighty then...,</h2><p>what about plugins? We are offering a few specific plugins to you because during the setup process when your database is created, we need to do some special magic</p>
-<p>PLUGINS HERE</p>
-<br/>
-<h2>OK then!</h2><p>You are all done. Feel free to now sit back, relax, and watch this pretty progress bar scroll quickly across your screen as our magical server gremlins do their work. I must insist however that you <b>DO NOT LEAVE THIS PAGE</b>. Don't close it. Or it will be your head!</p>
-<p>Also, please don't press <a onclick="add_content()" href="http://www.youtube.com/v/4R-7ZO4I1pI&fs=1&iv_load_policy=3&autoplay=1" target="_blank">this</a>.</p>
-<span id="well"></span>
+<div id="installer">
+	<div id="steps">
+		<ul>
+			<li>
+				<h1>Welcome to MCSAdmin.</h1>
+				<p>Before you can use MCSAdmin, there are a few things that need to set up</p>
+				<p>Ready? Click 'Next' to get started.</p>
+			</li>
+			<li>
+				<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
+				<p>Next, I need to get some basic info from you.</p>
+				<label for="username">What username would you like to use to access the web interface?</label><input type="text" name="username" id="username"><br/>
+				<label for="password">And what password would you like to use to access the web interface?</label><input type="password" name="password" id="password"><br/>
+			</li>
+			<li>
+				<h2>Allrighty then...,</h2><p>what about plugins? We are offering a few specific plugins to you because during the setup process when your database is created, we need to do some special magic</p>
+				<p>PLUGINS HERE</p>
+				<br/>
+			</li>
+			<li>
+				<h2>OK then!</h2><p>You are all done. Feel free to now sit back, relax, and watch this pretty progress bar scroll quickly across your screen as our magical server gremlins do their work. I must insist however that you <b>DO NOT LEAVE THIS PAGE</b>. Don't close it. Or it will be your head!</p>
+				<p>Also, please don't press <a onclick="add_content()" href="http://www.youtube.com/v/4R-7ZO4I1pI&fs=1&iv_load_policy=3&autoplay=1" target="_blank">this</a>.</p>
+				<span id="well"></span>
+				</form>
+			</li>
+		</ul>
+	 </div>
+<p id="copy">&copy; Hostiio, LLC.</p>
 </div>
-</form>
 </body>
 </html>
