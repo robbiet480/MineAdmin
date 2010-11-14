@@ -91,12 +91,12 @@
 	<script type="text/javascript" src="js/easySlider.js"></script>
 	<script type="text/javascript" language="javascript">
 		$(document).ready(function(){	
-			$('#installer').animate({height: "show", opacity: 'show'},'slow');
 			$("#steps").easySlider({
 				prevText:'< Back',
 				nextText:'Next >',
 				speed:'300',
 			});
+			$('#installer').slideDown(500);
 		});
 	   var http_request = false;
 	   function makePOSTRequest(url, parameters) {
