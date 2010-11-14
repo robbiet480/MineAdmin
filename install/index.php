@@ -14,12 +14,14 @@
 		    background: #fff;
 			left:50%;
 			top:50%;
-			margin-top: -232px;
+			margin-top: -202px;
 			padding-bottom: 30px;
 			margin-left: -250px;
 			position: absolute;
 			display: none;
 		    width: 500px;
+		    height: 404px;
+		    overflow: show;
 		    border-bottom-left-radius: 6px;
 		    border-bottom-right-radius: 6px;
 		    -moz-border-bottom-left-radius: 6px;
@@ -76,7 +78,7 @@
 			position: absolute;
 			color: #ccc;
 			text-shadow:#fff 0px 1px 0, #999 0 -1px 0;
-			margin-top: 60px;
+			margin-top: 40px;
 			left: 30%;
 		}
 		span#prevBtn {
