@@ -202,9 +202,9 @@
 				</li>
 				<li>
 					<p class="breadcrumb">Welcome > Account > Plugins > <span class="active">Install</span></p>
-					<h2>Ready to install!</h2>
-					<p>We have everything we need, all you need to do is click 'Install!'.</p>
-					<p style="color:#ff0000;font-weight:bold;">Do not close this page while installing!</p>
+					<h2>Ready to install.</h2>
+					<p>We have everything we need, all you need to do is click 'Install'!</p>
+					<p style="color:#ff0000;font-weight:bold;text-transform:uppercase;">Do not close this page while installing.</p>
 					<input type="submit" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" value="Install" />
 					</form>
 				</li>
