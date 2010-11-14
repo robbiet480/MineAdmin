@@ -22,9 +22,9 @@ if($_GET['action'] == "dlkit") {
 				<?php
 				foreach($items as $item) {
 				if(file_exists('images/'.$item['itemid'].'.png')) {
-					echo '<span><label><img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+					echo '<span><label><img src="images/'.$item['itemid'].'.png" alt="'.$item['name'].'" title="'.$item['name'].'" width="25px" height="25px" />';
 				} else {
-					echo '<span><label><img src="images/default.png" alt="'.$item['name'].'" width="25px" height="25px" />';
+					echo '<span><label><img src="images/default.png" alt="'.$item['name'].'" title="'.$item['name'].'" width="25px" height="25px" />';
 				}
 					echo '<input type="checkbox" name="item" value="'.$item['itemid'].'"></label></span>';
 				}
@@ -72,7 +72,7 @@ if($_GET['action'] == "dlkit") {
 				echo "<td>";
 				$items = explode(",",$kit['items']);
 				foreach($items as &$item){   
-					echo '<img src="images/'.$item.'.png">';
+					echo '<img src="images/'.$item.'.png" alt="'.$item['name'].'" title="'.$item['name'].'" >';
 				}
 				echo "</td>";
 				echo "<td>".$kit['group'].'</td>';
