@@ -23,7 +23,7 @@ if($_GET['action'] == "enable") {
 			if($plugin['enabled'] == "1") {
 				$img = "<img src='images/icons/accept.png'>";
 				if($plugin['id'] == "CraftAPI") {
-					$url = "<p>You can not disable CraftAPI</p>";
+					$url = "<p>You cannot disable CraftAPI</p>";
 				} else {
 				$url = "<a href='plugins.php?action=disable&id=".$plugin['id']."'>Disable Plugin</a>";
 			}

@@ -18,6 +18,7 @@
 			padding-bottom: 30px;
 			margin-left: -250px;
 			position: absolute;
+			display: none;
 		    width: 500px;
 		    border-bottom-left-radius: 6px;
 		    border-bottom-right-radius: 6px;
@@ -90,6 +91,7 @@
 	<script type="text/javascript" src="js/easySlider.js"></script>
 	<script type="text/javascript" language="javascript">
 		$(document).ready(function(){	
+			$('#installer').animate({height: "show", opacity: 'show'},'slow');
 			$("#steps").easySlider({
 				prevText:'< Back',
 				nextText:'Next >',
