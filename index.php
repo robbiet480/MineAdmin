@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>MinecraftServers.com</title>
-  <script>
+  <style type="text/css">
     * { margin: 0; padding: 0; }
     #wrapper{display:table;overflow:hidden;margin:0px auto;}
     *:first-child+html #wrapper {position:relative;}/*ie7*/
@@ -18,7 +18,7 @@
     html,body{height:100%;}
     body {background: #b2b2b2 url('images/bg.png') no-repeat top center;}
     #wrapper{height:100%;width:960px;}
-  </script>
+  </style>
 </head>
 <body>
    <div id="wrapper">
