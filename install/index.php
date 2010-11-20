@@ -156,20 +156,33 @@
 		<div id="steps">
 			<ul>
 				<li>
+					<?php
+					if(!file_exists('../config.php')) {
+					?>
 					<p class="breadcrumb"><span class="active">Welcome</span> > Account > Plugins > Install</p>
 					<h2>Welcome to MCSAdmin.</h2>
 					<p>Before you can use MCSAdmin, there are a few things that need to be set up.</p>
 					<p>Ready? Click 'Next' to get started.</p>
+					<?php
+					} else {
+					?>
+					<p class="breadcrumb"><span class="active">Error</span></p>
+					<h2>Hey!</h2>
+					<p>You already installed MCSAdmin! You can't do it again dummy!</p>
+					<p><a href="<?php echo $_SERVER['HTTP_HOST']; ?>/index.php">Go Login</a></p>
+					<?php
+					}
+					?>
 				</li>
 				<li>
 					<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
 					<p class="breadcrumb">Welcome > <span class="active">Account</span> > Plugins > Install</p>
 					<h2>Account Setup</h2>
-					<p>Create your account to log into MCSAdmin.</p>
+					<p>Create the admin account to administer MCSAdmin.</p>
 					<label for="username">Username: <input type="text" class="input_text" name="username" id="username"></label><br /><br />
 					<label for="password">Password: <input type="password" class="input_text" name="password" id="password"></label>
 				</li>
-				<li>
+				<!--<li>
 					<p class="breadcrumb">Welcome > Account > <span class="active">Plugins</span> > Install</p>
 					<h2>Plugins</h2>
 					<p>Plugins will extend the functionality of your Minecraft server, check the ones you'd like to install!</p>
@@ -199,7 +212,7 @@
 						</tr>																		
 					</table>
 					<br/>
-				</li>
+				</li>-->
 				<li>
 					<p class="breadcrumb">Welcome > Account > Plugins > <span class="active">Install</span></p>
 					<h2>Ready to install.</h2>

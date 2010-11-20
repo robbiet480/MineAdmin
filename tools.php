@@ -161,6 +161,14 @@ if($_GET['action'] == "backup") {
 		</table>
 		</div>
 		
+		<div id="logs">
+			<h1>Log viewer</h1>
+			<textarea cols=50 rows=50>
+			<?php
+			echo file_get_contents('/opt/server.log');
+			?>
+			</textarea>
+		</div>
 	</div>
 	<script type="text/javascript">
 		$(function(){
