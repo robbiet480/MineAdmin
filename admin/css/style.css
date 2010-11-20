@@ -536,7 +536,7 @@ width: 97%;
 }
 
 #add_kit span {
-	padding: 5px;
+	padding: 5px 0 5px 0;
 }
 
 #kits a {
