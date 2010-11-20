@@ -17,7 +17,7 @@ include('admin/includes/markdown.php');
 	#footer {color: #b2b2b2;text-shadow:#fff 0px 1px 0, #999 0 -1px 0;}
     #footer a {color: #144564;text-decoration: none;}
     #wrapper{height:100%;width:800px;}
-    #content {margin-top: 75px;}
+    #content {margin-top: 75px;text-align: left;}
 	#footer {position: absolute;bottom: 15px;width:800px;text-align: center;}
   </style>
 </head>
