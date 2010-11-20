@@ -2,11 +2,42 @@
 $pageid = "landing";
 require_once('header_inc.php');
 require_once('includes/header.php');
+if(isset($_POST['markdown'])) {
+$filename = "markdown.md";
+	// Let's make sure the file exists and is writable first.
+	if (is_writable($filename)) {
+
+	    // In our example we're opening $filename in append mode.
+	    // The file pointer is at the bottom of the file hence
+	    // that's where $somecontent will go when we fwrite() it.
+	    if (!$handle = fopen($filename, 'a')) {
+	         echo "Cannot open file ($filename)";
+	         exit;
+	    }
+
+	    // Write $somecontent to our opened file.
+	    if (fwrite($handle, $_POST['markdown']) === FALSE) {
+	        echo "Cannot write to file ($filename)";
+	        exit;
+	    }
+
+	    //echo "Success, wrote ($somecontent) to file ($filename)";
+
+	    fclose($handle);
+
+	} else {
+	    //echo "The file $filename is not writable";
+		echo "Uh-oh, something went wrong. Please open a support ticket in the <a href='http://billing.hostiio.com/'>customer portal</a>";
+	}
+	
+}
 ?>
 	<div id="page_wrap">
     <h1>Landing Page Editor</h1>
     <div>
-      <!-- INSERT MARKDOWN EDITOR HERE -->
+	<form action="landing.php" method="POST">
+		<textarea name="markdown" cols="50" rows="50"><?php echo file_get_contents("markdown.md"); ?></textarea>
+	</form>
     </div>
 	</div>
 <?php require_once('includes/footer.php'); ?>
