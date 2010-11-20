@@ -3,7 +3,7 @@ $pid = shell_exec('pidof java');
 if(count($pid)==1) {
 	$status = '<font color="green">Status: Online</font>';
 } else {
-	$status = '<font color="red">Status: OFFLINE</font>';
+	$status = '<font color="red">Status: Offline</font>';
 }
 ?>
 <!DOCTYPE HTML>
@@ -49,6 +49,7 @@ if(count($pid)==1) {
 					<li><a href="users.php" <?php if ($pageid=="users") { echo " class=\"menu_active\""; } else { echo ""; }?>>Users</a></li>	
 					<li><a href="groups.php" <?php if ($pageid=="groups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Groups</a></li>
 					<li><a href="plugins.php" <?php if ($pageid=="plugins") { echo " class=\"menu_active\""; } else { echo ""; }?>>Plugins</a></li>
+					<li><a href="landing.php" <?php if ($pageid=="landing") { echo " class=\"menu_active\""; } else { echo ""; }?>>Landing Page</a></li>
 					<li><a href="settings.php" <?php if ($pageid=="settings") { echo " class=\"menu_active\""; } else { echo ""; }?>>Configuration</a></li>	
 					<li><a href="sysinfo.php" <?php if ($pageid=="sysinfo") { echo " class=\"menu_active\""; } else { echo ""; }?>>System Info</a></li>	
 				</ul>
