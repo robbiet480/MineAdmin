@@ -36,9 +36,10 @@ $filename = "markdown.md";
     <h1>Landing Page Editor</h1>
     <div>
 	<p>The landing page is powered by <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>, an easy to use text-to-HTML conversion tool for writing. It's not hard, we promise. Here's the <a href='http://daringfireball.net/projects/markdown/syntax'>syntax</a>. We also are utilizing <a href="http://michelf.com/projects/php-markdown/extra/">PHP Markdown Extra</a> for some extra syntax options. You can view the extra syntax options <a href="http://michelf.com/projects/php-markdown/extra/">here</a>. You can do almost anything you can do in HTML with Markdown.</p>
+	<br />
 	<form action="landing.php" method="POST">
-		<textarea name="markdown" id="markdown"><?php echo file_get_contents("markdown.md"); ?></textarea>
-		<input type="submit">
+		<textarea name="markdown" id="markdown"><?php echo file_get_contents("markdown.md"); ?></textarea><br />
+		<input type="submit" class="btn">
 	</form>
     </div>
 	</div>
