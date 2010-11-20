@@ -3,15 +3,20 @@ $pageid = "kits";
 require_once('header_inc.php');
 require_once('includes/header.php');
 $items = $minecraft->item_list();
-if(isset($_POST['item_name'])) {
-	global $db;
-	$result=$db->set('items',array('name'=>$_POST['item_name']),array('id'=>$_POST['id']));
-}
 if($_GET['action'] == "dlkit") {
 	$result=$db->delete("kits", array("id"=>$_GET['id']));
 	$minecraft->reload_kits();
 	echo "<div class='success' style='display:block;'>Removed ".$_GET['id']." from kits</div>";
+} elseif($_GET['action'] == "savekit") {
+	$kititems = "";
+	foreach($_POST['item'] as $kititem) {
+	$kititems .= $kititem.",";
+	} 
+	$length = strlen($kititems);
+	$input_items = substr($kititems,0,($length-1));
+	$result=$db->insert("kits", array("id"=>"","name"=>$_POST['name'],"items"=>$input_items,"delay"=>$_POST['kit_delay'],"group"=>$_POST['kit_group']), array(), true);
 }
+
 ?>
 
 	<div id="page_wrap">
@@ -26,7 +31,7 @@ if($_GET['action'] == "dlkit") {
 				} else {
 					echo '<span><label><img src="images/default.png" alt="'.$item['name'].'" title="'.$item['name'].'" width="25px" height="25px" />';
 				}
-					echo '<input type="checkbox" name="item" value="'.$item['itemid'].'"></label></span>';
+					echo '<input type="checkbox" name="item[]" value="'.$item['itemid'].'"></label></span>';
 				}
 				?>	
 				<br />	

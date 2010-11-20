@@ -16,7 +16,7 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
     header("Location: users.php");
 }
 ?>
-<form action="user_commands.php?save=1&uid=<?PHP echo $user_info['id']; ?>" method="post">
+<form action="user_commands.php?save=1&uid=<?php echo $user_info['id']; ?>" method="post">
     <div style="width:500px;">
         <div class="overlay_title"><h1 class="over_html_h1"><?PHP echo $user_info['name'];?>'s Commands</h1></div>
         <div class="over_html_row_wrap">
