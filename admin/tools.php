@@ -163,7 +163,7 @@ if($_GET['action'] == "backup") {
 		
 		<div id="logs">
 			<h1>Log viewer</h1>
-			<textarea cols=50 rows=50>
+			<textarea>
 			<?php
 			echo file_get_contents('/opt/server.log');
 			?>

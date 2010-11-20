@@ -487,6 +487,16 @@ width: 97%;
 	width: 97%;
 }
 
+#logs {
+	margin-top: 10px;
+}
+
+#logs textarea {
+	width: 97.5%;
+	height: 300px;
+	margin-left: 10px;
+}
+
 /******************************
 
 	Items & Kits
