@@ -81,7 +81,7 @@ if($_GET['action'] == "dlkit") {
 				}
 				echo "</td>";
 				echo "<td>".$kit['group'].'</td>';
-				echo "<td><a href='tools.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
+				echo "<td><a href='kits.php?action=dlkit&id=".$kit['id']."'><img src='images/icons/delete.png'></a></td>";
 				echo "</tr>";
 			}
 			?>
