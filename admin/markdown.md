@@ -16,6 +16,6 @@ Sincerely,
 
 Robbie Trencheny (<robbie@hostiio.com>) and Dennis Tang (<dennis@hostiio.com>)
 
-Co-Owners
+CEO & Web Designer
 
 [Hostiio](http://hostiio.com), LLC & [Minecraft Servers.com](http://minecraftservers.com)
