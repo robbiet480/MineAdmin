@@ -1,4 +1,3 @@
-<center>
 ![MinecraftServers.com](../images/logo.png)
 Why hello there!
 =============
@@ -21,4 +20,3 @@ Robbie Trencheny (<robbie@hostiio.com>) and Dennis Tang (<dennis@hostiio.com>)
 Co-Founders
 
 [Hostiio](http://hostiio.com), LLC & [Minecraft Servers.com](http://minecraftservers.com)
-</center>
