@@ -14,12 +14,11 @@ include('admin/includes/markdown.php');
     html,body{height:100%;}
     body {background: #d3d3d3 url('images/bg.png') no-repeat top center; font-family: sans-serif; font-size: 16px;}
     a {text-decoration: none;color:#144564;}
-    p {padding: 5px 0;}
     ul,li {}
 	#footer {color: #b2b2b2;text-shadow:#fff 0px 1px 0, #999 0 -1px 0;}
     #footer a {color: #144564;text-decoration: none;}
     #wrapper{height:100%;width:800px;}
-    #content {margin-top: 75px;}
+    #content {margin-top: 75px;text-align: left;}
 	#footer {position: absolute;bottom: 15px;width:800px;text-align: center;}
   </style>
 </head>
