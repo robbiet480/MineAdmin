@@ -29,7 +29,7 @@ class minecraft{
     function group_prefix($pref){
         global $db;
         $result=$db->fetch_sql("SELECT * FROM `groups` WHERE `prefix`='".$pref."' LIMIT 1;");
-        return (isset($reult[0]) ? $result[0] : false);
+        return (isset($result[0]) ? $result[0] : false);
     }
     function clear_inv($nick){
         for($x=0;$x<36;$x++){

@@ -1,5 +1,8 @@
 <?php
 //superfantabolous installer
+if(file_exists('config.php')) {
+	header("Location: index.php");
+}
 ?>
 <!DOCTYPE HTML> 
 <html lang="en"> 

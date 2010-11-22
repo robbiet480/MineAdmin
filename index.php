@@ -1,6 +1,8 @@
 <?php
+if(!file_exists('admin/config.php')) {
+	header("Location: admin/install.php");
+}
 include('admin/includes/markdown.php');
-
 ?>
 <!doctype html>
 <html>
