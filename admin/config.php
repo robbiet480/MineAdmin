@@ -4,7 +4,7 @@
     $API['ADDRESS']    =   '127.0.0.1';
     $API['PORT']       =   '20012';
 
-    $mysql['HOST']     =   '67.228.153.25'; // Mysql Host
+    $mysql['HOST']     =   'localhost'; // Mysql Host
     $mysql['USER']     =   'root'; // Mysql Username
     $mysql['PASS']     =   'DC91652D1695606F425FBDAA017E357DC4026DD3CFF04D49CCCB94BCC583BFFA';          // Mysql Password
     $mysql['DB']       =   'minecraft'; // Mysql Database
