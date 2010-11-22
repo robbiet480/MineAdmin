@@ -221,7 +221,7 @@ if(file_exists('config.php')) {
 					<h2>Ready to install.</h2>
 					<p>We have everything we need, all you need to do is click 'Install'!</p>
 					<p style="color:#ff0000;font-weight:bold;text-transform:uppercase;">Do not close this page while installing.</p>
-					<input type="submit" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" value="Install" />
+					<input type="submit" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" name="install" value="Install" />
 					</form>
 				</li>
 			</ul>
