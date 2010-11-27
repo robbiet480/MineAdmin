@@ -1,4 +1,10 @@
 <?php
+    //Make shure we use arrays and not strings ... windows is stupid
+    $PATH  = Array();
+    //Only had problems with Path variable, but its better to  force every variable to be an array
+    $API   = Array();
+    $mysql = Array();
+
     /* Configuration Settings */
     
     $API['USER']       =   "secure";
