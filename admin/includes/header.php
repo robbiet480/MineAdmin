@@ -1,5 +1,13 @@
 <?php
-$pid = shell_exec('pidof java');
+$os_string = php_uname('s');
+if (strpos(strtoupper($os_string), 'WIN')!==false)
+{
+    $pid = shell_exec('wmic process where ExecutablePath=\'C:\\windows\\system32\\java.exe\' get ProcessId');
+}
+else
+{
+    $pid = shell_exec('pidof java');
+}
 if(count($pid)==1) {
 	$status = '<font color="green">Status: Online</font>';
 } else {
