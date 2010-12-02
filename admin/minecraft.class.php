@@ -1,11 +1,10 @@
 <?php
-
-include_once("prettyxmlrpc.php");
+include_once("jsonrpc.class.php");
 class minecraft{
     var $r;
     function __construct(){
         global $API;
-        $this->r = new PrettyXMLRPC("http://".$API['USER'].":".$API['PASS']."@".$API['ADDRESS'].":".$API['PORT'], new PrettyXMLRPCEpiBackend());
+        $this->r = new JsonRPC($API['ADDRESS'],$API['PORT'],$API['USER'],$API['PASS']);
     }
     function send_message($nick,$message){
         return $this->r->player->sendMessage($nick, $message);

@@ -25,13 +25,15 @@ class JsonRPC extends JsonRPCChild
     private $port;
 	private $user;
 	private $password;
+	private $debug;
 	public  $lasterror;
-    public function __construct($server,$port=20059,$user="",$password="")
+    public function __construct($server,$port=20059,$user="",$password="",$debug=true)
     {
 		$this->server=$server;
 		$this->port=$port;
 		$this->user=$user;
 		$this->password=$password;
+		$this->debug=$debug;
     } 
     
     public function __destruct() 
@@ -64,10 +66,19 @@ class JsonRPC extends JsonRPCChild
 			if($j->result=="success")
 			{
 				return $j->success;
+			if($this->debug)die($this->lasterror);
+            return null;
+        } else {
+			$j=json_decode($file,true);
+			
+			if($j["result"]=="success")
+			{
+				return $j["success"];
 			}
 			else
 			{
 				$this->lasterror=$r->error;
+			    if($this->debug)die($this->lasterror);
 				return null;
 			}
         } 
