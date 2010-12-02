@@ -5,6 +5,13 @@
     $API['PASS']       =   "password";
     $API['ADDRESS']    =   "127.0.0.1";
     $API['PORT']       =   "20012";
+
+    /* Configuration Settings */
+    
+    $jsonAPI['USER']       =   "admin";
+    $jsonAPI['PASS']       =   "password";
+    $jsonAPI['ADDRESS']    =   "127.0.0.1";
+    $jsonAPI['PORT']       =   "20059";
     
     
     /* MYSQL CONFIGURATION*/

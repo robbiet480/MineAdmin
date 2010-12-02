@@ -1,18 +1,23 @@
 <?php
-$os_string = php_uname('s');
-if (strpos(strtoupper($os_string), 'WIN')!==false)
-{
-    $pid = shell_exec('wmic process where ExecutablePath=\'C:\\windows\\system32\\java.exe\' get ProcessId');
-}
-else
-{
-    $pid = shell_exec('pidof java');
-}
-if(count($pid)==1) {
+/*
+(12/1/2010)Emirin: Removed old code checking pids and added new code to check the port.
+Later update to get port from server.properties and error logging.
+ */
+
+//Removeing warnings.  If warnings are added it will report a warning if the port is not found.
+error_reporting(E_ERROR | E_PARSE);
+
+if(fsockopen($jsonAPI['ADDRESS'], $jsonAPI['PORT'], $errno, $errstr, 1)) {
 	$status = '<font color="green">Status: Online</font>';
 } else {
 	$status = '<font color="red">Status: Offline</font>';
 }
+
+//Setting error reporting back to errors, warnings and parse errors.
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+//End edit.
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
