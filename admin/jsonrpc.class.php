@@ -62,13 +62,6 @@ class JsonRPC extends JsonRPCChild
 			$this->lasterror = $error["message"]; 
             return null;
         } else {
-			$j=json_decode($file);
-			if($j->result=="success")
-			{
-				return $j->success;
-			if($this->debug)die($this->lasterror);
-            return null;
-        } else {
 			$j=json_decode($file,true);
 			
 			if($j["result"]=="success")
