@@ -13,6 +13,11 @@ class minecraft{
     function __construct($server, $port, $user, $pass){
         global $API;
         $this->r = "http://".$server.":".$port."/api/call?username=".$user."&password=".$pass;
+		//(12-2-2010)Emirin: Adding usefull varables.
+		$this->server = $server;
+		$this->port = $port;
+		$this->user = $user;
+		$this->user = $user;
     }
     function send_message($nick,$message){
 //        return new JSON($this->r. "&method=player.sendMessage(".$nick.", ".$message.")", new JSONEpiBackend());
@@ -54,7 +59,8 @@ class minecraft{
 	//(12-2-2010)Emirin: Added json object here under the function.  Not sure this is how I want to do it but it works for the time being.
 		$JSON = new JSON();
 
-		$result = $JSON->retrieve($this->r. "&method=player.getPlayers");
+		//(12-2-2010)Emirin: populating the port and server for json server status.
+		$result = $JSON->retrieve($this->r. "&method=player.getPlayers", $this->server, $this->port);
 		$i =0;
 		foreach ($result->{'success'} as $object) {
 		//(12-2-2010)Emirin: Grab each player
