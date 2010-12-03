@@ -5,7 +5,7 @@ if($_SESSION['user']==""){
         $logged=false;
 }
 $list = $minecraft->player_list();
-//(12-2-2010)Emirin: Since we are returning an array, lets count the numbers, then run it
+//(12-3-2010)Emirin: Since we return an array now, $list->code isn't going to return anything.  Now we take the count of records and validate it.
 if(count($list) == 0) {
         echo "<p>No one is currently online.</p>";
 } else {
