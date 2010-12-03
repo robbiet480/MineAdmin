@@ -5,13 +5,6 @@
     $API['PASS']       =   "password";
     $API['ADDRESS']    =   "127.0.0.1";
     $API['PORT']       =   "20012";
-
-    /* Configuration Settings */
-    
-    $jsonAPI['USER']       =   "admin";
-    $jsonAPI['PASS']       =   "password";
-    $jsonAPI['ADDRESS']    =   "127.0.0.1";
-    $jsonAPI['PORT']       =   "20059";
     
     
     /* MYSQL CONFIGURATION*/
@@ -25,7 +18,11 @@
     
     $PATH['www']        =   "/var/adminpanel/"; // path to MineAdmin
     $PATH['minecraft']  =   "/var/minecraftserver/"; // Path to minecraft server folder
-    
+
+	/* Minecraft server speciic settings */
+	
+	$MCSERVER['PORT']	=	"25565";//Default minecraft port
+
     /* Methods for backup */
 
     $Backup_Method      =   "node.js"; // node.js, backup.plugin
