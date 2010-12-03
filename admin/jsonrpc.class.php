@@ -48,7 +48,6 @@ class JsonRPC extends JsonRPCChild
         $headers = array('Connection: close');
         $header = (version_compare(phpversion(), '5.2.8')) > 0 
             ? $headers : implode("\r\n", $headers); 
-            
         $context = stream_context_create(array('http' => array( 
             'method'     => "POST", 
             'header'     => $header, 
@@ -62,7 +61,8 @@ class JsonRPC extends JsonRPCChild
 			$this->lasterror = $error["message"]; 
             return null;
         } else {
-			$j=json_decode($file,true);
+		//(12-3-2010)Emirin: Adding UTF8 encoding to handle the color field.(thanks robbie480!)
+			$j=json_decode(utf8_encode($file),true);
 			
 			if($j["result"]=="success")
 			{

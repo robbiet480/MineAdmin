@@ -1,18 +1,34 @@
 <?php
-$os_string = php_uname('s');
-if (strpos(strtoupper($os_string), 'WIN')!==false)
-{
-    $pid = shell_exec('wmic process where ExecutablePath=\'C:\\windows\\system32\\java.exe\' get ProcessId');
-}
-else
-{
-    $pid = shell_exec('pidof java');
-}
+/*
+	$os_string = php_uname('s');
+	if (strpos(strtoupper($os_string), 'WIN')!==false)
+	{
+		$pid = shell_exec('wmic process where ExecutablePath=\'C:\\windows\\system32\\java.exe\' get ProcessId');
+	}
+	else
+	{
+		$pid = shell_exec('pidof java');
+	}
+*/
+
+/*
 if(count($pid)==1) {
 	$status = '<font color="green">Status: Online</font>';
 } else {
 	$status = '<font color="red">Status: Offline</font>';
 }
+*/
+
+error_reporting(E_ERROR | E_PARSE);
+//(12-3-2010)Emirin: Swaped back to using the $API and added $MCSERVER['PORT'] to validate listening on the mcserver port.
+if(fsockopen($API['ADDRESS'], $MCSERVER['PORT'], $errno, $errstr, 1)) {
+	$status = '<font color="green">Status: Online</font>';
+} else {
+	$status = '<font color="red">Status: Offline</font>';
+}
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
