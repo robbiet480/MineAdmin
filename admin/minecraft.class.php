@@ -1,14 +1,21 @@
 <?php
 
-include_once("prettyxmlrpc.php");
+include_once("json.php");
+
+
 class minecraft{
     var $r;
-    function __construct(){
+	var $server;
+	var $port;
+	var $user;
+	var $pass;
+
+    function __construct($server, $port, $user, $pass){
         global $API;
-        $this->r = new PrettyXMLRPC("http://".$API['USER'].":".$API['PASS']."@".$API['ADDRESS'].":".$API['PORT'], new PrettyXMLRPCEpiBackend());
+        $this->r = "http://".$server.":".$port."/api/call?username=".$user."&password=".$pass;
     }
     function send_message($nick,$message){
-        return $this->r->player->sendMessage($nick, $message);
+//        return new JSON($this->r. "&method=player.sendMessage(".$nick.", ".$message.")", new JSONEpiBackend());
     }
     function get_inventory($nick){
         return $this->r->player->getInventory($nick);
@@ -44,7 +51,28 @@ class minecraft{
         return $this->r->player->giveItem($nick,intval($item),intval($amount));
     }
     function player_list(){
-        return $this->r->player->getPlayers();
+	//(12-2-2010)Emirin: Added json object here under the function.  Not sure this is how I want to do it but it works for the time being.
+		$JSON = new JSON();
+
+		$result = $JSON->retrieve($this->r. "&method=player.getPlayers");
+		$i =0;
+		foreach ($result->{'success'} as $object) {
+		//(12-2-2010)Emirin: Grab each player
+			if (is_object($object))
+			{
+				//(12-2-2010)Emirin: rab each value and key in the player array
+				foreach ($object as $key => $value) {
+					$array[$key] = $value;
+				}
+			}
+			else {
+				$array = $object;
+			}
+			//(12-2-2010)Emirin: return the new array into the player array and increment.
+			$players[$i] = $array;
+			$i++;
+		}
+        return $players;
     }
 	function player_limit(){
 		return $this->$r->server->getPlayerLimit();
