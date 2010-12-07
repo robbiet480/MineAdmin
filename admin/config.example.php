@@ -22,7 +22,7 @@
 	/* Minecraft server speciic settings */
 	
 	$MCSERVER['PORT']	=	"25565";//Default minecraft port
-
+	$MCSERVER['SERVICENAME'] = "Minecraft" //Default minecraft service name (Required for Windows)
     /* Methods for backup */
 
     $Backup_Method      =   "node.js"; // node.js, backup.plugin
