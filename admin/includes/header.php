@@ -20,9 +20,10 @@ if(count($pid)==1) {
 */
 
 error_reporting(E_ERROR | E_PARSE);
-//(12-3-2010)Emirin: Swaped back to using the $API and added $MCSERVER['PORT'] to validate listening on the mcserver port.
-if(fsockopen($API['ADDRESS'], $MCSERVER['PORT'], $errno, $errstr, 1)) {
+
+if($conn=fsockopen($API['ADDRESS'], $MCSERVER['PORT'], $errno, $errstr, 1)) {
 	$status = '<font color="green">Status: Online</font>';
+	fclose($conn);
 } else {
 	$status = '<font color="red">Status: Offline</font>';
 }

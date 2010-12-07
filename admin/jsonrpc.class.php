@@ -44,7 +44,7 @@ class JsonRPC extends JsonRPCChild
     { 
 		error_reporting(E_ERROR | E_PARSE);
 //(12-6-2010)Emirin: Added socket check to json parse to speed up the load of the page if there is no server available.
-		if(fsockopen($this->server, $this->port, $errno, $errstr, 1))
+		if($conn=fsockopen($this->server, $this->port, $errno, $errstr, 1))
 		{
 			$url="http://".$this->server.":".$this->port."/api/call?method=".$name;
 			$request = "args=".urlencode(json_encode($arguments))."&username=".$this->user."&password=".$this->password;
@@ -79,6 +79,7 @@ class JsonRPC extends JsonRPCChild
 					return null;
 				}
 			} 
+			fclose($conn);
 		}
 		else{
 		}
