@@ -7,7 +7,7 @@ if(file_exists('config.php')) {
 <!DOCTYPE HTML> 
 <html lang="en"> 
 <head>
-	<title>MCSAdmin Installer - MinecraftServers.com</title>
+	<title>MineAdmin Installer</title>
 	<style type="text/css">
 		body {
 			background: #ebebeb;
@@ -155,7 +155,7 @@ if(file_exists('config.php')) {
 </head>
 <body>
 	<div id="installer">
-		<h1 id="logo">MCSAdmin</h1>
+		<h1 id="logo">MineAdmin</h1>
 		<div id="steps">
 			<ul>
 				<li>
@@ -163,15 +163,15 @@ if(file_exists('config.php')) {
 					if(!file_exists('../config.php')) {
 					?>
 					<p class="breadcrumb"><span class="active">Welcome</span> > Account > Plugins > Install</p>
-					<h2>Welcome to MCSAdmin.</h2>
-					<p>Before you can use MCSAdmin, there are a few things that need to be set up.</p>
+					<h2>Welcome to MineAdmin.</h2>
+					<p>Before you can use MineAdmin, there are a few things that need to be set up.</p>
 					<p>Ready? Click 'Next' to get started.</p>
 					<?php
 					} else {
 					?>
 					<p class="breadcrumb"><span class="active">Error</span></p>
 					<h2>Hey!</h2>
-					<p>You already installed MCSAdmin! You can't do it again dummy!</p>
+					<p>You already installed MineAdmin! You can't do it again dummy!</p>
 					<p><a href="<?php echo $_SERVER['HTTP_HOST']; ?>/index.php">Go Login</a></p>
 					<?php
 					}
@@ -181,7 +181,7 @@ if(file_exists('config.php')) {
 					<form action="javascript:get(document.getElementById('myform'));" name="myform" id="myform" method="post">
 					<p class="breadcrumb">Welcome > <span class="active">Account</span> > Plugins > Install</p>
 					<h2>Account Setup</h2>
-					<p>Create the admin account to administer MCSAdmin.</p>
+					<p>Create the admin account to administer MineAdmin.</p>
 					<label for="username">Username: <input type="text" class="input_text" name="username" id="username"></label><br /><br />
 					<label for="password">Password: <input type="password" class="input_text" name="password" id="password"></label>
 				</li>
@@ -226,7 +226,7 @@ if(file_exists('config.php')) {
 				</li>
 			</ul>
 		 </div>
-		<p id="copy">&copy; <?php echo date("Y"); ?> Hostiio, LLC.</p>
+		<p id="copy">&copy; <?php echo date("Y"); ?> MineAdmin.</p>
 	</div>
 </body>
 </html>

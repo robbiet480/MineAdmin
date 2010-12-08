@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<?php if((preg_match("/iPad/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPhone/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPod/i",$_SERVER['HTTP_USER_AGENT']))) {
-		echo "<title>MCSAdmin</title>";
+		echo "<title>MineAdmin</title>";
 	} else {
-		echo "<title>MCSAdmin - MinecraftServers.com</title>";
+		echo "<title>MineAdmin</title>";
 	}
 	?>
 	<link rel="stylesheet" href="css/style_login.css" type="text/css" media="screen" />
@@ -21,7 +21,7 @@
 	<div id="login-form">
 		<form action="javascript:login();" method="post">
 			<div id="login_form_i">
-				<h1>MCSAdmin</h1>
+				<h1>MineAdmin</h1>
 				<label><span>Username</span><input type="text" name="user" id="user" class="autofocus" /></label><br />
 				<label><span>Password</span><input type="password" name="pass" id="pass" /></label><br />
 				<input type="submit" value="Login">

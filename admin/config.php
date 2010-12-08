@@ -1,13 +1,13 @@
 <?php
     $API['USER']       =   'admin';
-    $API['PASS']       =   'admin';
+    $API['PASS']       =   'test';
     $API['ADDRESS']    =   '127.0.0.1';
-    $API['PORT']       =   '20012';
+    $API['PORT']       =   '20059';
 
-    $mysql['HOST']     =   'localhost'; // Mysql Host
-    $mysql['USER']     =   'root'; // Mysql Username
-    $mysql['PASS']     =   'DC91652D1695606F425FBDAA017E357DC4026DD3CFF04D49CCCB94BCC583BFFA';          // Mysql Password
-    $mysql['DB']       =   'minecraft'; // Mysql Database
+    $mysql['HOST']     =   '67.228.153.25'; // Mysql Host
+    $mysql['USER']     =   'acemonstertoys'; // Mysql Username
+    $mysql['PASS']     =   'D6D427976E744DBFED79FEC4CF23AAE51AC02E8443DD602D3F47DF7F8ED266CB';          // Mysql Password
+    $mysql['DB']       =   'acemonstertoys'; // Mysql Database
 
     $PATH['www']        =   '/var/www/'; // path to MineAdmin. MUST HAVE ENDING FORWARD SLASH
     $PATH['minecraft']  =   '/opt/'; // Path to minecraft server folder. MUST HAVE ENDING FORWARD SLASH

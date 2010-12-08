@@ -35,11 +35,11 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 <html lang="en">
 <head>
 	<?php if((preg_match("/iPad/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPhone/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPod/i",$_SERVER['HTTP_USER_AGENT']))) {
-		echo "<title>MCSAdmin</title>";
+		echo "<title>MineAdmin</title>";
 		echo "<meta name=\"viewport\" content=\"initial-scale = 1.0, user-scalable = no\" />";
 		echo "<link rel=\"apple-touch-startup-image\" href=\"images/ipad-startup.png\" />";
 	} else {
-		echo "<title>MCSAdmin - MinecraftServers.com</title>";
+		echo "<title>MineAdmin</title>";
 	}
 	?>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -64,7 +64,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 </head>
 <body>
 	<div id="menu-wrap">
-		<h2>MCSAdmin</h2>
+		<h2>MineAdmin</h2>
 		<ul>
 			<li><a href="logout_process.php">Logout</a></li>
 			<li class="dropdown"><a href="javascript:void(0)" id="droplink" <?php if ($pageid=="groups" or $pageid=="users" or $pageid=="items" or $pageid=="kits" or $pageid=="plugins" or $pageid=="settings" or $pageid=="sysinfo") {echo " class=\"menu_active\"";} else { echo ""; }?>>Settings &or;</a>
@@ -80,7 +80,6 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 				</ul>
 			</li>
             <li><a href="tools.php" <?php if ($pageid=="tools") { echo " class=\"menu_active\""; } else { echo ""; }?>>Tools</a></li>
-			<li><a href="news.php" <?php if ($pageid=="news") { echo " class=\"menu_active\""; } else { echo ""; }?>>News</a></li>
 			<li><a href="start.php" <?php if ($pageid=="start") { echo " class=\"menu_active\""; } else { echo ""; }?>>Home</a></li>
 		</ul>
 		<div id="status">
