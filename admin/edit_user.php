@@ -8,11 +8,19 @@ if(is_numeric($_GET['uid'])){
         $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
         $ip=$db->escape_string($_POST['ip']);
         $group=explode(":",$db->escape_string($_POST['groups']));
-        $db->exec("UPDATE `users` SET `admin`=".$admin.", `canmodifyworld`=".$canmodifyworld.", `ignoresrestrictions`=".$ignoresrestrictions.", `ip`='".$ip."', `groups`='".$group[1]."', `prefix`='".$group[0]."' WHERE `id`='".$user_info['id']."'");
+        $db->set("users",
+	        Array("admin"=>$admin,
+				  "canmodifyworld"=>$canmodifyworld,
+	              "ignoresrestrictions"=>$ignoresrestrictions,
+	              "ip"=>$ip,
+	              "groups"=>$group[1],
+	              "prefix"=>$group[0]
+	              ),
+              Array("id"=>$user_info['id']));
         header("Location: users.php");
         exit;
     }else if(isset($_GET['save']) && $_GET['save']=="2"){
-        if($db->exec("DELETE FROM `users` WHERE `id`='".$user_info['id']."'")){
+        if($db->delete("users",Array("id"=>$user_info['id']))){
             echo "1";
         }else{
             echo "0";

@@ -6,18 +6,24 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
     $canmodifyworld=$db->escape_string($_POST['canmodifyworld']=="on"?"1":"0");
     $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
     $inheritedgroups=$db->escape_string($_POST['inheritedgroups']);
-    $db->exec("UPDATE `groups` SET `inheritedgroups`='".$inheritedgroups."', `admin` = ".$admin.", `canmodifyworld` = ".$canmodifyworld.", `ignoresrestrictions` = ".$ignoresrestrictions." WHERE `id`='".$group_info['id']."'");
+    $db->set("groups",
+	        Array("inheritedgroups"=>$inheritedgroups,
+				  "admin"=>$admin,
+	              "canmodifyworld"=>$canmodifyworld,
+	              "ignoresrestrictions"=>$ignoresrestrictions
+	              ),
+              Array("id"=>$group_info['id']));
     header("Location: groups.php");
 }else if(isset($_GET['save']) && $_GET['save']=="2"){
-    if($db->exec("DELETE FROM `groups` WHERE `id`='".$group_info['id']."'")){
+    if($db->delete("groups",Array("id"=>$group_info['id']))){
         echo "1";
     }else{
         echo "0";
     }
     exit;
 }else if(isset($_GET['save']) && $_GET['save']=="3"){
-    if($db->exec("UPDATE `groups` SET `defaultgroup`=0")){
-        if($db->exec("UPDATE `groups` SET `defaultgroup`=1 WHERE `id`='".$group_info['id']."'")){
+    if($db->set("groups",Array("defaultgroup"=>0),"")){
+        if($db->set("groups",Array("defaultgroup"=>0),"",Array("id"=>$group_info['id']))){
             echo "1";
         }else{
             echo "0";

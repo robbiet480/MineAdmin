@@ -17,18 +17,19 @@ class minecraft{
     }
     function get_item_name($id){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `items` WHERE `itemid`='".$id."' LIMIT 1;");
-        return $result[0]['name'];
+       
+        $result=$db->fetch("items",Array("itemid"=>$id),"",false,"");
+        return $result['name'];
     }
     function get_item_id($name){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `items` WHERE `name`='".$name."' LIMIT 1;");
-        return $result[0]['itemid'];
+        $result=$db->fetch("items",Array("name"=>$name),"",false,"");
+        return $result['itemid'];
     }
     function group_prefix($pref){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `groups` WHERE `prefix`='".$pref."' LIMIT 1;");
-        return (isset($result[0]) ? $result[0] : false);
+        $result=$db->fetch("groups",Array("prefix"=>$pref),"",false,"");
+        return $result;
     }
     function clear_inv($nick){
         for($x=0;$x<36;$x++){
@@ -56,12 +57,12 @@ class minecraft{
     }
     function group_list(){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `groups` ORDER BY `name` DESC");
+        $result=$db->fetch("groups","","",true,Array("name"=>"DESC"));
         return $result;
     }
     function user_list(){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `users` ORDER BY `id` DESC");
+        $result=$db->fetch("users","","",true,Array("id"=>"DESC"));
         return $result;
     }
     function get_plugin($plugin){
@@ -78,13 +79,11 @@ class minecraft{
 	}
     function user_get_id($id){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `users` WHERE `id`='".$id."'");
-        return $result[0];
+        return $db->fetch("users",Array("id"=>$id),"",false,"");
     }
     function group_get_id($id){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `groups` WHERE `id`='".$id."'");
-        return $result[0];
+        return $db->fetch("groups",Array("id"=>$id),"",false,"");
     }
     function player_kick($nick,$reason){
         return $this->r->player->kick($nick,$reason);
@@ -104,8 +103,7 @@ class minecraft{
     }
     function backup_list(){
 	        global $db;
-	        $result=$db->fetch_sql("SELECT * FROM `backups` ORDER BY `id` DESC");
-	        return $result;
+	        return $db->fetch("backups","","",true,Array("id"=>"DESC"));
 	}
 	function backup($name,$comment){
 		global $PATH;
@@ -152,7 +150,7 @@ class minecraft{
 	}
 	function backup_delete($id){
 		global $db;
-		$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
+		$result=$db->fetch("backups",Array("id"=>"DESC"),"",true);
 		unlink($result[0]['filename']);
 		$result=$db->delete("backups", array("id"=>$id));
 		return $result;
@@ -218,12 +216,12 @@ class minecraft{
     
     function item_list(){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `items` ORDER BY `name` DESC");
+        $result=$db->fetch("items","","",true,Array("name"=>"DESC"));
         return $result;
     }
 	function reserve_list(){
         global $db;
-        $result=$db->fetch_sql("SELECT * FROM `reservelist`");
+        $result=$db->fetch("reservelist","");
         return $result;
     }
     function server_test(){
@@ -231,17 +229,17 @@ class minecraft{
     }
 	function white_list(){
 		global $db;
-        $result=$db->fetch_sql("SELECT * FROM `whitelist`");
+        $result=$db->fetch("whitelist","");
         return $result;
 	}
 	function kit_list(){
 		global $db;
-        $result=$db->fetch_sql("SELECT * FROM `kits` ORDER BY `id` DESC");
+        $result=$db->fetch("kits","","",true,Array("id"=>"DESC"));
         return $result;
 	}
 	function warp_list(){
 		global $db;
-        $result=$db->fetch_sql("SELECT * FROM `warps` ORDER BY `id` DESC");
+        $result=$db->fetch("warps","","",true,Array("id"=>"DESC"));
         return $result;
 	}
 	function reload_bans(){

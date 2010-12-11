@@ -7,8 +7,19 @@ if($_GET['save']=="1"){
     $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
     $ip=$db->escape_string($_POST['ip']);
     $group=explode(":",$db->escape_string($_POST['groups']));
-    $db->exec("INSERT INTO `users` SET `name` = '".$nick."', `admin` = ".$admin.", `canmodifyworld` = ".$canmodifyworld.", `ignoresrestrictions` = ".$ignoresrestrictions.", `ip` = '".$ip."', `groups` = '".$group[1]."', `prefix` = '".$group[0]."'");
+    $db->insert("users",Array("name"=>$nick,
+							  "admin"=>$admin,
+							  "canmodifyworld"=>$canmodifyworld,
+							  "ignoresrestrictions"=>$ignoresrestrictions,
+							  "ip"=>$ip,
+							  "groups"=>$group[1],
+							  "prefix"=>$group[0],
+							  
+							  ////TODO : Password input box? ... setting default to empty password for now
+							  "password"=>sha1("")
+							  ),"",true);
     header("Location: users.php");
+    exit();
 }
 ?>
 <form action="add_user.php?save=1" method="post">

@@ -1,5 +1,6 @@
 <?php
-class MySQL{
+require("database.class.php");
+class MySQL extends database{
 	var $server;
 	var $username;
 	var $password;
@@ -33,81 +34,8 @@ class MySQL{
 		}
 		return true;
 	}
-	function fetch_sql($sql_string,$multi=true){
-		$starttime = time() + microtime();
-		$sql=mysql_query($sql_string,$this->conn);
-		$stoptime = time() + microtime();
-		$total = round($stoptime - $starttime,4);
-		$this->queries_stats[]=array(
-			"time"=>$total,
-			"string"=>$sql_string
-		);
-		$this->overall_stats=$this->overall_stats+$total;
-		$return=array();
-		if($sql){
-			while($data=mysql_fetch_assoc($sql)){
-				$return_tmp=array($data);
-				$return=array_merge($return_tmp,$return);
-			}
-		}
-		if($multi){
-			return $return;
-		}else{
-			return $return[0];
-		}
-	}
-	function current_id(){
-		global $apps_folder;
-		//$handle = fopen($apps_folder."track.txt", "r");
-		//$data = fread($handle, filesize($apps_folder."track.txt"));
-		//fclose($handle);
-		//$handle = fopen($apps_folder."track.txt","w");
-		//fwrite($handle,($data+1));
-		//fclose($handle);
-		return $data;
-	}
-	/*function exec($sql_string){
-		global $reference_folder;
-		//$starttime = time() + microtime();
-		$handle = fopen($reference_folder.$this->current_id().".txt","w");
-		fwrite($handle,json_encode(array("action"=>"execute_sql","sql"=>$sql_string)));
-		fclose($handle);
-		//$stoptime = time() + microtime();
-		//$total = round($stoptime - $starttime,4);
-		//$this->queries_stats[]=array(
-		//	"time"=>$total,
-		//	"string"=>$sql_string
-		//);
-		return true;
-	}*/
-	function exec($sql_string){
-		$starttime = time() + microtime();
-		$return=mysql_query($sql_string,$this->conn);
-		if(!$return){
-			$this->error=mysql_error($this->conn);
-		}
-		$stoptime = time() + microtime();
-		$total = round($stoptime - $starttime,4);
-		$this->queries_stats[]=array(
-			"time"=>$total,
-			"string"=>$sql_string
-		);
-		$this->overall_stats=$this->overall_stats+$total;
-		return $return;
-	}
-	function exec_shell($sql_string){
-		$starttime = time() + microtime();
-		$return=mysql_query($sql_string,$this->conn);
-		$stoptime = time() + microtime();
-		$total = round($stoptime - $starttime,4);
-		$this->queries_stats[]=array(
-			"time"=>$total,
-			"string"=>$sql_string
-		);
-		$this->overall_stats=$this->overall_stats+$total;
-		return $return;
-	}
-	function fetch($table,$data_array,$return="",$multi=false){
+	
+	function fetch($table,$data_array,$return="",$multi=false,$order_array){
 		$return_info="";
 		if($return!=""){
 			$return=explode(",",$return);
@@ -135,9 +63,22 @@ class MySQL{
 			}
 			$where_out="WHERE ".$where;
 		}
+		
+		$order="";
+		if(is_array($order_array)){
+			$order="ORDER BY ";
+			foreach($order_array as $key=>$value){
+				$ascdesc="ASC";
+				if(strtoupper($value)=="DESC")$ascdesc="DESC";
+				$order.="`".$key."` ".$ascdesc.",";
+			}
+			$order=substr($order,0,-1);
+		}
+		
 		$return=array();
 		$starttime = time() + microtime();
-		$sql=mysql_query("SELECT ".$return_info." FROM `".$table."` ".$where_out,$this->conn);
+		$sql_string="SELECT ".$return_info." FROM `".$table."` ".$where_out." ".$order;
+		$sql=mysql_query($sql_string,$this->conn);
 		$stoptime = time() + microtime();
 		$total = round($stoptime - $starttime,4);
 		$this->queries_stats[]=array(
@@ -155,7 +96,7 @@ class MySQL{
 			return $return[0];
 		}
 	}
-	function fetch_by($table,$data_array,$return,$multi=false){
+	function fetch_by($table,$data_array,$return,$multi=false,$order_array){
 		$return_info="*";
 		if(is_array($data_array)){
 			$x=1;
@@ -170,7 +111,8 @@ class MySQL{
 			$where_out="WHERE ".$where;
 		}
 		$starttime = time() + microtime();
-		$sql=mysql_query("SELECT ".$return_info." FROM `".$table."` ".$where_out." ".$return,$this->conn);
+		$sql_string="SELECT ".$return_info." FROM `".$table."` ".$where_out." ".$return;
+		$sql=mysql_query($sql_string,$this->conn);
 		$stoptime = time() + microtime();
 		$total = round($stoptime - $starttime,4);
 		$this->queries_stats[]=array(
@@ -189,7 +131,7 @@ class MySQL{
 			return $return[0];
 		}
 	}
-	function fetch_search($table,$data_array,$search,$return,$multi=false){
+	function fetch_search($table,$data_array,$search,$return,$multi=false,$order_array){
 		$return_info="*";
 		$x=1;
 		if(is_array($data_array)){
@@ -260,7 +202,9 @@ class MySQL{
 		if(!$create){
 			$where="WHERE {$where}";
 		}
-		$data=mysql_query("INSERT INTO `{$table}` SET {$set} {$where}",$this->conn);
+		$sql_string="INSERT INTO `{$table}` SET {$set} {$where}";
+		$data=mysql_query($sql_string,$this->conn)or die(mysql_error());
+		
 		return $data;
 	}
 	function set($table,$data_array,$where_array){

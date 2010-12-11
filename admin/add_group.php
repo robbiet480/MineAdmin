@@ -7,7 +7,13 @@ if($_GET['save']=="1"){
     $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
     $inheritedgroups=$db->escape_string($_POST['inheritedgroups']);
     $prefix=$db->escape_string($_POST['prefix']);
-    $db->exec("INSERT INTO `groups` SET `prefix`='".$prefix."', `inheritedgroups`='".$inheritedgroups."',`name` = '".$name."', `admin` = ".$admin.", `canmodifyworld` = ".$canmodifyworld.", `ignoresrestrictions` = ".$ignoresrestrictions."");
+    $db->insert("groups",Array("prefix"=>$prefix,
+							  "inheritedgroups"=>$inheritedgroups,
+							  "name"=>$name,
+							  "admin"=>$admin,
+							  "canmodifyworld"=>$canmodifyworld,
+							  "ignoresrestrictions"=>$ignoresrestrictions
+							  ),"",true);
     header("Location: groups.php");
 }
 ?>

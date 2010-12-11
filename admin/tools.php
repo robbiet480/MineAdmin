@@ -1,4 +1,6 @@
 <?php
+//TODO: Setup for tables like backup-table?
+//I don't have such a table on my minecraft server...  TheCrazyT
 $pageid = "tools";
 require_once('header_inc.php');
 require_once('includes/header.php');
@@ -9,7 +11,7 @@ function stop_server() {
 if($_GET['action'] == "backup") {
 	$minecraft->backup($_POST['backup_name'],$_POST['backup_comment']);
 } elseif($_GET['action'] == "dl") {
-    $result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
+    $result=$db->fetch("backups",Array("id"=>$_GET['id']),"",true,"");
 	if (file_exists($result[0]['filename'])) {
 	    header('Content-Description: File Transfer');
 	    header('Content-Type: application/octet-stream');
@@ -27,7 +29,7 @@ if($_GET['action'] == "backup") {
 	} elseif($_GET['action'] == "delete") {
 		$minecraft->backup_delete($_GET['id']);
 	} elseif($_GET['action'] == "restore") {
-		$result=$db->fetch_sql("SELECT filename FROM `backups` WHERE id = ".$_GET['id']);
+		$result=$db->fetch("backups",Array("id"=>$_GET['id']),"filename",true,"");
 		stop_server();
 		$restore = shell_exec('tar xvfz -C '.$PATH['minecraft'].'.. '.$result[0]['filename']);
 		shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');

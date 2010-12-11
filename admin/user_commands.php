@@ -12,7 +12,8 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
             $clist.=",/".$result[1][$i];
         }
     }
-    $db->exec("UPDATE `users` SET `commands`='".$clist."' WHERE `id`='".$user_info['id']."'");
+    $db->set("users",Array("commands"=>$clist),Array("id"=>$user_info['id']));
+
     header("Location: users.php");
 }
 ?>
