@@ -185,6 +185,9 @@ class MySQL extends database{
 			}
 		}
 		if(!$create){
+			//TODO: find out why you use a where command here
+			//Insert command uses no "WHERE" http://dev.mysql.com/doc/refman/5.1/en/insert.html
+			//Lets delete that param completely later?
 			$where="WHERE {$where}";
 		}
 		$sql_string="INSERT INTO `{$table}` SET {$set} {$where}";

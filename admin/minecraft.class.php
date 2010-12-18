@@ -47,7 +47,7 @@ class minecraft{
         return $this->r->player->getPlayers();
     }
 	function player_limit(){
-		return $this->$r->server->getPlayerLimit();
+		return $this->r->server->getPlayerLimit();
 	}
     function remove_slot($nick,$slot){
         return $this->r->player->removeInventorySlot($nick,intval($slot));
@@ -221,7 +221,7 @@ class minecraft{
     }
 	function reserve_list(){
         global $db;
-        $result=$db->fetch("reservelist","");
+        $result=$db->fetch("reservelist","","",true);
         return $result;
     }
     function server_test(){
@@ -229,7 +229,7 @@ class minecraft{
     }
 	function white_list(){
 		global $db;
-        $result=$db->fetch("whitelist","");
+        $result=$db->fetch("whitelist","","",true);
         return $result;
 	}
 	function kit_list(){

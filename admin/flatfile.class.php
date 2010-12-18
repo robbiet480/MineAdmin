@@ -11,7 +11,9 @@ class Flatfile extends database{
 							   "kits"  =>Array("name","items","delay","group"),
 							   "groups"=>Array("name","color","commands","inheritedgroups","admin"),
 							   "whitelist"=>Array("name"),
-							   "backups"=>Array("id","name","date","time","size","comment","filename"));
+							   "reservelist"=>Array("name"),
+							   "backups"=>Array("id","name","date","time","size","comment","filename"),
+							   "warps"=>Array("name","x","y","z","rotX","rotY","group"));
 	var $column_idx    = Array("users.name"=>0,
 						  "users.groups"=>1,
 						  "users.admin"=>2,
@@ -42,7 +44,17 @@ class Flatfile extends database{
 						  "backups.time"=>3,
 						  "backups.size"=>4,
 						  "backups.comment"=>5,
-                          "backups.filename"=>6
+                          "backups.filename"=>6,
+                          
+                          "warps.name"=>0,
+						  "warps.x"=>1,
+						  "warps.y"=>2,
+						  "warps.z"=>3,
+				          "warps.rotX"=>4,
+						  "warps.rotY"=>5,
+						  "warps.group"=>6,
+						  
+						  "reservelist.name"=>0
 						  );
 	var $tablefiles    = Array("users"=>"users.txt",
 							   "items"=>"items.txt",
@@ -64,13 +76,17 @@ class Flatfile extends database{
 		return false;
 	}
 	function escape_string($string){
-		$data=str_replace(":","_/@\_",$string);
-		return $data;
+		$string=str_replace(":","_/@\_",$string);
+		$string=str_replace("\r","_/r\_",$string);
+		$string=str_replace("\n","_/n\_",$string);
+		return $string;
 	}
 	function unescape_string($string)
 	{
-		$data=str_replace("_/@\_",":",$string);
-		return $data;
+		$string=str_replace("_/@\_",":",$string);
+		$string=str_replace("_/r\_","\r",$string);
+		$string=str_replace("_/n\_","\n",$string);
+		return $string;
 	}
 	function checkall($exists){
 		foreach($exists as $one){
@@ -110,7 +126,7 @@ class Flatfile extends database{
 		while($l=fgets($f))
 		{
 			if($l[0]=='#')continue;
-			$l=substr($l,0,-1);
+			if(substr($l,-1,1)=="\n")$l=substr($l,0,-1);
 			if(substr($l,-1,1)=="\r")$l=substr($l,0,-1);
 			$c = split(":",$l);
 			$columngroup = Array();
@@ -160,6 +176,9 @@ class Flatfile extends database{
 		while($l=fgets($f))
 		{
 			if($l[0]=='#')continue;
+			if(substr($l,-1,1)=="\n")$l=substr($l,0,-1);
+			if(substr($l,-1,1)=="\r")$l=substr($l,0,-1);
+			
 			$c = split(":",$l);
 			$columngroup = Array();
 			foreach($this->table_columns[$table] as $columnname)
