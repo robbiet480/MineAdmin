@@ -4,7 +4,7 @@
     $flatfile    = Array();
     $API         = Array();
     $GENERAL     = Array();
-    $useflatfile = true;
+    $useflatfile = false;
 
     /* Configuration Settings */
     
