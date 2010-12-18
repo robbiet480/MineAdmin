@@ -5,8 +5,17 @@
             exit;
     }
     require_once('config.php');
-    require("mysql.class.php");
-    $db = new MySQL($mysql['HOST'], $mysql['USER'], $mysql['PASS'], $mysql['DB']);
+
+    if($useflatfile){
+        require("flatfile.class.php");
+        $db = new Flatfile($flatfile['HOST'], $flatfile['USER'], $flatfile['PASS'], $flatfile['DB']);
+    }
+    else
+    {
+        require("mysql.class.php");
+        $db = new MySQL($mysql['HOST'], $mysql['USER'], $mysql['PASS'], $mysql['DB']);
+    }
+
     if ( !$db->isconnected() ) {
         echo "MySQL Configuration Incorrect.";
         exit();

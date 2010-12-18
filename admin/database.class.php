@@ -5,9 +5,9 @@ abstract class database {
 	abstract protected function escape_string($string);
 	abstract protected function checkall($exists);
 
-	abstract protected function fetch($table,$data_array,$return="",$multi=false,$order_array);
-	abstract protected function fetch_by($table,$data_array,$return,$multi=false,$order_array);
-	abstract protected function fetch_search($table,$data_array,$search,$return,$multi=false,$order_array);
+	abstract protected function fetch($table,$data_array,$return="",$multi=false,$order_array="");
+	abstract protected function fetch_by($table,$data_array,$return,$multi=false,$order_array="");
+	abstract protected function fetch_search($table,$data_array,$search,$return,$multi=false,$order_array="");
 	
 	abstract protected function insert($table,$data_array,$where_array,$create=false);
 	abstract protected function set($table,$data_array,$where_array);

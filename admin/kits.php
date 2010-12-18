@@ -41,7 +41,7 @@ if($_GET['action'] == "dlkit") {
 				<label>Group
 				<select class="input_text" name="kit_group" style="width:100px;margin-left:10px">
 				<?php
-				foreach($minecraft->group_list as $groups) {
+				foreach($minecraft->group_list() as $groups) {
 					echo "<option value='".$groups['name']."'>".$groups['name']."</option>";
 				}
 				?>

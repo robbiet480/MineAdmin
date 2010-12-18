@@ -1,4 +1,11 @@
 <?php
+    $PATH        = Array();
+    $mysql       = Array();
+    $flatfile    = Array();
+    $API         = Array();
+    $GENERAL     = Array();
+    $useflatfile = true;
+
     /* Configuration Settings */
     
     $API['USER']       =   "secure";
@@ -18,6 +25,11 @@
     
     $PATH['www']        =   "/var/adminpanel/"; // path to MineAdmin
     $PATH['minecraft']  =   "/var/minecraftserver/"; // Path to minecraft server folder
+
+    $flatfile['HOST']    =   '';
+    $flatfile['USER']    =   '';
+    $flatfile['PASS']    =   '';
+    $flatfile['DB']      =   $PATH['minecraft'];
 
     /* Minecraft server speciic settings */
 	

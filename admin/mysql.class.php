@@ -35,7 +35,7 @@ class MySQL extends database{
 		return true;
 	}
 	
-	function fetch($table,$data_array,$return="",$multi=false,$order_array){
+	function fetch($table,$data_array,$return="",$multi=false,$order_array=""){
 		$return_info="";
 		if($return!=""){
 			$return=explode(",",$return);
@@ -55,9 +55,9 @@ class MySQL extends database{
 			$x=1;
 			foreach($data_array as $key=>$value){
 				if($x==1){
-					$where="`".$key."`='".$value."'";
+					$where="`".$key."`='".$this->escape_string($value)."'";
 				}else{
-					$where.=" AND `".$key."`='".$value."'";
+					$where.=" AND `".$key."`='".$this->escape_string($value)."'";
 				}
 				$x=2;
 			}
@@ -96,15 +96,15 @@ class MySQL extends database{
 			return $return[0];
 		}
 	}
-	function fetch_by($table,$data_array,$return,$multi=false,$order_array){
+	function fetch_by($table,$data_array,$return,$multi=false,$order_array=""){
 		$return_info="*";
 		if(is_array($data_array)){
 			$x=1;
 			foreach($data_array as $key=>$value){
 				if($x==1){
-					$where="`".$key."`='".$value."'";
+					$where="`".$key."`='".$this->escape_string($value)."'";
 				}else{
-					$where.=" AND `".$key."`='".$value."'";
+					$where.=" AND `".$key."`='".$this->escape_string($value)."'";
 				}
 				$x=2;
 			}
@@ -131,23 +131,23 @@ class MySQL extends database{
 			return $return[0];
 		}
 	}
-	function fetch_search($table,$data_array,$search,$return,$multi=false,$order_array){
+	function fetch_search($table,$data_array,$search,$return,$multi=false,$order_array=""){
 		$return_info="*";
 		$x=1;
 		if(is_array($data_array)){
 			foreach($data_array as $key=>$value){
 				if($x==1){
-					$where="`".$key."`='".$value."'";
+					$where="`".$key."`='".$this->escape_string($value)."'";
 					$x=2;
 				}else{
-					$where.=" AND `".$key."`='".$value."'";
+					$where.=" AND `".$key."`='".$this->escape_string($value)."'";
 				}
 			}
 		}
 		if($x==1){
-			$where="`".$search[0]."` LIKE '%".$search[1]."%'";
+			$where="`".$search[0]."` LIKE '%".$this->escape_string($search[1])."%'";
 		}else{
-			$where.=" AND `".$search[0]."` LIKE '%".$search[1]."%'";
+			$where.=" AND `".$search[0]."` LIKE '%".$this->escape_string($search[1])."%'";
 		}
 		$where_out="WHERE ".$where;
 		$sql=mysql_query("SELECT ".$return_info." FROM `".$table."` ".$where_out." ".$return,$this->conn);
@@ -165,36 +165,21 @@ class MySQL extends database{
 	function insert($table,$data_array,$where_array,$create=false){
 		$x=1;
 		foreach($data_array as $key=>$value){
-			$value=addslashes($value);
+			$value=$this->escape_string($value);
 			if($x==1){
-				if($table_info[$key]['Type']=="int(11)" || $table_info[$key]['Type']=="tinyint(1)"){
-					$set="`{$key}`={$value}";
-				}else{
-					$set="`{$key}`='{$value}'";
-				}
+				$set="`{$key}`='{$value}'";
 			}else{
-				if($table_info[$key]['Type']=="int(11)" || $table_info[$key]['Type']=="tinyint(1)"){
-					$set.=", `{$key}`={$value}";
-				}else{
-					$set.=", `{$key}`='{$value}'";
-				}
+				$set.=", `{$key}`='{$value}'";
 			}
 			$x=2;
 		}
 		if(is_array($where_array)){
 			foreach($where_array as $key=>$value){
+				$value=$this->escape_string($value);
 				if($x==1){
-					if($table_info[$key]['Type']=="int(11)" || $table_info[$key]['Type']=="tinyint(1)"){
-						$where="`{$key}`={$value}";
-					}else{
-						$where="`{$key}`='{$value}'";
-					}
+					$where="`{$key}`='{$value}'";
 				}else{
-					if($table_info[$key]['Type']=="int(11)" || $table_info[$key]['Type']=="tinyint(1)"){
-						$where.=" AND `{$key}`={$value}";
-					}else{
-						$where.=" AND `{$key}`='{$value}'";
-					}
+					$where.=" AND `{$key}`='{$value}'";
 				}
 				$x=2;
 			}
@@ -211,9 +196,9 @@ class MySQL extends database{
 		$x=1;
 		foreach($data_array as $key=>$value){
 			if($x==1){
-				$set="`".$key."`='".$value."'";
+				$set="`".$key."`='".$this->escape_string($value)."'";
 			}else{
-				$set.=", `".$key."`='".$value."'";
+				$set.=", `".$key."`='".$this->escape_string($value)."'";
 			}
 			$x=2;
 		}
@@ -221,9 +206,9 @@ class MySQL extends database{
 		if(is_array($where_array)){
 			foreach($where_array as $key=>$value){
 				if($x==1){
-					$where="`".$key."`='".$value."'";
+					$where="`".$key."`='".$this->escape_string($value)."'";
 				}else{
-					$where.=" AND `".$key."`='".$value."'";
+					$where.=" AND `".$key."`='".$this->escape_string($value)."'";
 				}
 				$x=2;
 			}
@@ -236,9 +221,9 @@ class MySQL extends database{
 			$x=1;
 			foreach($where_array as $key=>$value){
 				if($x==1){
-					$where="`".$key."`='".$value."'";
+					$where="`".$key."`='".$this->escape_string($value)."'";
 				}else{
-					$where.=" AND `".$key."`='".$value."'";
+					$where.=" AND `".$key."`='".$this->escape_string($value)."'";
 				}
 				$x=2;
 			}
@@ -252,7 +237,7 @@ class MySQL extends database{
 		$exists_single=false;
 		if(is_array($where_array)){
 			foreach($where_array as $key=>$value){
-				$query=mysql_query("SELECT * FROM `".$table."` WHERE `".$key."`='".$value."'",$this->conn);
+				$query=mysql_query("SELECT * FROM `".$table."` WHERE `".$key."`='".$this->escape_string($value)."'",$this->conn);
 				if(mysql_num_rows($query)==1){
 					$exists[$key]=true;
 					if($exists_single==false){
@@ -276,9 +261,9 @@ class MySQL extends database{
 			$x=1;
 			foreach($where_array as $key=>$value){
 				if($x==1){
-					$where="`".$key."`='".$value."'";
+					$where="`".$key."`='".$this->escape_string($value)."'";
 				}else{
-					$where.=" AND `".$key."`='".$value."'";
+					$where.=" AND `".$key."`='".$this->escape_string($value)."'";
 				}
 				$x=2;
 			}

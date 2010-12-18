@@ -4,10 +4,10 @@ if(is_numeric($_GET['uid'])){
     $user_info=$minecraft->user_get_id($db->escape_string($_GET['uid']));
     if(isset($_GET['save']) && $_GET['save']=="1"){
         $admin=($_POST['admin']=="on"?"1":"0");
-        $canmodifyworld=$db->escape_string($_POST['canmodifyworld']=="on"?"1":"0");
-        $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
-        $ip=$db->escape_string($_POST['ip']);
-        $group=explode(":",$db->escape_string($_POST['groups']));
+        $canmodifyworld=$_POST['canmodifyworld']=="on"?"1":"0";
+        $ignoresrestrictions=$_POST['ignoresrestrictions']=="on"?"1":"0";
+        $ip=$_POST['ip'];
+        $group=explode(":",$_POST['groups']);
         $db->set("users",
 	        Array("admin"=>$admin,
 				  "canmodifyworld"=>$canmodifyworld,
