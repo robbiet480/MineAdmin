@@ -4,14 +4,20 @@ $group_info=$minecraft->group_get_id($db->escape_string($_GET['gid']));
 if(isset($_GET['save']) && $_GET['save']=="1"){
     $commands=$_POST['commands'];
     $clist="";
-    preg_match_all('%/([0-9a-zA-Z]+)%simx', $commands, $result, PREG_PATTERN_ORDER);
-    for ($i = 0; $i < count($result[0]); $i++) {
-        if($clist==""){
-            $clist="/".$result[1][$i];
-        }else{
-            $clist.=",/".$result[1][$i];
-        }
-    }
+	//(12/27/2010)Emirin: Simple if statement to filter out * for admin stuff
+	if ($commands == "*")
+	{
+		$clist="*";
+	} else {
+		preg_match_all('%/([0-9a-zA-Z]+)%simx', $commands, $result, PREG_PATTERN_ORDER);
+		for ($i = 0; $i < count($result[0]); $i++) {
+			if($clist==""){
+				$clist="/".addslashes($result[1][$i]);
+			}else{
+				$clist.=",/".addslashes($result[1][$i]);
+			}
+		}
+	}
     $db->set("groups",Array("commands"=>$clist),Array("id"=>$group_info['id']));
     
     header("Location: groups.php");

@@ -1,19 +1,54 @@
 <?php
-    $API['USER']       =   'admin';
-    $API['PASS']       =   'test';
-    $API['ADDRESS']    =   '127.0.0.1';
-    $API['PORT']       =   '20059';
+    $PATH        = Array();
+    $mysql       = Array();
+    $flatfile    = Array();
+    $API         = Array();
+    $GENERAL     = Array();
+    $useflatfile = false;
 
-    $mysql['HOST']     =   '67.228.153.25'; // Mysql Host
-    $mysql['USER']     =   'acemonstertoys'; // Mysql Username
-    $mysql['PASS']     =   'D6D427976E744DBFED79FEC4CF23AAE51AC02E8443DD602D3F47DF7F8ED266CB';          // Mysql Password
-    $mysql['DB']       =   'acemonstertoys'; // Mysql Database
+    /* Configuration Settings */
+    
+    $API['USER']       =   "emirin";
+    $API['PASS']       =   "ustick";
+    $API['ADDRESS']    =   "localhost";
+    $API['PORT']       =   "20059";
+    
+    /* MYSQL CONFIGURATION*/
+    
+    $mysql['HOST']     =   "192.168.1.200"; // Mysql Host
+    $mysql['USER']     =   "root"; // Mysql Username
+    $mysql['PASS']     =   "s0f/\\K1nG";          // Mysql Password
+    $mysql['DB']       =   "minecraft"; // Mysql Database
+   
+   
+    /* Paths to files */
+    
+    $PATH['www']        =   "c:/server/www/admin/admin/"; // path to MineAdmin
+    $PATH['minecraft']  =   "c:/minecraft/bin"; // Path to minecraft server folder
 
-    $PATH['www']        =   '/var/www/'; // path to MineAdmin. MUST HAVE ENDING FORWARD SLASH
-    $PATH['minecraft']  =   '/opt/'; // Path to minecraft server folder. MUST HAVE ENDING FORWARD SLASH
-	$PATH['backups']	=   '/opt/backups/'; //Path to Backups folder. MUST HAVE ENDING FORWARD SLASH
+    $flatfile['HOST']    =   '';
+    $flatfile['USER']    =   '';
+    $flatfile['PASS']    =   '';
+    $flatfile['DB']      =   $PATH['minecraft'];
+
+    /* Minecraft server speciic settings */
 	
-	$GENERAL['mapper_cmd']			=	'screen -dmS Mapper python gmap.py --cachedir /opt/cache/ /opt/world /var/www/map; find /opt/cache -name *.png -exec pngcrush {} {}.crush \; -exec mv {}.crush {} \;'; //Mapping program, needs to be installed. Valid options: c10t, minecraft-overviewer. for Minecraft-Overviewer, it is recommended that you set the cache directory to something other then world. You may also want to append this command to the end: find /path/to/destination -name '*.png' -exec pngcrush {} {}.crush \; -exec mv {}.crush {} \;
-	$GENERAL['version']				=	'0.1'; //dont touch me
+	$MCSERVER['PORT']	 = "25565";     //Default minecraft port
+	$MCSERVER['SERVICENAME'] = "Minecraft"; //Default minecraft service name (Required for Windows)
+
+    /* Methods for backup */
+
+    $Backup_Method      =   "node.js"; // node.js, backup.plugin
+    
+
+    /*
+        ADMIN LOGINS
+        FORMAT, USERNAME=>SHA1(PASSWORD)
+    */
+    
+    $ADMIN_LOGINS=array(
+        "test"=>"a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"
+    );
+
 ?>
 

@@ -29,7 +29,6 @@ if($conn=fsockopen($API['ADDRESS'], $MCSERVER['PORT'], $errno, $errstr, 1)) {
 }
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -61,11 +60,12 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	<script type="text/javascript" src="js/jquery.ui.all.js"></script>
 	<script type="text/javascript" src="js/system.js"></script> 
 	<link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="css/ipad.portrait.css"> 
+
 </head>
 <body>
 	<div id="menu-wrap">
 		<h2>MineAdmin</h2>
-		<ul>
+		<ul style="z-index:10;">
 			<li><a href="logout_process.php">Logout</a></li>
 			<li class="dropdown"><a href="javascript:void(0)" id="droplink" <?php if ($pageid=="groups" or $pageid=="users" or $pageid=="items" or $pageid=="kits" or $pageid=="plugins" or $pageid=="settings" or $pageid=="sysinfo") {echo " class=\"menu_active\"";} else { echo ""; }?>>Settings &or;</a>
 				<ul id="droplist">
@@ -79,7 +79,17 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 					<li><a href="sysinfo.php" <?php if ($pageid=="sysinfo") { echo " class=\"menu_active\""; } else { echo ""; }?>>System Info</a></li>	
 				</ul>
 			</li>
-            <li><a href="tools.php" <?php if ($pageid=="tools") { echo " class=\"menu_active\""; } else { echo ""; }?>>Tools</a></li>
+			<li class="dropdown"><a href="javascript:void(0)" id="droplink" <?php if ($pageid=="tools" or $pageid=="chat") {echo " class=\"menu_active\"";} else { echo ""; }?>>Tools &or;</a>
+				<ul id="droplist">
+					<li><a href="chat.php" <?php if ($pageid=="chat") { echo " class=\"menu_active\""; } else { echo ""; }?>>Chat</a></li>			
+					<li><a href="map.php" <?php if ($pageid=="map") { echo " class=\"menu_active\""; } else { echo ""; }?>>Mapping</a></li>
+					<li><a href="backup.php" <?php if ($pageid=="backups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Backups</a></li>	
+					<li><a href="reservelist.php" <?php if ($pageid=="reservelist") { echo " class=\"menu_active\""; } else { echo ""; }?>>Reserve</a></li>
+					<li><a href="whitelist.php" <?php if ($pageid=="whitelist") { echo " class=\"menu_active\""; } else { echo ""; }?>>White List</a></li>
+					<li><a href="warplist.php" <?php if ($pageid=="warplist") { echo " class=\"menu_active\""; } else { echo ""; }?>>Warp List</a></li>
+					<li><a href="logs.php" <?php if ($pageid=="logs") { echo " class=\"menu_active\""; } else { echo ""; }?>>Logs</a></li>	
+				</ul>
+			</li>
 			<li><a href="start.php" <?php if ($pageid=="start") { echo " class=\"menu_active\""; } else { echo ""; }?>>Home</a></li>
 		</ul>
 		<div id="status">
