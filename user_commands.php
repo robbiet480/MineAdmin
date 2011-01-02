@@ -12,23 +12,24 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
             $clist.=",/".$result[1][$i];
         }
     }
-    $db->exec("UPDATE `users` SET `commands`='".$clist."' WHERE `id`='".$user_info['id']."'");
+    $db->set("users",Array("commands"=>$clist),Array("id"=>$user_info['id']));
+
     header("Location: users.php");
 }
 ?>
-<form action="user_commands.php?save=1&uid=<?PHP echo $user_info['id']; ?>" method="post">
+<form action="user_commands.php?save=1&uid=<?php echo $user_info['id']; ?>" method="post">
     <div style="width:500px;">
-        <h1 class="over_html_h1"><?PHP echo $user_info['name'];?>'s Commands</h1>
+        <div class="overlay_title"><h1 class="over_html_h1"><?PHP echo $user_info['name'];?>'s Commands</h1></div>
         <div class="over_html_row_wrap">
             <label>
-                <span class="over_html_row">Command List <br /><span>commands allowed by this group.</span></span>
+                <span class="over_html_row">Command List <br /><span>Commands allowed by this group.</span></span>
                 <span class="input_area"><textarea name="commands" style="width:200px;height:500px;"><?PHP echo str_replace(",","\n",$user_info['commands']);?></textarea></span>
             </label>
         </div>
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row"></span>
-                <span class="input_area"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
+                <span class="input_area" style="float:right;"><input class="button" type="submit" value="Save" /><input class="button" type="button" onclick="$.fancybox.close();" value="Close"></span>
             </label>
         </div>
         

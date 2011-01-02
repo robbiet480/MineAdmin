@@ -1,16 +1,17 @@
 <?php
-    //Make shure we use arrays and not strings ... windows is stupid
-    $PATH  = Array();
-    //Only had problems with Path variable, but its better to  force every variable to be an array
-    $API   = Array();
-    $mysql = Array();
+    $PATH        = Array();
+    $mysql       = Array();
+    $flatfile    = Array();
+    $API         = Array();
+    $GENERAL     = Array();
+    $useflatfile = false;
 
     /* Configuration Settings */
     
     $API['USER']       =   "secure";
     $API['PASS']       =   "password";
     $API['ADDRESS']    =   "127.0.0.1";
-    $API['PORT']       =   "20012";
+    $API['PORT']       =   "20059";
     
     
     /* MYSQL CONFIGURATION*/
@@ -24,7 +25,17 @@
     
     $PATH['www']        =   "/var/adminpanel/"; // path to MineAdmin
     $PATH['minecraft']  =   "/var/minecraftserver/"; // Path to minecraft server folder
-    
+
+    $flatfile['HOST']    =   '';
+    $flatfile['USER']    =   '';
+    $flatfile['PASS']    =   '';
+    $flatfile['DB']      =   $PATH['minecraft'];
+
+    /* Minecraft server speciic settings */
+	
+	$MCSERVER['PORT']	 = "25565";     //Default minecraft port
+	$MCSERVER['SERVICENAME'] = "Minecraft"; //Default minecraft service name (Required for Windows)
+
     /* Methods for backup */
 
     $Backup_Method      =   "node.js"; // node.js, backup.plugin

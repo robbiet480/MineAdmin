@@ -1,23 +1,20 @@
 # MineAdmin
 
 ## Introduction
-MineAdmin is a PHP/MySQL based web control panel for Minecraft Servers utilizing [hMod](http://www.minecraftforum.net/viewtopic.php?t=23340) and [CraftAPI](http://forum.hey0.net/showthread.php?tid=405).
+MineAdmin is a PHP/MySQL based web control panel for Minecraft Servers utilizing [hMod](http://www.minecraftforum.net/viewtopic.php?t=23340) and [JSONApi](http://forum.hey0.net/showthread.php?pid=21769).
 This is a continuation of the great work of Firestar, The009, ricin and Zeryl. Firestar has passed the project to me.
 
 ## Requirements
 
 - hMod Mod with MySQL set as the data-source
-- [CraftAPI](http://forum.hey0.net/showthread.php?tid=405)
-- PHP XML-RPC
+- [JSONApi](http://forum.hey0.net/showthread.php?pid=21769)
+- PHP 5.2.0+
 - [MCStats](https://github.com/rmichela/MCStats)
 - LAMP (Linux, Apache, MySQL, PHP5) stack
-- PHP needs to have XML-RPC support. On Ubuntu (and maybe Debian) you can use the following command to install XML-RPC support:
-
-	`sudo apt-get install php5-xmlrpc`
 
 ## Windows Support
 
-I do not know how this performs under Windows since I only use Mac/Linux. Please report your findings to me.
+We have heard mixed responses as to Windows support. We will update this area or the wiki when we hear more.
 
 ## General
 Project Website is on (https://github.com/robbiet480/MineAdmin)Github[/url)
@@ -41,28 +38,35 @@ If you need any help, [send me a message](https://github.com/inbox/new/robbiet48
 - Multi-user authentication
 - Power functions
 - Installer
+- Chat
+- Console
+- Log Viewing
+- Flat File support
+- Awesomeness
 
 ## Coming Soon
 - Plugins
-- Voice server Support (most likely TeamSpeak)
 - Player forum signature support (got a favorite server? get a custom built forum signature box with dynamic data of your stats)
 
 Installation
 ------------
-1.	Set up hey0. 
+1.	Set up hMod. 
 	1.	Simply start Minecraft_Mod.jar once. It will fail. Stop it.
 	2.	Open server.properties, change data-source to mysql. 
 	3.	Start Minecraft_Mod.jar again. It will create a mysql.properties file. 
-	4.	Import minecraft.sql into a database (preferrably minecraft)
-	5.	Fill in the settings in mysql.properties
-	6.	Start the server one last time
+	4.	Do NOT import minecraft.sql yet!
 2.	Checkout the files or download a tarball/zipball from [Github](http://github.com/robbiet480/MineAdmin)
 3.	Move config.example.php to config.php and change the values to match.
-4.	Done!
+4.	Import the minecraft.sql file into a database of your choice. Match the username, password, hostname and database name in both config.php and mysql.properties
+5.	Start hMod
+6.	Done!
+	
 
 ## Current contributors
 - robbiet480
 - dtang
+- Emirin
+- TheCrazyT
 
 ## Past contributors
 - Firestar

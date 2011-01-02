@@ -6,18 +6,24 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
     $canmodifyworld=$db->escape_string($_POST['canmodifyworld']=="on"?"1":"0");
     $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
     $inheritedgroups=$db->escape_string($_POST['inheritedgroups']);
-    $db->exec("UPDATE `groups` SET `inheritedgroups`='".$inheritedgroups."', `admin` = ".$admin.", `canmodifyworld` = ".$canmodifyworld.", `ignoresrestrictions` = ".$ignoresrestrictions." WHERE `id`='".$group_info['id']."'");
+    $db->set("groups",
+	        Array("inheritedgroups"=>$inheritedgroups,
+				  "admin"=>$admin,
+	              "canmodifyworld"=>$canmodifyworld,
+	              "ignoresrestrictions"=>$ignoresrestrictions
+	              ),
+              Array("id"=>$group_info['id']));
     header("Location: groups.php");
 }else if(isset($_GET['save']) && $_GET['save']=="2"){
-    if($db->exec("DELETE FROM `groups` WHERE `id`='".$group_info['id']."'")){
+    if($db->delete("groups",Array("id"=>$group_info['id']))){
         echo "1";
     }else{
         echo "0";
     }
     exit;
 }else if(isset($_GET['save']) && $_GET['save']=="3"){
-    if($db->exec("UPDATE `groups` SET `defaultgroup`=0")){
-        if($db->exec("UPDATE `groups` SET `defaultgroup`=1 WHERE `id`='".$group_info['id']."'")){
+    if($db->set("groups",Array("defaultgroup"=>0),"")){
+        if($db->set("groups",Array("defaultgroup"=>0),"",Array("id"=>$group_info['id']))){
             echo "1";
         }else{
             echo "0";
@@ -30,7 +36,7 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
 ?>
 <form action="edit_group.php?save=1&gid=<?php echo $group_info['id']; ?>" method="post">
     <div style="width:500px;">
-        <h1 class="over_html_h1"><?php echo $group_info['name'];?>'s Settings</h1>
+        <div class="overlay_title"><h1 class="over_html_h1"><?php echo $group_info['name'];?>'s Settings</h1></div>
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row">Inherit Group <br /><span>Get group permissions and apply to this group in additition to this groups permissions</span></span>
@@ -67,7 +73,7 @@ if(isset($_GET['save']) && $_GET['save']=="1"){
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row"></span>
-                <span class="input_area"><input style="margin-left:20px;" class="button" type="button" onclick="$.fancybox.close();" value="Close"> <input class="button" type="submit" value="Save" /></span>
+                <span class="input_area" style="float:right;"><input class="button" type="submit" value="Save" /><input class="button" type="button" onclick="$.fancybox.close();" value="Close"></span>
             </label>
         </div>
         
