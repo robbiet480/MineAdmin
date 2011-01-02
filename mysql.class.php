@@ -36,6 +36,9 @@ class MySQL extends database{
 	}
 	
 	function fetch($table,$data_array,$return="",$multi=false,$order_array=""){
+        global $TABLES;
+        $table = $TABLES[$table];
+
 		$return_info="";
 		if($return!=""){
 			$return=explode(",",$return);
@@ -97,6 +100,9 @@ class MySQL extends database{
 		}
 	}
 	function fetch_by($table,$data_array,$return,$multi=false,$order_array=""){
+        global $TABLES;
+        $table = $TABLES[$table];
+
 		$return_info="*";
 		if(is_array($data_array)){
 			$x=1;
@@ -132,6 +138,9 @@ class MySQL extends database{
 		}
 	}
 	function fetch_search($table,$data_array,$search,$return,$multi=false,$order_array=""){
+        global $TABLES;
+        $table = $TABLES[$table];
+
 		$return_info="*";
 		$x=1;
 		if(is_array($data_array)){
@@ -163,6 +172,9 @@ class MySQL extends database{
 		}
 	}
 	function insert($table,$data_array,$where_array,$create=false){
+        global $TABLES;
+        $table = $TABLES[$table];
+
 		$x=1;
 		foreach($data_array as $key=>$value){
 			$value=$this->escape_string($value);
@@ -220,6 +232,9 @@ class MySQL extends database{
 		return $data;
 	}
 	function delete($table,$where_array){
+        global $TABLES;
+        $table = $TABLES[$table];
+
 		if(is_array($where_array)){
 			$x=1;
 			foreach($where_array as $key=>$value){
@@ -236,6 +251,9 @@ class MySQL extends database{
 		return $data;
 	}
 	function check_exists($table,$where_array,$multi=false){
+        global $TABLES;
+        $table = $TABLES[$table];
+
 		$exists=array();
 		$exists_single=false;
 		if(is_array($where_array)){
@@ -258,6 +276,9 @@ class MySQL extends database{
 		}
 	}
 	function check_exists_i($table,$where_array){
+        global $TABLES;
+        $table = $TABLES[$table];
+
 		$exists=array();
 		$exists_single=false;
 		if(is_array($where_array)){

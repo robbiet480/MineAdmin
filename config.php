@@ -32,6 +32,21 @@
     $flatfile['PASS']    =   '';
     $flatfile['DB']      =   $PATH['minecraft'];
 
+
+    /* Edit to use custom tablenames */
+    $TABLES = Array(
+        "backups"      => "backups",
+        "bans"         => "bans",
+        "groups"       => "groups",
+        "homes"        => "homes",
+        "items"        => "items",
+        "kits"         => "kits",
+        "reservelist"  => "reservelist",
+        "users"        => "users",
+        "warps"        => "warps",
+        "whitelist"    => "whitelist"
+    );
+
     /* Minecraft server speciic settings */
 	
 	$MCSERVER['PORT']	 = "25565";     //Default minecraft port
@@ -52,4 +67,3 @@
     );
 
 ?>
-
