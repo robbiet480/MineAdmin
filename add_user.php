@@ -15,8 +15,8 @@ if($_GET['save']=="1"){
 							  "groups"=>$group[1],
 							  "prefix"=>$group[0],
 							  
-							  ////TODO : Password input box? ... setting default to empty password for now
-							  "password"=>sha1("")
+							  ////TODO : Password input box? ...
+							  "password"=>''
 							  ),"",true);
     header("Location: users.php");
     exit();
