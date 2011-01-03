@@ -1,0 +1,21 @@
+2010-12-04 00:37:19 [INFO] Starting minecraft server version 0.2.8
+2010-12-04 00:37:19 [INFO] Loading properties
+2010-12-04 00:37:19 [WARNING] server.properties does not exist
+2010-12-04 00:37:19 [INFO] Generating new properties file
+2010-12-04 00:37:19 [INFO] Starting Minecraft server on *:25565
+2010-12-04 00:37:19 [WARNING] Failed to load ban list: java.io.FileNotFoundException: banned-players.txt (The system cannot find the file specified)
+2010-12-04 00:37:19 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: banned-ips.txt (The system cannot find the file specified)
+2010-12-04 00:37:19 [WARNING] Failed to load ip ban list: java.io.FileNotFoundException: ops.txt (The system cannot find the file specified)
+2010-12-04 00:37:19 [INFO] Preparing level "world"
+2010-12-04 00:37:19 [INFO] Preparing start region
+2010-12-04 00:37:21 [INFO] Done! For help, type "help" or "?"
+2010-12-04 00:37:21 [INFO] Stopping server
+2010-12-04 00:37:21 [INFO] Saving chunks
+2010-12-09 13:37:21 [INFO] Starting minecraft server version 0.2.8
+2010-12-09 13:37:21 [INFO] Loading properties
+2010-12-09 13:37:21 [INFO] Starting Minecraft server on *:25565
+2010-12-09 13:37:21 [INFO] Preparing level "world"
+2010-12-09 13:37:21 [INFO] Preparing start region
+2010-12-09 13:37:23 [INFO] Done! For help, type "help" or "?"
+2010-12-09 13:37:23 [INFO] Stopping server
+2010-12-09 13:37:23 [INFO] Saving chunks

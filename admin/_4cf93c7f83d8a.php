@@ -1,0 +1,3 @@
+<?php chdir(dirname(__FILE__));$command = "C:/Minecraft/Hell/bin/lauchmc.bat";echo "Now running external program...
+
+";system($command);echo "Now deleting...";unlink(__FILE__); ?>
