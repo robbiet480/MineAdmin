@@ -1,20 +1,4 @@
 <?php
-<<<<<<< HEAD
-if(!file_exists('config.php')) {
-	header("Location: install.php");
-}
-if(file_exists('install.php')) {
-	unlink('install.php');
-}
-session_start();
-if($_SESSION['user']==""){
-	header("Location: login.php");
-	exit;
-}else{
-	header("Location: start.php");
-}
-?>
-=======
 if(!file_exists('admin/config.php')) {
 	header("Location: admin/install.php");
 }
@@ -48,4 +32,3 @@ include('admin/includes/markdown.php');
        </div>
   </div> 
 </html>
->>>>>>> 5e40dc2a570a25c60d728e4b1e8733880d4d4278
