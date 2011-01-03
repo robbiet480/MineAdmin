@@ -4,7 +4,7 @@ class minecraft{
     var $r;
     function __construct(){
         global $API;
-        $this->r = new JsonRPC($API['ADDRESS'],$API['PORT'],$API['USER'],$API['PASS']);
+        $this->r = new JsonRPC($API['ADDRESS'],$API['PORT'],$API['USER'],$API['PASS'],$API['SALT']);
     }
     function send_message($nick,$message){
         return $this->r->player->sendMessage($nick, $message);
