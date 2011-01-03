@@ -19,7 +19,7 @@ CREATE TABLE `backups` (
   `comment` varchar(500) NOT NULL,
   `filename` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 DROP TABLE IF EXISTS `groups`;
@@ -34,7 +34,7 @@ CREATE TABLE `groups` (
   `canmodifyworld` tinyint(1) DEFAULT '1',
   `ignoresrestrictions` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 DROP TABLE IF EXISTS `homes`;
@@ -88,7 +88,7 @@ CREATE TABLE `users` (
   `ignoresrestrictions` tinyint(1) DEFAULT '0',
   `password` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 DROP TABLE IF EXISTS `users_online`;
