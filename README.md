@@ -54,12 +54,12 @@ Installation
 	1.	Simply start Minecraft_Mod.jar once. It will fail. Stop it.
 	2.	Open server.properties, change data-source to mysql. 
 	3.	Start Minecraft_Mod.jar again. It will create a mysql.properties file. 
-	4.	Do NOT import minecraft.sql yet!
 2.	Checkout the files or download a tarball/zipball from [Github](http://github.com/robbiet480/MineAdmin)
 3.	Move config.example.php to config.php and change the values to match.
-4.	Import the minecraft.sql file into a database of your choice. Match the username, password, hostname and database name in both config.php and mysql.properties
+4.	Import the mineadmin.sql file into a database of your choice. Match the username, password, hostname and database name in both config.php and mysql.properties
 5.	Start hMod
-6.	Done!
+6.	Open your browser and go to your site.  Type Admin for the user name and test for the password. (Make sure you remove this user after you set up a user for yourself.)
+7.	Done!
 	
 
 ## Current contributors
