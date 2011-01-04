@@ -143,7 +143,7 @@ class minecraft{
 		}
 		shell_exec("tar -czf ".$output." ".$PATH['minecraft']."world");
 		$size = ByteSize(filesize($output));
-		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>date('Y-m-d'),"time"=>date('Hi'),"size"=>$size,"comment"=>$comment,"filename"=>$output), true);
+		$result=$db->insert("backups", array("id"=>"","name"=>$name,"date"=>date('Y-m-d'),"time"=>date('Hi'),"size"=>$size,"comment"=>$comment,"filename"=>$output));
 		$this->r->player->broadcastMessage("Issuing save-on command");
 		$this->r->server->runConsoleCommand("save-on");
 		return $result;

@@ -240,7 +240,7 @@ class Flatfile extends database{
 		$total = round($stoptime - $starttime,4);
 		$this->overall_stats=$this->overall_stats+$total;
 	}
-	function insert($table,$data_array,$create=false){
+	function insert($table,$data_array){
 		if(!isset($this->tablefiles[$table]))
 			die($table. " does not exist!");
 		
@@ -298,7 +298,7 @@ class Flatfile extends database{
 					next($data_array);
 				}
 			}
-			$this->insert($table,$result[$a],"");
+			$this->insert($table,$result[$a]);
 		}
 		
 //TODO: better implementation of flatfile set
