@@ -17,7 +17,7 @@ This is a continuation of the great work of Firestar, The009, ricin and Zeryl. F
 We have heard mixed responses as to Windows support. We will update this area or the wiki when we hear more.
 
 ## General
-Project Website is on (https://github.com/robbiet480/MineAdmin)Github[/url)
+Project Website is on [Github](https://github.com/robbiet480/MineAdmin)
 
 If you need any help, [send me a message](https://github.com/inbox/new/robbiet480) on [GitHub](http://github.com/robbiet480) or on the forums or on IRC (i'm always in #hey0 on Esper or robbiet480 on Freenode. I may not respond instantly as I use IRSSI+screen+ssh). You can also join our IRC channel on Esper, #mineadmin
 
