@@ -27,7 +27,7 @@
 					<form action="buildconfig.php" name="mrT" id="mrT" method="post">
 						 <?php /* thats right mother fuckers, I pitty da foo who can't config!  Best learn before you wreck yo self!  Thats right, I also added this php tag just to comment, suck it!*/ ?>
 						<h2>General Server Configuration</h2>
-						<label for="conf_mapath">Path to MineAdmin: <input type="text" class="input_text" name="conf_mapath" id="conf_mapath" value="<?php echo $_SERVER['SCRIPT_FILENAME']; ?>"></label><br /><br />
+						<label for="conf_mapath">Path to MineAdmin: <input type="text" class="input_text" name="conf_mapath" id="conf_mapath" value="<?php echo str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']); ?>"></label><br /><br />
 						<label for="conf_srvpath">Path to Minecraft Server: <input type="text" class="input_text" name="conf_srvpath" id="conf_srvpath"></label><br /><br />
 						<label for="conf_srvport">Minecraft Server Port: <input type="text" class="input_text" name="conf_srvport" id="conf_srvport" value="25565"></label><br /><br />
 						<label for="conf_service">Minecraft Server/Screen Name: <input type="text" class="input_text" name="conf_service" id="conf_service" value="Minecraft"></label>
