@@ -8,27 +8,28 @@
 
     /* Configuration Settings */
     
-    $API['USER']       =   "secure";
-    $API['PASS']       =   "password";
-    $API['ADDRESS']    =   "127.0.0.1";
-    $API['PORT']       =   "20059";
+    $API['USER']       =   "<apiUser>";
+    $API['PASS']       =   "<apiPass>";
+    $API['ADDRESS']    =   "<apiAddress>";
+    $API['PORT']       =   "<apiPort>";
+    $API['SALT']       =   "<apiSalt>";
     
     
     /* MYSQL CONFIGURATION*/
     
-    $mysql['HOST']     =   "localhost"; // Mysql Host
-    $mysql['USER']     =   ""; // Mysql Username
-    $mysql['PASS']     =   "";          // Mysql Password
-    $mysql['DB']       =   "minecraft"; // Mysql Database
+    $mysql['HOST']     =   "<dbHost>"; // Mysql Host
+    $mysql['USER']     =   "<dbUser>"; // Mysql Username
+    $mysql['PASS']     =   "<dbPass>";          // Mysql Password
+    $mysql['DB']       =   "<dbName>"; // Mysql Database
    
     /* Paths to files */
     
-    $PATH['www']        =   "/var/adminpanel/"; // path to MineAdmin
-    $PATH['minecraft']  =   "/var/minecraftserver/"; // Path to minecraft server folder
+    $PATH['www']        =   "<pathWWW>"; // path to MineAdmin
+    $PATH['minecraft']  =   "<pathMinecraft>"; // Path to minecraft server folder
 
-    $flatfile['HOST']    =   '';
-    $flatfile['USER']    =   '';
-    $flatfile['PASS']    =   '';
+    $flatfile['HOST']    =   "";
+    $flatfile['USER']    =   "";
+    $flatfile['PASS']    =   "";
     $flatfile['DB']      =   $PATH['minecraft'];
 
     /* Edit to use custom tablenames */
@@ -47,8 +48,8 @@
 
     /* Minecraft server speciic settings */
 	
-	$MCSERVER['PORT']	 = "25565";     //Default minecraft port
-	$MCSERVER['SERVICENAME'] = "Minecraft"; //Default minecraft service/screen name
+	$MCSERVER['PORT']	 = "<mcserverPort>";     //Default minecraft port
+	$MCSERVER['SERVICENAME'] = "<mcserverService>"; //Default minecraft service/screen name
 
     /* Methods for backup */
 
