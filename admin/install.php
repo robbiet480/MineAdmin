@@ -27,10 +27,10 @@
 					<form action="buildconfig.php" name="mrT" id="mrT" method="post">
 						 <?php /* thats right mother fuckers, I pitty da foo who can't config!  Best learn before you wreck yo self!  Thats right, I also added this php tag just to comment, suck it!*/ ?>
 						<h2>General Server Configuration</h2>
-						<label for="conf_mapath">Path to MineAdmin: <input type="text" class="input_text" name="conf_mapath" id="conf_mapath"></label><br /><br />
+						<label for="conf_mapath">Path to MineAdmin: <input type="text" class="input_text" name="conf_mapath" id="conf_mapath" value="<?php echo $_SERVER['SCRIPT_FILENAME']; ?>"></label><br /><br />
 						<label for="conf_srvpath">Path to Minecraft Server: <input type="text" class="input_text" name="conf_srvpath" id="conf_srvpath"></label><br /><br />
-						<label for="conf_srvport">Minecraft Server Port: <input type="text" class="input_text" name="conf_srvport" id="conf_srvport"></label><br /><br />
-						<label for="conf_service">Minecraft Server/Screen Name: <input type="text" class="input_text" name="conf_service" id="conf_service"></label>
+						<label for="conf_srvport">Minecraft Server Port: <input type="text" class="input_text" name="conf_srvport" id="conf_srvport" value="25565"></label><br /><br />
+						<label for="conf_service">Minecraft Server/Screen Name: <input type="text" class="input_text" name="conf_service" id="conf_service" value="Minecraft"></label>
 						<h2>MySQL</h2>
 						<label for="mysql_host">Host: <input type="text" class="input_text" name="mysql_host" id="mysql_host"></label><br /><br />
 						<label for="mysql_database">Database Name: <input type="text" class="input_text" name="mysql_database" id="mysql_database"></label><br /><br />
