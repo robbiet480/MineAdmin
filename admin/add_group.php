@@ -13,7 +13,7 @@ if($_GET['save']=="1"){
 							  "admin"=>$admin,
 							  "canmodifyworld"=>$canmodifyworld,
 							  "ignoresrestrictions"=>$ignoresrestrictions
-							  ),"",true);
+							  ));
     header("Location: groups.php");
 }
 ?>
