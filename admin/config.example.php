@@ -48,20 +48,10 @@
     /* Minecraft server speciic settings */
 	
 	$MCSERVER['PORT']	 = "25565";     //Default minecraft port
-	$MCSERVER['SERVICENAME'] = "Minecraft"; //Default minecraft service name (Required for Windows)
+	$MCSERVER['SERVICENAME'] = "Minecraft"; //Default minecraft service/screen name
 
     /* Methods for backup */
 
     $Backup_Method      =   "node.js"; // node.js, backup.plugin
-    
-
-    /*
-        ADMIN LOGINS
-        FORMAT, USERNAME=>SHA1(PASSWORD)
-    */
-    
-    $ADMIN_LOGINS=array(
-        "test"=>"a94a8fe5ccb19ba61c4c0873d391e987982fbbd3"
-    );
     
 ?>

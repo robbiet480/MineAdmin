@@ -27,13 +27,15 @@ class JsonRPC extends JsonRPCChild
 	private $password;
 	private $debug;
 	public  $lasterror;
-    public function __construct($server,$port=20059,$user="",$password="",$debug=true)
+	public	$salt;
+    public function __construct($server,$port=20059,$user="",$password="", $salt="",$debug=true)
     {
 		$this->server=$server;
 		$this->port=$port;
 		$this->user=$user;
 		$this->password=$password;
 		$this->debug=$debug;
+		$this->salt=$salt;
     } 
     
     public function __destruct() 
@@ -46,8 +48,8 @@ class JsonRPC extends JsonRPCChild
 //(12-6-2010)Emirin: Added socket check to json parse to speed up the load of the page if there is no server available.
 		if($conn=fsockopen($this->server, $this->port, $errno, $errstr, 1))
 		{
-			$url="http://".$this->server.":".$this->port."/api/call?method=".$name;
-			$request = "args=".urlencode(json_encode($arguments))."&key=" . hash('sha256', $this->user.$name. $this->password.$API['SALT'])."&password=".$this->password;
+			$url="http://".$this->server.":".$this->port."/api/call?method=".$name."&key=" . hash('sha256', $this->user.$name.$this->password.$this->salt);
+			$request = "args=".urlencode(json_encode($arguments));
 			
 			$headers = array('Connection: close');
 			$header = (version_compare(phpversion(), '5.2.8')) > 0 

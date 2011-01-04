@@ -5,7 +5,7 @@ if($_SESSION['user']==""){
 	$logged=false;
 }
 function stop_server() {
-		shell_exec("screen -S Minecraft -p 0 -X stuff `printf 'stop.\r'`; sleep 5");
+		shell_exec("screen -S " . $MCSERVER['SERVICENAME'] . " -p 0 -X stuff `printf 'stop.\r'`; sleep 5");
 }
 
 $os_string = php_uname('s');
@@ -26,8 +26,7 @@ switch($_POST['act']){
 			}
 			else
 			{
-				shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
-				echo "windows";
+				shell_exec('screen -dmS ' . $MCSERVER['SERVICENAME'] . ' java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 			}
 			echo "<div class='success' style='display:block;'>Started server!</div>";
 		}
@@ -62,7 +61,7 @@ switch($_POST['act']){
 			else
 			{
 				stop_server();
-				shell_exec('screen -dmS Minecraft java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
+				shell_exec('screen -dmS ' . $MCSERVER['SERVICENAME'] . ' java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
 			}
 		echo "<div class='success' style='display:block;'>Restarted server!</div>";
 	break;

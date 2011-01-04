@@ -81,8 +81,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 			</li>
 			<li class="dropdown"><a href="javascript:void(0)" id="droplink" <?php if ($pageid=="tools" or $pageid=="chat") {echo " class=\"menu_active\"";} else { echo ""; }?>>Tools &or;</a>
 				<ul id="droplist">
-					<li><a href="chat.php" <?php if ($pageid=="chat") { echo " class=\"menu_active\""; } else { echo ""; }?>>Chat</a></li>			
-					<li><a href="map.php" <?php if ($pageid=="map") { echo " class=\"menu_active\""; } else { echo ""; }?>>Mapping</a></li>
+					<li><a href="chat.php" <?php if ($pageid=="chat") { echo " class=\"menu_active\""; } else { echo ""; }?>>Console</a></li>			
 					<li><a href="backup.php" <?php if ($pageid=="backups") { echo " class=\"menu_active\""; } else { echo ""; }?>>Backups</a></li>	
 					<li><a href="reservelist.php" <?php if ($pageid=="reservelist") { echo " class=\"menu_active\""; } else { echo ""; }?>>Reserve</a></li>
 					<li><a href="whitelist.php" <?php if ($pageid=="whitelist") { echo " class=\"menu_active\""; } else { echo ""; }?>>White List</a></li>
