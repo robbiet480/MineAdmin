@@ -171,7 +171,7 @@ class MySQL extends database{
 			return $return[0];
 		}
 	}
-	function insert($table,$data_array,$where_array,$create=false){
+	function insert($table,$data_array,$create=false){
         global $TABLES;
         $table = $TABLES[$table];
 
@@ -196,13 +196,7 @@ class MySQL extends database{
 				$x=2;
 			}
 		}
-		if(!$create){
-			//TODO: find out why you use a where command here
-			//Insert command uses no "WHERE" http://dev.mysql.com/doc/refman/5.1/en/insert.html
-			//Lets delete that param completely later?
-			$where="WHERE {$where}";
-		}
-		$sql_string="INSERT INTO `{$table}` SET {$set} {$where}";
+		$sql_string="INSERT INTO `{$table}` SET {$set}";
 		$data=mysql_query($sql_string,$this->conn)or die(mysql_error());
 		
 		return $data;

@@ -240,7 +240,7 @@ class Flatfile extends database{
 		$total = round($stoptime - $starttime,4);
 		$this->overall_stats=$this->overall_stats+$total;
 	}
-	function insert($table,$data_array,$where_array,$create=false){
+	function insert($table,$data_array,$create=false){
 		if(!isset($this->tablefiles[$table]))
 			die($table. " does not exist!");
 		

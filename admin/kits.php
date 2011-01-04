@@ -14,7 +14,7 @@ if($_GET['action'] == "dlkit") {
 	} 
 	$length = strlen($kititems);
 	$input_items = substr($kititems,0,($length-1));
-	$result=$db->insert("kits", array("id"=>"","name"=>$_POST['kit_name'],"items"=>$input_items,"delay"=>$_POST['kit_delay'],"group"=>$_POST['kit_group']), array(), true);
+	$result=$db->insert("kits", array("id"=>"","name"=>$_POST['kit_name'],"items"=>$input_items,"delay"=>$_POST['kit_delay'],"group"=>$_POST['kit_group']), true);
 }
 
 ?>

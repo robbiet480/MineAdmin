@@ -17,7 +17,7 @@ if($_GET['save']=="1"){
 							  
 							  ////TODO : Password input box? ...
 							  "password"=>''
-							  ),"",true);
+							  ),true);
     header("Location: users.php");
     exit();
 }
