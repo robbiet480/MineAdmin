@@ -40,6 +40,11 @@ a {
 .active {
 	color:#000;
 }
+#errors {
+	color: #ff0000;
+	font-size: 16px;
+	text-align: center;
+}
 #steps ul, #steps li {
 	margin: -6px 0 0 0;
 	padding: 0;
