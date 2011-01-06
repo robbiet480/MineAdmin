@@ -15,3 +15,35 @@ function ajaxOpenPage(url, id)
 	document.getElementById(id).innerHTML=xmlhttp.responseText;
 	eval();
 }
+
+function ajaxPostForm(url, id, form)
+{
+	var i, postvar
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.open("POST",url,false);
+
+	for (i=0; i < form.elements.length; i++)
+	{
+		object = form.elements[i];
+		if(object.name != "")
+		{
+			if(postvar == "")
+			{
+				postvar = object.name +"=" + object.value;
+			} else {
+				postvar += "&" + object.name +"=" + object.value;
+			}
+		}
+	}
+
+	xmlhttp.send(postvar);
+	document.getElementById(id).innerHTML=xmlhttp.responseText;
+	eval();
+}

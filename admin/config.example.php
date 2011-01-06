@@ -52,7 +52,7 @@
 	$MCSERVER['SERVICENAME'] = "<mcserverService>"; //Default minecraft service/screen name
 
     /* Methods for backup */
-
+	$PATH['backup']		=	"<backupPath>";
     $Backup_Method      =   "node.js"; // node.js, backup.plugin
     
 ?>

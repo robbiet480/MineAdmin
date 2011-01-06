@@ -2,6 +2,41 @@
 <head>
 	<title>MineAdmin Installer - MineAdmin.com</title>
 	<link rel="stylesheet" type="text/css" href="css/installer.css" />
+	<script type="text/javascript">
+	function ajaxPostForm(url, id, form)
+	{
+		var i, postvar =""
+		document.body.cursor = "wait";
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		}
+		else
+		{// code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xmlhttp.open("POST",url,false);
+
+		for (i=0; i < form.elements.length; i++)
+		{
+			object = form.elements[i];
+			if(object.name != "")
+			{
+				if(postvar == "")
+				{
+					postvar = object.name +"=" + object.value;
+				} else {
+					postvar += "&" + object.name +"=" + object.value;
+				}
+			}
+		}
+		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xmlhttp.send(postvar);
+		document.getElementById(id).innerHTML=xmlhttp.responseText;
+		eval();
+		document.body.cursor = "default";
+	}
+</script>
 </head>
 <body>
 	<div id="installer">
@@ -9,10 +44,8 @@
 		<div id="steps">
 			<ul>
 				<li>
-					
-					<div id="errors">
-					
-					</div>
+					<div id="errors"></div>
+					<div id="ajaxRunner"></div>
 					
 					<?php
 					if(!file_exists('config.php')) {
@@ -29,12 +62,12 @@
 					}
 					?>
 
-					<form action="buildconfig.php" name="mrT" id="mrT" method="post">
+					<form name="mrT" id="mrT" method="post">
 						 <?php /* thats right mother fuckers, I pitty da foo who can't config!  Best learn before you wreck yo self!  Thats right, I also added this php tag just to comment, suck it!*/ ?>
 						<h2>General Server Configuration</h2>
 						<label for="conf_mapath">
 							Path to MineAdmin: 
-							<input type="text" class="input_text" name="conf_mapath" id="conf_mapath" value="<?php echo str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']); ?>">
+							<input type="text" class="input_text" name="conf_mapath" id="conf_mapath" value="<?php echo str_replace('install.php','',$_SERVER['SCRIPT_FILENAME']); ?>">
 						</label><br /><br />
 						<label for="conf_srvpath">
 							Path to Minecraft Server: 
@@ -93,7 +126,7 @@
 						<h2>Ready to install.</h2>
 						<p>We have everything we need, all you need to do is click 'Install'!</p>
 						<p style="color:#ff0000;font-weight:bold;text-transform:uppercase;">Do not close this page while installing.</p>
-						<input type="submit" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" value="Install" />
+						<input type="button" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" value="Install" onclick="document.getElementById('errors').innerHTML='';ajaxPostForm('buildconfig.php','ajaxRunner', document.getElementById('mrT'))"/>
 					</form>
 		 </div>
 	</div>
