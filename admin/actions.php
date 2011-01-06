@@ -26,7 +26,7 @@ switch($_POST['act']){
 			}
 			else
 			{
-				shell_exec('screen -dmS ' . $MCSERVER['SERVICENAME'] . ' java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
+				shell_exec('screen -dmS ' . $MCSERVER['SERVICENAME'] . ' java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar '.$PATH['minecraft'] .'Minecraft_Mod.jar');
 			}
 			echo "<div class='success' style='display:block;'>Started server!</div>";
 		}
@@ -61,7 +61,7 @@ switch($_POST['act']){
 			else
 			{
 				stop_server();
-				shell_exec('screen -dmS ' . $MCSERVER['SERVICENAME'] . ' java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar /opt/Minecraft_Mod.jar');
+				shell_exec('screen -dmS ' . $MCSERVER['SERVICENAME'] . ' java -Xmx'.$GENERAL["memory"].' -Xms'.$GENERAL["memory"].' -jar '.$PATH['minecraft'] .'Minecraft_Mod.jar');
 			}
 		echo "<div class='success' style='display:block;'>Restarted server!</div>";
 	break;
