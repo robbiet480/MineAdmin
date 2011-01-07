@@ -33,6 +33,12 @@ if($_GET['save']=="1"){
         </div>
         <div class="over_html_row_wrap">
             <label>
+                <span class="over_html_row">Password <br><span>Player Password</span></span>
+                <span class="input_area"><input type="password" class="input_text" name="pass"></span>
+            </label>
+        </div>
+        <div class="over_html_row_wrap">
+            <label>
                 <span class="over_html_row">Group <br /><span>Set user to a group</span></span>
                 <span class="input_area">
                     <select class="input_text" name="groups">
