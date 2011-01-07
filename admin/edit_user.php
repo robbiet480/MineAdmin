@@ -8,15 +8,29 @@ if(is_numeric($_GET['uid'])){
         $ignoresrestrictions=$_POST['ignoresrestrictions']=="on"?"1":"0";
         $ip=$_POST['ip'];
         $group=explode(":",$_POST['groups']);
-        $db->set("users",
-	        Array("admin"=>$admin,
-				  "canmodifyworld"=>$canmodifyworld,
-	              "ignoresrestrictions"=>$ignoresrestrictions,
-	              "ip"=>$ip,
-	              "groups"=>$group[1],
-	              "prefix"=>$group[0]
-	              ),
-              Array("id"=>$user_info['id']));
+	$password=sha1($_POST['pass']);
+	if (strlen($_POST['pass']) > 0)
+	{
+		$db->set("users",Array(
+								  "admin"=>$admin,
+								  "canmodifyworld"=>$canmodifyworld,
+								  "ignoresrestrictions"=>$ignoresrestrictions,
+								  "ip"=>$ip,
+								  "groups"=>$group[1],
+								  "prefix"=>$group[0],
+								  
+								  ////TODO : Password input box? ...
+								  "password"=>$password),
+								  Array("id"=>$user_info['id']));
+	} else {
+		$db->set("users",Array("admin"=>$admin,
+								  "canmodifyworld"=>$canmodifyworld,
+								  "ignoresrestrictions"=>$ignoresrestrictions,
+								  "ip"=>$ip,
+								  "groups"=>$group[1],
+								  "prefix"=>$group[0]),
+								  Array("id"=>$user_info['id']));
+								  }
         header("Location: users.php");
         exit;
     }else if(isset($_GET['save']) && $_GET['save']=="2"){
@@ -35,6 +49,12 @@ if(is_numeric($_GET['uid'])){
 <form action="edit_user.php?uid=<?php echo $user_info['id'];?>&save=1" method="post">
     <div style="width:500px;">
         <div class="overlay_title"><h1 class="over_html_h1"><?php echo $user_info['name'];?>'s Settings</h1></div>
+        <div class="over_html_row_wrap">
+            <label>
+                <span class="over_html_row">Password <br><span>(Blank passwords not allowed)</span></span>
+                <span class="input_area"><input type="password" class="input_text" name="pass"></span>
+            </label>
+        </div>
         <div class="over_html_row_wrap">
             <label>
                 <span class="over_html_row">Group <br /><span>Set user to a group</span></span>

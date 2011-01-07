@@ -7,17 +7,30 @@ if($_GET['save']=="1"){
     $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
     $ip=$db->escape_string($_POST['ip']);
     $group=explode(":",$db->escape_string($_POST['groups']));
-    $db->insert("users",Array("name"=>$nick,
-							  "admin"=>$admin,
-							  "canmodifyworld"=>$canmodifyworld,
-							  "ignoresrestrictions"=>$ignoresrestrictions,
-							  "ip"=>$ip,
-							  "groups"=>$group[1],
-							  "prefix"=>$group[0],
-							  
-							  ////TODO : Password input box? ...
-							  "password"=>''
-							  ));
+	$password=sha1($db->escape_string($_POST['pass']));
+	if (strlen($_POST['pass']) > 0)
+	{
+		$db->insert("users",Array("name"=>$nick,
+								  "admin"=>$admin,
+								  "canmodifyworld"=>$canmodifyworld,
+								  "ignoresrestrictions"=>$ignoresrestrictions,
+								  "ip"=>$ip,
+								  "groups"=>$group[1],
+								  "prefix"=>$group[0],
+								  
+								  ////TODO : Password input box? ...
+								  "password"=>$password
+								  ));
+	} else {
+		$db->insert("users",Array("name"=>$nick,
+								  "admin"=>$admin,
+								  "canmodifyworld"=>$canmodifyworld,
+								  "ignoresrestrictions"=>$ignoresrestrictions,
+								  "ip"=>$ip,
+								  "groups"=>$group[1],
+								  "prefix"=>$group[0]
+								  ));
+	}
     header("Location: users.php");
     exit();
 }
@@ -33,7 +46,7 @@ if($_GET['save']=="1"){
         </div>
         <div class="over_html_row_wrap">
             <label>
-                <span class="over_html_row">Password <br><span>Player Password</span></span>
+                <span class="over_html_row">Password <br><span>(Blank passwords not allowed)</span></span>
                 <span class="input_area"><input type="password" class="input_text" name="pass"></span>
             </label>
         </div>
