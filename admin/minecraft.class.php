@@ -174,9 +174,9 @@ class minecraft{
                 if ($file != "." && $file != ".." && $file != "mysql.properties" && $file != "craftapi.properties" ) {
                     $file_out=preg_split('/\./si', $file);
                     if($file_out[1]=="properties"){
-                        $filename = $PATH['minecraft'].$file_out[0].".properties";
+                        $filename = $PATH['minecraft']."/".$file_out[0].".properties";
                         $handle2 = fopen($filename, "r");
-                        $contents = fread($handle2, filesize($PATH['minecraft'].$file_out[0].".properties"));
+                        $contents = fread($handle2, filesize($filename));
                         fclose($handle2);
                         $props=array();
                         preg_match_all('/^([a-zA-Z0-9\-]+)=(.*)/im', $contents, $resulti, PREG_PATTERN_ORDER);
