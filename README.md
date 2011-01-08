@@ -67,6 +67,7 @@ Installation
 - dtang
 - Emirin
 - TheCrazyT
+- resba
 
 ## Past contributors
 - Firestar
