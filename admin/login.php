@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<?php if((preg_match("/iPad/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPhone/i",$_SERVER['HTTP_USER_AGENT'])) || (preg_match("/iPod/i",$_SERVER['HTTP_USER_AGENT']))) {
 		echo "<title>MineAdmin</title>";
 	} else {
