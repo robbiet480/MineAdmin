@@ -12,11 +12,11 @@ require_once('includes/header.php');
                                     <li class="name" style="text-align:left;">Name</li>
                                     <li class="hand" style="width:70px;">Group</li>
                                     <li class="ip">IP Address</li>
-                                    <li class="access">Access</li>
-                                    <li class="access">Admin</li>
-                                    <li class="access">Modify</li>
-                                    <li class="access">Ignore</li>
-                                    <li class="users_actions"></li>
+                                    <li class="build" style="width:65px;">Access</li>
+                                    <li class="build" style="width:65px;">Admin</li>
+                                    <li class="world" style="width:65px;">Modify</li>
+                                    <li class="build" style="width:65px;">Ignore</li>
+                                    <li class="actions" style="width:180px;"></li>
                             </ul>
                             <?php
                             foreach($minecraft->user_list() as $user){
@@ -27,11 +27,11 @@ require_once('includes/header.php');
                                             <li class="name" style="text-align:left;"><?php echo $user['name'];?></li>
                                             <li class="hand" style="width:70px;"><?php echo $user['groups'];?></li>
                                             <li class="ip"><?php echo ($user['ip']==""? "<u>Not Set</u>": $user['ip']);?></li>
-                                            <li class="access"><?php if($user['password']){ echo "<img src=\"images/icon-checkmark.png\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" />"; };  ?></li>
-                                            <li class="access"><?php if($user['admin']){ echo "<img src=\"images/icon-checkmark.png\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" />"; };?></li>
-                                            <li class="access"><?php if($user['canmodifyworld']){ echo "<img src=\"images/icon-checkmark.png\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" />"; };?></li>
-                                            <li class="access"><?php if($user['ignoresrestrictions']){ echo "<img src=\"images/icon-checkmark.png\" title=\"Ignoring restriction\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" title=\"restriction in place for this user\" />"; };?></li>
-                                            <li class="users_actions"><a class="fancy" href="edit_user.php?uid=<?php echo $user['id'];?>">&lsaquo; edit &rsaquo;</a> <a class="fancy" href="user_commands.php?uid=<?php echo $user['id'];?>">&lsaquo; clist &rsaquo;</a> <a href="javascript:delete_user('<?php echo $user['name'];?>','<?php echo $user['id'];?>');">&lsaquo; delete &rsaquo;</a></li>
+                                            <li class="hand" style="width:65px"><?php if($user['password']){ echo "<img src=\"images/icon-checkmark.png\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" />"; };?></li>
+                                            <li class="hand" style="width:65px;"><?php if($user['admin']){ echo "<img src=\"images/icon-checkmark.png\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" />"; };?></li>
+                                            <li class="world" style="width:65px;"><?php if($user['canmodifyworld']){ echo "<img src=\"images/icon-checkmark.png\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" />"; };?></li>
+                                            <li class="hand" style="width:65px;"><?php if($user['ignoresrestrictions']){ echo "<img src=\"images/icon-checkmark.png\" title=\"Ignoring restriction\" />"; }else{ echo "<img src=\"images/toolbar-icon-delete.png\" title=\"restriction in place for this user\" />"; };?></li>
+                                            <li class="actions" style="width:180px;"><a class="fancy" href="edit_user.php?uid=<?php echo $user['id'];?>">&lsaquo; edit &rsaquo;</a> <a class="fancy" href="user_commands.php?uid=<?php echo $user['id'];?>">&lsaquo; clist &rsaquo;</a> <a href="javascript:delete_user('<?php echo $user['name'];?>','<?php echo $user['id'];?>');">&lsaquo; delete &rsaquo;</a></li>
                                     </ul>
                                 </div>
                                 <?PHP
