@@ -238,6 +238,18 @@ li.dropdown ul li {
 #page_wrap ul li.group{
 	width:96px;
 }
+#page_warp ul li.access{
+	width: 65px;
+}
+#page_wrap ul li.users_actions{
+	width: 180px;
+	float: right;
+}
+#page_wrap ul li.users_actions a{
+	color: #144564;
+	margin-right: 5px;
+	text-decoration: none;
+}
 #page_wrap ul li.build{
 	width:86px;
 }
