@@ -129,6 +129,16 @@
 		{
 			$err .= "Cannot find your database.  Your server is up, but your database ". $_POST['mysql_database'] ." cannot be found.<br />";
 		} else {
+			$rs = mysql_query('SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = "users" and table_schema = '.$_POST['mysql_database'].'"', $conn);
+			if (mysql_num_rows($rs) == 0)
+			{
+				mysql_query('CREATE TABLE \'users\' (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(32) NOT NULL,
+  `password` varchar(32) NOT NULL
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1');
+			}
 			$rs = mysql_query('SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = "users" AND COLUMN_NAME = "password" and table_schema = '.$_POST['mysql_database'].'"', $conn);
 			if (mysql_num_rows($rs) == 0)
 			{
