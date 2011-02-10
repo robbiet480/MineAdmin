@@ -144,7 +144,7 @@
 			{
 				mysql_query('ALTER TABLE users ADD password varchar(255)');
 			}
-			mysql_query('insert into users (name, groups, password) values ("admin","default", "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3");', $conn);
+			mysql_query('insert into users (name, password) values ("admin", "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3");', $conn);
 			if(mysql_errno($conn))
 			{
 				$err .= "Could not set up a default user for you, most likely cause there is no password field due to user rights to the information_schema table.<br />";
