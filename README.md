@@ -1,15 +1,14 @@
 # MineAdmin
 
 ## Introduction
-MineAdmin is a PHP/MySQL based web control panel for Minecraft Servers utilizing [hMod](http://www.minecraftforum.net/viewtopic.php?t=23340) and [JSONApi](http://forum.hey0.net/showthread.php?pid=21769).
+MineAdmin is a PHP/MySQL based web control panel for Minecraft Servers utilizing [Bukkit](http://bukkit.org) and [JSONApi](http://forum.hey0.net/showthread.php?pid=21769).
 This is a continuation of the great work of Firestar, The009, ricin and Zeryl. Firestar has passed the project to me.
 
 ## Requirements
 
-- hMod Mod with MySQL set as the data-source
+- Bukkit
 - [JSONApi](http://forum.hey0.net/showthread.php?pid=21769)
 - PHP 5.2.0+
-- [MCStats](https://github.com/rmichela/MCStats)
 - LAMP (Linux, Apache, MySQL, PHP5) stack
 
 ## Windows Support
@@ -19,7 +18,7 @@ We have heard mixed responses as to Windows support. We will update this area or
 ## General
 Project Website is on [Github](https://github.com/robbiet480/MineAdmin)
 
-If you need any help, [send me a message](https://github.com/inbox/new/robbiet480) on [GitHub](http://github.com/robbiet480) or on the forums or on IRC (i'm always in #hey0 on Esper or robbiet480 on Freenode. I may not respond instantly as I use IRSSI+screen+ssh). You can also join our IRC channel on Esper, #mineadmin
+If you need any help, [send me a message](https://github.com/inbox/new/robbiet480) on [GitHub](http://github.com/robbiet480) or on the forums or on IRC (i'm always in #bukkit on Esper or robbiet480 on Freenode. I may not respond instantly as I use IRSSI+screen+ssh). You can also join our IRC channel on Esper, #mineadmin
 
 ## Currently Working
 - User Control
@@ -50,14 +49,14 @@ If you need any help, [send me a message](https://github.com/inbox/new/robbiet48
 
 Installation
 ------------
-1.	Set up hMod. 
+1.	Set up Bukkit. 
 	1.	Simply start Minecraft_Mod.jar once. It will fail. Stop it.
 	2.	Open server.properties, change data-source to mysql. 
 	3.	Start Minecraft_Mod.jar again. It will create a mysql.properties file. 
 2.	Checkout the files or download a tarball/zipball from [Github](http://github.com/robbiet480/MineAdmin)
 3.	Move config.example.php to config.php and change the values to match.
 4.	Import the mineadmin.sql file into a database of your choice. Match the username, password, hostname and database name in both config.php and mysql.properties
-5.	Start hMod
+5.	Start Bukkit
 6.	Open your browser and go to your site.  Type Admin for the user name and test for the password. (Make sure you remove this user after you set up a user for yourself.)
 7.	Done!
 	
