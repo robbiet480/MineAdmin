@@ -3,7 +3,6 @@ if(!file_exists('admin/config.php')) {
 	header("Location: admin/install.php");
 }
 include('admin/includes/markdown.php');
-include('admin/config.php');
 ?>
 <!doctype html>
 <html lang="en">
