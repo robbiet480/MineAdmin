@@ -1,19 +1,13 @@
 <?php
 require_once('header_inc.php');
 if($_GET['save']=="1"){
-    //OfHash Implementation
-    require_once('hash/OfHash.class.php');
-    $hash = new OfHash();
-$password2 = $_POST['pass'];
-$inputresult = $hash->hash($password2);
-    //End OfHash Implementation. Code Modified replaces $_POST['pass'] with the hashed $inputresult.
     $nick=$db->escape_string($_POST['nick']);
     $admin=($_POST['admin']=="on"?"1":"0");
     $canmodifyworld=$db->escape_string($_POST['canmodifyworld']=="on"?"1":"0");
     $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
     $ip=$db->escape_string($_POST['ip']);
     $group=explode(":",$db->escape_string($_POST['groups']));
-	$password=$db->escape_string($inputresult);
+	$password=sha1($db->escape_string($_POST['pass']));
 	if (strlen($_POST['pass']) > 0)
 	{
 		$db->insert("users",Array("name"=>$nick,

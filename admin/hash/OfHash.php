@@ -9,6 +9,8 @@
  * Minimum Requirement: PHP 5.0.0
  */
 
+if(!defined('OF_ROOT')) exit;
+
 /**
  * OpenFlame Web Framework - Hashing framework,
  * 		Used as the Framework's password hashing system.

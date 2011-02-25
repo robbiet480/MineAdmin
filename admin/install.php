@@ -126,7 +126,7 @@
 						<h2>Ready to install.</h2>
 						<p>We have everything we need, all you need to do is click 'Install'!</p>
 						<p style="color:#ff0000;font-weight:bold;text-transform:uppercase;">Do not close this page while installing.</p>
-						<input type="button" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" value="Install" onClick="document.getElementById('errors').innerHTML='';ajaxPostForm('buildconfig.php','ajaxRunner', document.getElementById('mrT'))"/>
+						<input type="button" style="background:#144564;color:#fff;font-size:24px;width:92%;height:48px;margin-left:20px;margin-top:60px;" value="Install" onclick="document.getElementById('errors').innerHTML='';ajaxPostForm('buildconfig.php','ajaxRunner', document.getElementById('mrT'))"/>
 					</form>
 		 </div>
 	</div>

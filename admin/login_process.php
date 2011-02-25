@@ -1,12 +1,6 @@
 <?php
 session_start();
 require_once('config.php');
-require_once('hash/OfHash.php');
-require_once('hash/OfInput.php');
-$hash = new OfHash();
-// $password = $_POST['pass'];
-// $inputresult = $hash->hash($password);
-$password_input = new OfInput('pass', '', '_POST');
 
 if($useflatfile){
     require("flatfile.class.php");
@@ -22,8 +16,8 @@ if ( !$db->isconnected() ) {
     echo "MySQL Configuration Incorrect.";
     exit();
 }
-$result=$db->fetch_by("users",Array("password"=>$password_input,"name"=>$_POST['user']),"");
-if($result['password'] == $password_input) {
+$result=$db->fetch_by("users",Array("password"=>sha1($_POST['pass']),"name"=>$_POST['user']),"");
+if($result['password'] == sha1($_POST['pass'])) {
         $_SESSION['user']=$result["name"];
         echo "1";
 }else{
