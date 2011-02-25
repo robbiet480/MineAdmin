@@ -1,5 +1,6 @@
 <?php
 	error_reporting(E_ERROR | E_PARSE);
+	
 	/*Alright kids, its time to build your config files!
 	
 		We are going to do this the easy way.
@@ -144,7 +145,7 @@
 			{
 				mysql_query('ALTER TABLE users ADD password varchar(255)');
 			}
-			mysql_query('insert into users (name, password) values ("admin", "a94a8fe5ccb19ba61c4c0873d391e987982fbbd3");', $conn);
+			mysql_query('insert into users (name, password) values ("admin", );', $conn);
 
 			$rs = mysql_query('SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = "items" and table_schema = "'.$_POST['mysql_database'].'"', $conn);
 			if (mysql_num_rows($rs) == 0)
