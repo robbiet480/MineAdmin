@@ -1,19 +1,19 @@
 <?php
 #
-# Markdown Extra  -  A text-to-HTML conversion tool for web writers
+# markdown Extra  -  A text-to-HTML conversion tool for web writers
 #
-# PHP Markdown & Extra
+# PHP markdown & Extra
 # Copyright (c) 2004-2009 Michel Fortin  
 # <http://michelf.com/projects/php-markdown/>
 #
-# Original Markdown
+# Original markdown
 # Copyright (c) 2004-2006 John Gruber  
 # <http://daringfireball.net/projects/markdown/>
 #
 
 
-define( 'MARKDOWN_VERSION',  "1.0.1n" ); # Sat 10 Oct 2009
-define( 'MARKDOWNEXTRA_VERSION',  "1.2.4" ); # Sat 10 Oct 2009
+define( 'markdown_VERSION',  "1.0.1n" ); # Sat 10 Oct 2009
+define( 'markdownEXTRA_VERSION',  "1.2.4" ); # Sat 10 Oct 2009
 
 
 #
@@ -21,42 +21,42 @@ define( 'MARKDOWNEXTRA_VERSION',  "1.2.4" ); # Sat 10 Oct 2009
 #
 
 # Change to ">" for HTML output
-@define( 'MARKDOWN_EMPTY_ELEMENT_SUFFIX',  " />");
+@define( 'markdown_EMPTY_ELEMENT_SUFFIX',  " />");
 
 # Define the width of a tab for code blocks.
-@define( 'MARKDOWN_TAB_WIDTH',     4 );
+@define( 'markdown_TAB_WIDTH',     4 );
 
 # Optional title attribute for footnote links and backlinks.
-@define( 'MARKDOWN_FN_LINK_TITLE',         "" );
-@define( 'MARKDOWN_FN_BACKLINK_TITLE',     "" );
+@define( 'markdown_FN_LINK_TITLE',         "" );
+@define( 'markdown_FN_BACKLINK_TITLE',     "" );
 
 # Optional class attribute for footnote links and backlinks.
-@define( 'MARKDOWN_FN_LINK_CLASS',         "" );
-@define( 'MARKDOWN_FN_BACKLINK_CLASS',     "" );
+@define( 'markdown_FN_LINK_CLASS',         "" );
+@define( 'markdown_FN_BACKLINK_CLASS',     "" );
 
 
 #
 # WordPress settings:
 #
 
-# Change to false to remove Markdown from posts and/or comments.
-@define( 'MARKDOWN_WP_POSTS',      true );
-@define( 'MARKDOWN_WP_COMMENTS',   true );
+# Change to false to remove markdown from posts and/or comments.
+@define( 'markdown_WP_POSTS',      true );
+@define( 'markdown_WP_COMMENTS',   true );
 
 
 
 ### Standard Function Interface ###
 
-@define( 'MARKDOWN_PARSER_CLASS',  'MarkdownExtra_Parser' );
+@define( 'markdown_PARSER_CLASS',  'markdownExtra_Parser' );
 
-function Markdown($text) {
+function markdown($text) {
 #
 # Initialize the parser and return the result of its transform method.
 #
 	# Setup static parser variable.
 	static $parser;
 	if (!isset($parser)) {
-		$parser_class = MARKDOWN_PARSER_CLASS;
+		$parser_class = markdown_PARSER_CLASS;
 		$parser = new $parser_class;
 	}
 
@@ -68,9 +68,9 @@ function Markdown($text) {
 ### WordPress Plugin Interface ###
 
 /*
-Plugin Name: Markdown Extra
+Plugin Name: markdown Extra
 Plugin URI: http://michelf.com/projects/php-markdown/
-Description: <a href="http://daringfireball.net/projects/markdown/syntax">Markdown syntax</a> allows you to write using an easy-to-read, easy-to-write plain text format. Based on the original Perl version by <a href="http://daringfireball.net/">John Gruber</a>. <a href="http://michelf.com/projects/php-markdown/">More...</a>
+Description: <a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a> allows you to write using an easy-to-read, easy-to-write plain text format. Based on the original Perl version by <a href="http://daringfireball.net/">John Gruber</a>. <a href="http://michelf.com/projects/php-markdown/">More...</a>
 Version: 1.2.4
 Author: Michel Fortin
 Author URI: http://michelf.com/
@@ -82,15 +82,15 @@ if (isset($wp_version)) {
 	
 	# Post content and excerpts
 	# - Remove WordPress paragraph generator.
-	# - Run Markdown on excerpt, then remove all tags.
+	# - Run markdown on excerpt, then remove all tags.
 	# - Add paragraph tag around the excerpt, but remove it for the excerpt rss.
-	if (MARKDOWN_WP_POSTS) {
+	if (markdown_WP_POSTS) {
 		remove_filter('the_content',     'wpautop');
         remove_filter('the_content_rss', 'wpautop');
 		remove_filter('the_excerpt',     'wpautop');
-		add_filter('the_content',     'mdwp_MarkdownPost', 6);
-        add_filter('the_content_rss', 'mdwp_MarkdownPost', 6);
-		add_filter('get_the_excerpt', 'mdwp_MarkdownPost', 6);
+		add_filter('the_content',     'mdwp_markdownPost', 6);
+        add_filter('the_content_rss', 'mdwp_markdownPost', 6);
+		add_filter('get_the_excerpt', 'mdwp_markdownPost', 6);
 		add_filter('get_the_excerpt', 'trim', 7);
 		add_filter('the_excerpt',     'mdwp_add_p');
 		add_filter('the_excerpt_rss', 'mdwp_strip_p');
@@ -102,10 +102,10 @@ if (isset($wp_version)) {
 	}
 	
 	# Add a footnote id prefix to posts when inside a loop.
-	function mdwp_MarkdownPost($text) {
+	function mdwp_markdownPost($text) {
 		static $parser;
 		if (!$parser) {
-			$parser_class = MARKDOWN_PARSER_CLASS;
+			$parser_class = markdown_PARSER_CLASS;
 			$parser = new $parser_class;
 		}
 		if (is_single() || is_page() || is_feed()) {
@@ -120,15 +120,15 @@ if (isset($wp_version)) {
 	# - Remove WordPress paragraph generator.
 	# - Remove WordPress auto-link generator.
 	# - Scramble important tags before passing them to the kses filter.
-	# - Run Markdown on excerpt then remove paragraph tags.
-	if (MARKDOWN_WP_COMMENTS) {
+	# - Run markdown on excerpt then remove paragraph tags.
+	if (markdown_WP_COMMENTS) {
 		remove_filter('comment_text', 'wpautop', 30);
 		remove_filter('comment_text', 'make_clickable');
-		add_filter('pre_comment_content', 'Markdown', 6);
+		add_filter('pre_comment_content', 'markdown', 6);
 		add_filter('pre_comment_content', 'mdwp_hide_tags', 8);
 		add_filter('pre_comment_content', 'mdwp_show_tags', 12);
-		add_filter('get_comment_text',    'Markdown', 6);
-		add_filter('get_comment_excerpt', 'Markdown', 6);
+		add_filter('get_comment_text',    'markdown', 6);
+		add_filter('get_comment_excerpt', 'markdown', 6);
 		add_filter('get_comment_excerpt', 'mdwp_strip_p', 7);
 	
 		global $mdwp_hidden_tags, $mdwp_placeholders;
@@ -166,12 +166,12 @@ function identify_modifier_markdown() {
 	return array(
 		'name' => 'markdown',
 		'type' => 'modifier',
-		'nicename' => 'PHP Markdown Extra',
+		'nicename' => 'PHP markdown Extra',
 		'description' => 'A text-to-HTML conversion tool for web writers',
 		'authors' => 'Michel Fortin and John Gruber',
 		'licence' => 'GPL',
-		'version' => MARKDOWNEXTRA_VERSION,
-		'help' => '<a href="http://daringfireball.net/projects/markdown/syntax">Markdown syntax</a> allows you to write using an easy-to-read, easy-to-write plain text format. Based on the original Perl version by <a href="http://daringfireball.net/">John Gruber</a>. <a href="http://michelf.com/projects/php-markdown/">More...</a>',
+		'version' => markdownEXTRA_VERSION,
+		'help' => '<a href="http://daringfireball.net/projects/markdown/syntax">markdown syntax</a> allows you to write using an easy-to-read, easy-to-write plain text format. Based on the original Perl version by <a href="http://daringfireball.net/">John Gruber</a>. <a href="http://michelf.com/projects/php-markdown/">More...</a>',
 		);
 }
 
@@ -179,7 +179,7 @@ function identify_modifier_markdown() {
 ### Smarty Modifier Interface ###
 
 function smarty_modifier_markdown($text) {
-	return Markdown($text);
+	return markdown($text);
 }
 
 
@@ -190,10 +190,10 @@ function smarty_modifier_markdown($text) {
 if (strcasecmp(substr(__FILE__, -16), "classTextile.php") == 0) {
 	# Try to include PHP SmartyPants. Should be in the same directory.
 	@include_once 'smartypants.php';
-	# Fake Textile class. It calls Markdown instead.
+	# Fake Textile class. It calls markdown instead.
 	class Textile {
 		function TextileThis($text, $lite='', $encode='') {
-			if ($lite == '' && $encode == '')    $text = Markdown($text);
+			if ($lite == '' && $encode == '')    $text = markdown($text);
 			if (function_exists('SmartyPants'))  $text = SmartyPants($text);
 			return $text;
 		}
@@ -209,10 +209,10 @@ if (strcasecmp(substr(__FILE__, -16), "classTextile.php") == 0) {
 
 
 #
-# Markdown Parser Class
+# markdown Parser Class
 #
 
-class Markdown_Parser {
+class markdown_Parser {
 
 	# Regex to match balanced [brackets].
 	# Needed to insert a maximum bracked depth while converting to PHP.
@@ -227,8 +227,8 @@ class Markdown_Parser {
 	var $escape_chars_re;
 
 	# Change to ">" for HTML output.
-	var $empty_element_suffix = MARKDOWN_EMPTY_ELEMENT_SUFFIX;
-	var $tab_width = MARKDOWN_TAB_WIDTH;
+	var $empty_element_suffix = markdown_EMPTY_ELEMENT_SUFFIX;
+	var $tab_width = markdown_TAB_WIDTH;
 	
 	# Change to `true` to disallow markup or entities.
 	var $no_markup = false;
@@ -239,7 +239,7 @@ class Markdown_Parser {
 	var $predef_titles = array();
 
 
-	function Markdown_Parser() {
+	function markdown_Parser() {
 	#
 	# Constructor function. Initialize appropriate member variables.
 	#
@@ -578,9 +578,9 @@ class Markdown_Parser {
 	#
 	# Run block gamut tranformations.
 	#
-		# We need to escape raw HTML in Markdown source before doing anything 
+		# We need to escape raw HTML in markdown source before doing anything 
 		# else. This need to be done for each block, and not only at the 
-		# begining in the Markdown function since hashed blocks can be part of
+		# begining in the markdown function since hashed blocks can be part of
 		# list items and could have been indented. Indented blocks would have 
 		# been seen as a code block in a previous pass of hashHTMLBlocks.
 		$text = $this->hashHTMLBlocks($text);
@@ -671,7 +671,7 @@ class Markdown_Parser {
 
 	function doAnchors($text) {
 	#
-	# Turn Markdown link shortcuts into XHTML <a> tags.
+	# Turn markdown link shortcuts into XHTML <a> tags.
 	#
 		if ($this->in_anchor) return $text;
 		$this->in_anchor = true;
@@ -796,7 +796,7 @@ class Markdown_Parser {
 
 	function doImages($text) {
 	#
-	# Turn Markdown image shortcuts into <img> tags.
+	# Turn markdown image shortcuts into <img> tags.
 	#
 		#
 		# First, handle reference-style labeled images: ![alt text][id]
@@ -1049,7 +1049,7 @@ class Markdown_Parser {
 		#
 		# Whereas when we're inside a list (or sub-list), that line will be
 		# treated as the start of a sub-list. What a kludge, huh? This is
-		# an aspect of Markdown's syntax that's hard to parse perfectly
+		# an aspect of markdown's syntax that's hard to parse perfectly
 		# without resorting to mind-reading. Perhaps the solution is to
 		# change the syntax rules such that sub-lists must start with a
 		# starting cardinal number; e.g. "1." or "a.".
@@ -1101,7 +1101,7 @@ class Markdown_Parser {
 
 	function doCodeBlocks($text) {
 	#
-	#	Process Markdown `<pre><code>` blocks.
+	#	Process markdown `<pre><code>` blocks.
 	#
 		$text = preg_replace_callback('{
 				(?:\n\n|\A\n?)
@@ -1386,7 +1386,7 @@ class Markdown_Parser {
 //				{
 //					list(, $div_open, , $div_content, $div_close) = $matches;
 //
-//					# We can't call Markdown(), because that resets the hash;
+//					# We can't call markdown(), because that resets the hash;
 //					# that initialization code should be pulled into its own sub, though.
 //					$div_content = $this->hashHTMLBlocks($div_content);
 //					
@@ -1671,27 +1671,27 @@ class Markdown_Parser {
 
 
 #
-# Markdown Extra Parser Class
+# markdown Extra Parser Class
 #
 
-class MarkdownExtra_Parser extends Markdown_Parser {
+class markdownExtra_Parser extends markdown_Parser {
 
 	# Prefix for footnote ids.
 	var $fn_id_prefix = "";
 	
 	# Optional title attribute for footnote links and backlinks.
-	var $fn_link_title = MARKDOWN_FN_LINK_TITLE;
-	var $fn_backlink_title = MARKDOWN_FN_BACKLINK_TITLE;
+	var $fn_link_title = markdown_FN_LINK_TITLE;
+	var $fn_backlink_title = markdown_FN_BACKLINK_TITLE;
 	
 	# Optional class attribute for footnote links and backlinks.
-	var $fn_link_class = MARKDOWN_FN_LINK_CLASS;
-	var $fn_backlink_class = MARKDOWN_FN_BACKLINK_CLASS;
+	var $fn_link_class = markdown_FN_LINK_CLASS;
+	var $fn_backlink_class = markdown_FN_BACKLINK_CLASS;
 	
 	# Predefined abbreviations.
 	var $predef_abbr = array();
 
 
-	function MarkdownExtra_Parser() {
+	function markdownExtra_Parser() {
 	#
 	# Constructor function. Initialize the parser object.
 	#
@@ -1717,7 +1717,7 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 			"doAbbreviations"    => 70,
 			);
 		
-		parent::Markdown_Parser();
+		parent::markdown_Parser();
 	}
 	
 	
@@ -1793,20 +1793,20 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 	# phrase emphasis, and spans. The list of tags we're looking for is
 	# hard-coded.
 	#
-	# This works by calling _HashHTMLBlocks_InMarkdown, which then calls
+	# This works by calling _HashHTMLBlocks_Inmarkdown, which then calls
 	# _HashHTMLBlocks_InHTML when it encounter block tags. When the markdown="1" 
 	# attribute is found whitin a tag, _HashHTMLBlocks_InHTML calls back
-	#  _HashHTMLBlocks_InMarkdown to handle the Markdown syntax within the tag.
+	#  _HashHTMLBlocks_Inmarkdown to handle the markdown syntax within the tag.
 	# These two functions are calling each other. It's recursive!
 	#
 		#
-		# Call the HTML-in-Markdown hasher.
+		# Call the HTML-in-markdown hasher.
 		#
-		list($text, ) = $this->_hashHTMLBlocks_inMarkdown($text);
+		list($text, ) = $this->_hashHTMLBlocks_inmarkdown($text);
 		
 		return $text;
 	}
-	function _hashHTMLBlocks_inMarkdown($text, $indent = 0, 
+	function _hashHTMLBlocks_inmarkdown($text, $indent = 0, 
 										$enclosing_tag_re = '', $span = false)
 	{
 	#
@@ -1818,8 +1818,8 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 	#
 	#     <div>
 	#         <div markdown="1">
-	#         Hello World.  <-- Is this a Markdown code block or text?
-	#         </div>  <-- Is this a Markdown code block or a real tag?
+	#         Hello World.  <-- Is this a markdown code block or text?
+	#         </div>  <-- Is this a markdown code block or a real tag?
 	#     <div>
 	#
 	#     If you don't like this, just don't indent the tag on which
@@ -1908,7 +1908,7 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 			$parts = preg_split($block_tag_re, $text, 2, 
 								PREG_SPLIT_DELIM_CAPTURE);
 			
-			# If in Markdown span mode, add a empty-string span-level hash 
+			# If in markdown span mode, add a empty-string span-level hash 
 			# after each newline to prevent triggering any block element.
 			if ($span) {
 				$void = $this->hashPart("", ':');
@@ -2037,7 +2037,7 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 	}
 	function _hashHTMLBlocks_inHTML($text, $hash_method, $md_attr) {
 	#
-	# Parse HTML, calling _HashHTMLBlocks_InMarkdown for block tags.
+	# Parse HTML, calling _HashHTMLBlocks_Inmarkdown for block tags.
 	#
 	# *   Calls $hash_method to convert any blocks.
 	# *   Stops when the first opening tag closes.
@@ -2173,14 +2173,14 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 					$block_text .= $tag;
 					$parsed .= $this->$hash_method($block_text);
 					
-					# Get enclosing tag name for the ParseMarkdown function.
+					# Get enclosing tag name for the Parsemarkdown function.
 					# (This pattern makes $tag_name_re safe without quoting.)
 					preg_match('/^<([\w:$]*)\b/', $tag, $matches);
 					$tag_name_re = $matches[1];
 					
-					# Parse the content using the HTML-in-Markdown parser.
+					# Parse the content using the HTML-in-markdown parser.
 					list ($block_text, $text)
-						= $this->_hashHTMLBlocks_inMarkdown($text, $indent, 
+						= $this->_hashHTMLBlocks_inmarkdown($text, $indent, 
 							$tag_name_re, $span_mode);
 					
 					# Outdent markdown text.
@@ -2538,7 +2538,7 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 
 	function doFencedCodeBlocks($text) {
 	#
-	# Adding the fenced code block syntax to regular Markdown:
+	# Adding the fenced code block syntax to regular markdown:
 	#
 	# ~~~
 	# Code block
@@ -2845,28 +2845,28 @@ class MarkdownExtra_Parser extends Markdown_Parser {
 
 /*
 
-PHP Markdown Extra
+PHP markdown Extra
 ==================
 
 Description
 -----------
 
-This is a PHP port of the original Markdown formatter written in Perl 
-by John Gruber. This special "Extra" version of PHP Markdown features 
+This is a PHP port of the original markdown formatter written in Perl 
+by John Gruber. This special "Extra" version of PHP markdown features 
 further enhancements to the syntax for making additional constructs 
 such as tables and definition list.
 
-Markdown is a text-to-HTML filter; it translates an easy-to-read /
-easy-to-write structured text format into HTML. Markdown's text format
+markdown is a text-to-HTML filter; it translates an easy-to-read /
+easy-to-write structured text format into HTML. markdown's text format
 is most similar to that of plain text email, and supports features such
 as headers, *emphasis*, code blocks, blockquotes, and links.
 
-Markdown's syntax is designed not as a generic markup language, but
+markdown's syntax is designed not as a generic markup language, but
 specifically to serve as a front-end to (X)HTML. You can use span-level
-HTML tags anywhere in a Markdown document, and you can use block level
+HTML tags anywhere in a markdown document, and you can use block level
 HTML tags (like <div> and <table> as well).
 
-For more information about Markdown's syntax, see:
+For more information about markdown's syntax, see:
 
 <http://daringfireball.net/projects/markdown/>
 
@@ -2879,7 +2879,7 @@ To file bug reports please send email to:
 <michel.fortin@michelf.com>
 
 Please include with your report: (1) the example input; (2) the output you
-expected; (3) the output Markdown actually produced.
+expected; (3) the output markdown actually produced.
 
 
 Version History
@@ -2891,12 +2891,12 @@ See the readme file for detailed release notes for this version.
 Copyright and License
 ---------------------
 
-PHP Markdown & Extra  
+PHP markdown & Extra  
 Copyright (c) 2004-2009 Michel Fortin  
 <http://michelf.com/>  
 All rights reserved.
 
-Based on Markdown  
+Based on markdown  
 Copyright (c) 2003-2006 John Gruber   
 <http://daringfireball.net/>   
 All rights reserved.
@@ -2912,7 +2912,7 @@ met:
 	notice, this list of conditions and the following disclaimer in the
 	documentation and/or other materials provided with the distribution.
 
-*	Neither the name "Markdown" nor the names of its contributors may
+*	Neither the name "markdown" nor the names of its contributors may
 	be used to endorse or promote products derived from this software
 	without specific prior written permission.
 
