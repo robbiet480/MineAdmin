@@ -2,6 +2,7 @@ backups/*
 npp.bat
 .svn
 .DS_Store
+.gitignore
 nbproject/private/private.properties
 nbproject/project.properties
 nbproject/project.xml
