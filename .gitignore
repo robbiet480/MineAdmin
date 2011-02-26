@@ -2,3 +2,6 @@ backups/*
 npp.bat
 .svn
 .DS_Store
+nbproject/private/private.properties
+nbproject/project.properties
+nbproject/project.xml
