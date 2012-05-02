@@ -171,3 +171,4 @@ class OfHash
 		return $hash == $stored_hash;
 	}
 }
+?>
