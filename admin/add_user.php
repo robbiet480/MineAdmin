@@ -7,7 +7,11 @@ if($_GET['save']=="1"){
     $ignoresrestrictions=$db->escape_string($_POST['ignoresrestrictions']=="on"?"1":"0");
     $ip=$db->escape_string($_POST['ip']);
     $group=explode(":",$db->escape_string($_POST['groups']));
-	$password=sha1($db->escape_string($_POST['pass']));
+    include_once('hash/OfHash.php');
+    $hash = new OfHash();
+    $inputstring=$_POST['pass'];
+    $hashedpassword = $hash->hash($inputstring);
+    $password=$db->escape_string($hashedpassword);
 	if (strlen($_POST['pass']) > 0)
 	{
 		$db->insert("users",Array("name"=>$nick,

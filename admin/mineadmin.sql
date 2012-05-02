@@ -12,4 +12,4 @@ CALL addcol();
 
 DROP PROCEDURE addcol;
 
-insert into users (name, groups, password) values ('admin','default', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3');
+insert into users (name, groups, password) values ('admin','default', '$O$Brl4bRZY/Lt9yEk.6htwp7hmElu6rO1gXFLmzoBTyYHLpZWUDy.gkyUtZoqakeESC1Z5JsXlPbPkoPJHP95hSzoN4aiDe2/');

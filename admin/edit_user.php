@@ -8,7 +8,10 @@ if(is_numeric($_GET['uid'])){
         $ignoresrestrictions=$_POST['ignoresrestrictions']=="on"?"1":"0";
         $ip=$_POST['ip'];
         $group=explode(":",$_POST['groups']);
-	$password=sha1($_POST['pass']);
+        include_once('hash/OfHash.php');
+        $hash = new OfHash();
+	$inputstring=$_POST['pass'];
+        $password = $hash->hash($inputstring);
 	if (strlen($_POST['pass']) > 0)
 	{
 		$db->set("users",Array(
